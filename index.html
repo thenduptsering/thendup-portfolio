@@ -22,6 +22,9 @@
           var decoded = l.search.slice(1).split('&').map(function(s) { 
             return s.replace(/~and~/g, '&')
           }).join('?');
+
+          console.log({ decoded })
+
           window.history.replaceState(null, null,
               l.pathname.slice(0, -1) + decoded + l.hash
           );
@@ -29,8 +32,8 @@
       }(window.location))
     </script>
 
-    <script type="module" crossorigin src="/assets/index-DipkZ_6O.js"></script>
-    <link rel="stylesheet" crossorigin href="/assets/index-DLw9hLV5.css">
+    <script type="module" crossorigin src="/assets/index-C2QldykB.js"></script>
+    <link rel="stylesheet" crossorigin href="/assets/index-FNog1TiO.css">
   </head>
   <body>
     <div id="root"></div>
