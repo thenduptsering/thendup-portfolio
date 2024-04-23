@@ -1,6 +1,6 @@
 import anime from "animejs";
 import { useMemo, useState } from "react";
-import { useResizer } from "../../hooks/useResizer";
+import { useResizer } from "../hooks/useResizer";
 
 export default function Tiles () {
   const [toggled, setToggled] = useState(false);

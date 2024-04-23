@@ -8,7 +8,7 @@ function App() {
         <nav className="Navbar">
           <Link className="Navbar__link" to="/">Home</Link>
 
-          <Link className="Navbar__link" to="/playground">Playground</Link>
+          <Link className="Navbar__link" to="/tiles">Tiles</Link>
         </nav>
       </div>
 

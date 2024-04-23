@@ -4,16 +4,13 @@ import { Route, RouterProvider, createBrowserRouter, createRoutesFromElements } 
 
 import App from './App.jsx';
 
-import Tiles from './components/playground/Tiles.jsx';
-import Playground from './pages/Playground.jsx';
+import Tiles from './components/Tiles.jsx';
 import './styles/index.scss';
 
 const router = createBrowserRouter(
   createRoutesFromElements(
     <Route path="/" element={<App />}>
-      <Route path="/playground" element={<Playground />}>
-        <Route path="tiles" element={<Tiles />} />
-      </Route>
+      <Route path="tiles" element={<Tiles />} />
 {/* 
       <Route path="/search" element={<Search />}>
         <Route path="countries" element={<Countries />} />
