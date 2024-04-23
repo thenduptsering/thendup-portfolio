@@ -1,13 +1,13 @@
 import ReactDOM from 'react-dom/client';
 
-import { Route, RouterProvider, createBrowserRouter, createRoutesFromElements } from 'react-router-dom';
+import { Route, RouterProvider, createHashRouter, createRoutesFromElements } from 'react-router-dom';
 
 import App from './App.jsx';
 
 import Tiles from './components/Tiles.jsx';
 import './styles/index.scss';
 
-const router = createBrowserRouter(
+const router = createHashRouter(
   createRoutesFromElements(
     <Route path="/" element={<App />}>
       <Route path="tiles" element={<Tiles />} />
