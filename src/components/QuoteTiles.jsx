@@ -88,16 +88,16 @@ export default function QuoteTiles () {
   const handleKeyDown = (e) => {
     if (e.key === 'Backspace') {
       navigate("/");
-    } else if (e.key === 'ArrowRight') {
-      handleQuoteNext();
     } else if (e.key === 'ArrowLeft') {
       handleQuotePrevious();
+    } else if (e.key === 'ArrowRight') {
+      handleQuoteNext();
+    } else if (e.key === 'b') {
+      toggleBackground();
     } else if (e.key === 'f') {
       toggleFullScreen();
     } else if (e.key === 'h') {
       toggleControls();
-    } else if (e.key === 'b') {
-      toggleBackground();
     }
   };
 
@@ -207,6 +207,20 @@ export default function QuoteTiles () {
           role="button"
           className="Key Tiles__key-sc"
           onKeyDown={(e) => {
+            if (e.key === 'Enter' || e.key === ' ') toggleBackground()
+          }}
+          onClick={() => toggleBackground()}
+        >
+          <div className="Key__icon Tiles__key-sc-icon"><i className="fa-solid fa-b"></i></div>
+          
+          <span className="Key__info Tiles__key-sc-label">background</span>
+        </div>
+
+        <div
+          tabIndex="0"
+          role="button"
+          className="Key Tiles__key-sc"
+          onKeyDown={(e) => {
             if (e.key === 'Enter' || e.key === ' ') toggleFullScreen()
           }}
           onClick={() => toggleFullScreen()}
@@ -228,20 +242,6 @@ export default function QuoteTiles () {
           <div className="Key__icon Tiles__key-sc-icon"><i className="fa-solid fa-h"></i></div>
           
           <span className="Key__info Tiles__key-sc-label">hide</span>
-        </div>
-
-        <div
-          tabIndex="0"
-          role="button"
-          className="Key Tiles__key-sc"
-          onKeyDown={(e) => {
-            if (e.key === 'Enter' || e.key === ' ') toggleBackground()
-          }}
-          onClick={() => toggleBackground()}
-        >
-          <div className="Key__icon Tiles__key-sc-icon"><i className="fa-solid fa-b"></i></div>
-          
-          <span className="Key__info Tiles__key-sc-label">background</span>
         </div>
       </div>
     </div>
