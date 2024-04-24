@@ -1,0 +1,23 @@
+.Key {
+  display: flex;
+  align-items: center;
+  user-select: none;
+
+  &__icon {
+    width: 25px;
+    font-family: "Ubuntu Mono", monospace;
+    font-size: 14px;
+    padding: 4px 8px;
+    border-radius: 8px;
+    text-align: center;
+    font-weight: bold;
+    background: #646669;
+    color: #323437;
+  }
+
+  &__info {
+    color: #323437;
+    margin-left: 8px;
+    font-weight: 500;
+  }
+}
