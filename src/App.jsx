@@ -12,7 +12,14 @@ function App() {
         <>
           <div className="App__navbar">
             <nav className="Navbar">
-              <Link className="Navbar__link" to="/quote-tiles">Quotes & Tiles</Link>
+              <div className="Navbar__left">Thendup Tsering</div>
+
+              <div className="Navbar__right">
+                <Link className="Navbar__link">About me</Link>
+                <Link className="Navbar__link">Experience</Link>
+                <Link className="Navbar__link">Projects</Link>
+                <Link className="Navbar__link">Contact</Link>
+              </div>
             </nav>
           </div>
 
