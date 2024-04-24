@@ -114,6 +114,19 @@ $c7: #ae2012;
   &__key {
     &-sc {
       margin: 0 16px;
+      user-select: none;
+
+      &:hover {
+        .Tiles__key-sc {
+          &-icon {
+            background-color: transparentize(#cccccc, 0.3);
+          }
+
+          &-label {
+            color: #ffffff;
+          }
+        }
+      }
     }
 
     &-sc-icon {
@@ -122,7 +135,7 @@ $c7: #ae2012;
     }
 
     &-sc-label {
-      color: #cccccc;
+      color: transparentize(#cccccc, 0.3);
     }
   }
 
@@ -142,6 +155,7 @@ $c7: #ae2012;
 
     &--show {
       opacity: 1;
+      pointer-events: all;
     }
   }
 }
