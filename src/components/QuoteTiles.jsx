@@ -41,7 +41,7 @@ export default function QuoteTiles () {
       setFade(false);
       setQuoteIdx((prev) => mod((prev + 1), quotes.length));
       setImageIdx((prev) => mod((prev + 1), imageUrls.length));
-    }, 1200);
+    }, 600);
   }, 1000, false);
 
   const handleQuotePrevious = useThrottle(() => {
@@ -51,7 +51,7 @@ export default function QuoteTiles () {
       setFade(false);
       setQuoteIdx((prev) => mod((prev - 1), quotes.length));
       setImageIdx((prev) => mod((prev - 1), imageUrls.length));
-    }, 1200);
+    }, 600);
   }, 1000, false);
 
   const toggleControls = () => {
@@ -59,7 +59,6 @@ export default function QuoteTiles () {
   }
 
   const toggleBackground = () => {
-    console.log({ tilesToggled });
     setBackgroundToggled((prev) => !prev);
   }
 
@@ -164,7 +163,7 @@ export default function QuoteTiles () {
         <div
           tabIndex="0"
           role="button"
-          className="Key Tiles__key-sc"
+          className="Key Key--long Tiles__key-sc"
           onKeyDown={(e) => {
             if (e.key === 'Enter' || e.key === ' ') navigate("/")
           }}
