@@ -5,7 +5,7 @@ import { Route, RouterProvider, createHashRouter, createRoutesFromElements } fro
 import App from './App.jsx';
 
 import QuoteTiles from './components/QuoteTiles.jsx';
-import './styles/index.scss';
+import './styles/_index.scss';
 
 const router = createHashRouter(
   createRoutesFromElements(

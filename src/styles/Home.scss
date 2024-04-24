@@ -1,0 +1,23 @@
+.Home {
+  margin-top: 24px;
+
+  &__body {
+    display: flex;
+    justify-content: center;
+    color: $body-color;
+
+    &-hero {
+      text-align: center;
+
+      &-logo {
+        border-radius: 50%;
+        max-width: 400px;
+      }
+
+      &-text {
+        font-family: "Hanken Grotesk";
+        font-size: 60px;
+      }
+    }
+  }
+}
