@@ -3,12 +3,14 @@
 @import './variables';
 
 @import './App';
-@import './Button';
 @import './Home';
+
+@import './Button';
 @import './HamburgerMenu';
 @import './Navbar';
 @import './Key';
 @import './Tile';
+@import './Tooltip';
 
 :root {
   font-family: "Poppins", "Hanken Grotesk", "Montserrat", system-ui;
