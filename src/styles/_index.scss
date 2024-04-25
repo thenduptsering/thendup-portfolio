@@ -29,15 +29,15 @@
 
 a {
   font-weight: 400;
-  color: $light-teal;
+  color: $teal-1;
   text-decoration: inherit;
 }
 
 a:hover {
-  color: $teal;
+  color: $teal-3;
   text-decoration: underline;
   text-underline-offset: 12px;
-  text-decoration-color: $teal;
+  text-decoration-color: $teal-3;
 }
 
 p {

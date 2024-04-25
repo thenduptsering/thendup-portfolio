@@ -31,7 +31,7 @@ export default function Home () {
         <div className="Home__section-button-container">
           <button className="Home__section-button Button" onClick={downloadResume}>Download resume</button>
 
-          <button className="Home__section-button Button">Contact</button>
+          <button className="Home__section-button Button Button--secondary">Contact</button>
         </div>
       </div>
 
