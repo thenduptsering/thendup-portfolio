@@ -10,13 +10,11 @@ $c7: #ae2012;
   height: 100vh;
   width: 100vw;
   cursor: pointer;
-  min-width: 600px;
 
   &__background {
     height: 100%;
     width: 100%;
     position: absolute;
-    min-width: 600px;
 
     &-image {
       position: absolute;
@@ -195,6 +193,14 @@ $c7: #ae2012;
   .Tiles {
     &__body-quote {
       max-width: 80%;
+
+      &-text {
+        font-size: 40px;
+      }
+
+      &-author {
+        font-size: 30px;
+      }
     }
 
     &__footer {
@@ -209,11 +215,31 @@ $c7: #ae2012;
 @media screen and (max-width: $min-device-width) {
   .Tiles {
     &__body-quote {
-      max-width: 100%;
+      &-text {
+        font-size: 30px;
+      }
+
+      &-author {
+        font-size: 20px;
+      }
+    }
+
+    &__key-sc {
+      &-icon {
+        width: 15px !important;
+        height: 15px;
+        font-size: 12px;
+      }
+
+      &-label {
+        font-size: 12px;
+      }
     }
 
     &__footer {
-      display: none;
+      grid-template-columns: repeat(2, 1fr);
+      grid-template-rows: repeat(3, 1fr);
+      gap: 2px;
     }
   }
 }
