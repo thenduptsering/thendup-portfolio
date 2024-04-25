@@ -1,6 +1,6 @@
 import Tooltip from './Tooltip';
 
-const RESUME_URL = 'src/assets/tt_resume.pdf';
+const RESUME_URL = '/tt_resume.pdf';
 
 export default function Home () {
 

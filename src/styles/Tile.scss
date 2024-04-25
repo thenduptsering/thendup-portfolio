@@ -20,7 +20,7 @@ $c7: #ae2012;
       position: absolute;
       height: 100%;
       width: 100%;
-      transition: opacity 0.7s linear, background-position 0.7s ease-out;
+      transition: opacity 0.7s linear;
       -webkit-filter: blur(4px);
       -moz-filter: blur(4px);
       -o-filter: blur(4px);
@@ -160,21 +160,22 @@ $c7: #ae2012;
 
 .Tile {
   position: relative;
-  transition: opacity 1s ease-in-out;
 
   &:before {
     background-color: $black;
     content: "";
     position: absolute;
     inset: 1px;
+    transition: opacity 1.5s ease-out;
   }
 
   &:hover {
-    opacity: 0.1 !important;
-    transition: opacity 0s linear;
+    opacity: 0.7 !important;
 
     &:before {
       border-radius: 4px;
+      opacity: 0.1;
+      transition: opacity 0s linear;
     }
   }
 }
