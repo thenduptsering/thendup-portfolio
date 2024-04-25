@@ -20,24 +20,24 @@ export default function Home () {
           <img className="Home__section-pic" src="src/assets/headshot.jpg" alt="Thendup headshot" />
         </div>
 
-        <div className="Home__section-text-container">
-          <p className="Home__section-text-1">Hello, I am</p>
+        <div className="Home__section-info">
+          <p className="Home__section-text-2">Hello, I am</p>
 
           <p className="Home__section-text-main">Thendup Tsering</p>
 
           <p className="Home__section-text-1">Senior Frontend Developer</p>
-        </div>
 
-        <div className="Home__section-button-container">
-          <button className="Home__section-button Button" onClick={downloadResume}>Download resume</button>
+          <div className="Home__section-buttons">
+            <button className="Home__section-button Button" onClick={downloadResume}>Download resume</button>
 
-          <button className="Home__section-button Button Button--secondary">Contact</button>
+            <button className="Home__section-button Button Button--secondary">Contact</button>
+          </div>
         </div>
       </div>
 
       <div className="Home__footer">
         <div className="Home__section-socials-container">
-          <Tooltip direction="top" content="LinkedIn profile">
+          <Tooltip direction="top" delay="0" content="LinkedIn profile">
             <a
               className="Home__section-link Home__section-link--icon"
               href="https://www.linkedin.com/in/thendup-tsering"
@@ -48,7 +48,7 @@ export default function Home () {
             </a>
           </Tooltip>
 
-          <Tooltip direction="top" content="Github profile">          
+          <Tooltip direction="top" delay="0" content="Github profile">
             <a
               className="Home__section-link Home__section-link--icon"
               href="https://github.com/thenduptsering"
@@ -59,7 +59,7 @@ export default function Home () {
             </a>
           </Tooltip>
 
-          <Tooltip direction="top" content="Instagram profile">  
+          <Tooltip direction="top" delay="0" content="Instagram profile">
             <a
               className="Home__section-link Home__section-link--icon"
               href="https://www.instagram.com/thendup.tsering"
@@ -70,7 +70,7 @@ export default function Home () {
             </a>
           </Tooltip>
 
-          <Tooltip direction="top" content="Twitter (X) profile">  
+          <Tooltip direction="top" delay="0" content="Twitter(X) profile">
             <a
               className="Home__section-link Home__section-link--icon"
               href="https://twitter.com/thenduptsering"

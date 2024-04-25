@@ -4,13 +4,13 @@ import { Route, RouterProvider, createHashRouter, createRoutesFromElements } fro
 
 import App from './App.jsx';
 
-import QuoteTiles from './components/QuoteTiles.jsx';
+import Tiles from './components/Tiles.jsx';
 import './styles/_index.scss';
 
 const router = createHashRouter(
   createRoutesFromElements(
     <Route path="/" element={<App />}>
-      <Route path="quote-tiles" element={<QuoteTiles />} />
+      <Route path="click-tiles" element={<Tiles />} />
     </Route>
   )
 );
