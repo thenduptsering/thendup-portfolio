@@ -13,7 +13,7 @@ import useThrottle from '../helpers/useThrottle';
 
 export default function QuoteTiles () {
   const navigate = useNavigate();
-  const [tilesToggled, setTilesToggled] = useState(false);
+  const [tilesToggled, setTilesToggled] = useState(true);
   const [backgroundToggled, setBackgroundToggled] = useState(true);
   const [slowLoad, setSlowLoad] = useState(false);
   const [hideControls, setHideControls] = useState(false);
@@ -124,7 +124,7 @@ export default function QuoteTiles () {
   return (
     <div className="Tiles" style={style}>
       <div className="Tiles__background" style={{
-        opacity: backgroundToggled ? 0 : 1
+        opacity: backgroundToggled ? 1 : 0
       }}>
         {imageUrls.map((url, idx) => {
           return (
@@ -139,7 +139,7 @@ export default function QuoteTiles () {
         <div className="Tiles__background-overlay" />
       </div>
 
-      <div className={`Tiles__main ${tilesToggled ? 'Tiles__main--toggled' : ''} ${backgroundToggled ? 'Tiles__main--gradient' : ''}`}>
+      <div className={`Tiles__main ${tilesToggled ? 'Tiles__main--toggled' : ''} ${!backgroundToggled ? 'Tiles__main--gradient' : ''}`}>
         {
           Array.from(Array(cols * rows)).map((n, i) => {
             return <div key={`tile_${i}`} className="Tile" onClick={() => handleOnClick(i)}></div>
