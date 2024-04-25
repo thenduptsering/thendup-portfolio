@@ -16,7 +16,6 @@ export default function Home () {
 
       <div className="Home__footer">
         
-
       </div>
     </div>
   );

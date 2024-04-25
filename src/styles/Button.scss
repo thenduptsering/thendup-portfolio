@@ -1,0 +1,10 @@
+.Button {
+  &--icon {
+    border-radius: 8px;
+    border: none;
+    font-family: inherit;
+    background: transparent;
+    cursor: pointer;
+    font-size: 24px;
+  }
+}

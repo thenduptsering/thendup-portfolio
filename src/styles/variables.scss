@@ -1,13 +1,37 @@
-$navy: #264653;
 $gray: #2A9D8F;
-$yellow: #E9C46A;
-$orange: #F4A261;
-$red: #E76F51;
 $dark-gray: #292C35;
-
 $body-color: #cccccc;
 $black: #000000;
 $white: #ffffff;
 
-$min-device-width: 600px;
+$min-device-width: 854px;
 $tablet-width: 1024px;
+
+$dark-navy: #001220;
+$dark-teal: #005f74;
+$teal: #0a9397;
+$light-teal: #94d2be;
+$beige: #e9d8a7;
+$yellow: #ee9b01;
+$orange: #ca6703;
+$dark-orange: #bb3e04;
+$red: #ae2013;
+$dark-red: #9b2227;
+
+@mixin box-shadow {
+  -webkit-box-shadow: -8px 16px 16px 4px rgba(0,0,0,0.5);
+  -moz-box-shadow: -8px 16px 16px 4px rgba(0,0,0,0.5);
+  box-shadow: -8px 16px 16px 4px rgba(0,0,0,0.5);
+}
+
+@mixin box-shadow {
+  -webkit-box-shadow: -8px 16px 16px 4px rgba(0,0,0,0.3);
+  -moz-box-shadow: -8px 16px 16px 4px rgba(0,0,0,0.3);
+  box-shadow: -8px 16px 16px 4px rgba(0,0,0,0.3);
+}
+
+@mixin box-shadow-heavy {
+  -webkit-box-shadow: -8px 16px 16px 4px rgba(0,0,0,0.66);
+  -moz-box-shadow: -8px 16px 16px 4px rgba(0,0,0,0.66);
+  box-shadow: -8px 16px 16px 4px rgba(0,0,0,0.66);
+}
