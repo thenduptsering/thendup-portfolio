@@ -1,6 +1,16 @@
 
+const RESUME_URL = 'src/assets/tt_resume.pdf';
 
 export default function Home () {
+
+  const downloadResume = () => {
+    const anchor = document.createElement('a')
+    anchor.href = RESUME_URL
+    anchor.download = RESUME_URL.split('/').pop()
+    document.body.appendChild(anchor)
+    anchor.click()
+    document.body.removeChild(anchor)
+  }
 
   return (
     <div className="Home">
@@ -18,9 +28,9 @@ export default function Home () {
         </div>
 
         <div className="Home__section-button-container">
-          <button className="Home__section-button Button">Download resume</button>
+          <button className="Home__section-button Button" onClick={downloadResume}>Download resume</button>
 
-          <button className="Home__section-button Button">Contact info</button>
+          <button className="Home__section-button Button">Contact</button>
         </div>
       </div>
 
