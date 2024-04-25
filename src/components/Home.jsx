@@ -17,7 +17,7 @@ export default function Home () {
     <div className="Home">
       <div className="Home__section">
         <div className="Home__section-pic-container">
-          <img className="Home__section-pic" src="src/assets/headshot.jpg" alt="Thendup headshot" />
+          <img className="Home__section-pic" src="/public/headshot.jpg" alt="Thendup headshot" />
         </div>
 
         <div className="Home__section-info">
