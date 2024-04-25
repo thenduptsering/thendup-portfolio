@@ -1,0 +1,23 @@
+.Navbar {
+  color: $body-color;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 60px;
+  font-size: 18px;
+
+  &__logo {
+    font-size: 24px;
+  }
+
+  &__link {
+    margin: 8px 16px;
+  }
+}
+
+@media screen and (max-width: $min-device-width) {
+  .Navbar {
+    display: none;
+  }
+}

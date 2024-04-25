@@ -3,8 +3,14 @@
   align-items: center;
   user-select: none;
 
+  &--long {
+    .Key__icon {
+      width: 24px;
+    }
+  }
+
   &__icon {
-    width: 25px;
+    width: 14px;
     font-family: "Ubuntu Mono", monospace;
     font-size: 14px;
     padding: 4px 8px;

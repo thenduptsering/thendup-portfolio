@@ -1,15 +1,8 @@
 .App {
   display: block;
   width: 100vw;
-}
 
-.Navbar {
-  width: 100%;
-  display: flex;
-  align-items: center;
-  height: 40px;
-
-  &__link {
-    margin: 8px 16px;
+  &__navbar {
+    padding: 0 24px;
   }
 }

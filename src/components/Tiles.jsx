@@ -11,10 +11,10 @@ import mod from '../helpers/mod';
 import toggleFullScreen from '../helpers/toggleFullScreen';
 import useThrottle from '../helpers/useThrottle';
 
-export default function QuoteTiles () {
+export default function Tiles () {
   const navigate = useNavigate();
   const [tilesToggled, setTilesToggled] = useState(false);
-  const [backgroundToggled, setBackgroundToggled] = useState(true);
+  const [backgroundToggled, setBackgroundToggled] = useState(false);
   const [slowLoad, setSlowLoad] = useState(false);
   const [hideControls, setHideControls] = useState(false);
   const [fade, setFade] = useState(false);
@@ -41,7 +41,7 @@ export default function QuoteTiles () {
       setFade(false);
       setQuoteIdx((prev) => mod((prev + 1), quotes.length));
       setImageIdx((prev) => mod((prev + 1), imageUrls.length));
-    }, 1200);
+    }, 600);
   }, 1000, false);
 
   const handleQuotePrevious = useThrottle(() => {
@@ -51,7 +51,7 @@ export default function QuoteTiles () {
       setFade(false);
       setQuoteIdx((prev) => mod((prev - 1), quotes.length));
       setImageIdx((prev) => mod((prev - 1), imageUrls.length));
-    }, 1200);
+    }, 600);
   }, 1000, false);
 
   const toggleControls = () => {
@@ -59,7 +59,6 @@ export default function QuoteTiles () {
   }
 
   const toggleBackground = () => {
-    console.log({ tilesToggled });
     setBackgroundToggled((prev) => !prev);
   }
 
@@ -89,16 +88,16 @@ export default function QuoteTiles () {
   const handleKeyDown = (e) => {
     if (e.key === 'Backspace') {
       navigate("/");
-    } else if (e.key === 'ArrowRight') {
-      handleQuoteNext();
     } else if (e.key === 'ArrowLeft') {
       handleQuotePrevious();
+    } else if (e.key === 'ArrowRight') {
+      handleQuoteNext();
+    } else if (e.key === 'b') {
+      toggleBackground();
     } else if (e.key === 'f') {
       toggleFullScreen();
     } else if (e.key === 'h') {
       toggleControls();
-    } else if (e.key === 'b') {
-      toggleBackground();
     }
   };
 
@@ -125,7 +124,7 @@ export default function QuoteTiles () {
   return (
     <div className="Tiles" style={style}>
       <div className="Tiles__background" style={{
-        opacity: backgroundToggled ? 0 : 1
+        opacity: backgroundToggled ? 1 : 0
       }}>
         {imageUrls.map((url, idx) => {
           return (
@@ -140,7 +139,7 @@ export default function QuoteTiles () {
         <div className="Tiles__background-overlay" />
       </div>
 
-      <div className={`Tiles__main ${tilesToggled ? 'Tiles__main--toggled' : ''} ${backgroundToggled ? 'Tiles__main--gradient' : ''}`}>
+      <div className={`Tiles__main ${tilesToggled ? 'Tiles__main--toggled' : ''} ${!backgroundToggled ? 'Tiles__main--gradient' : ''}`}>
         {
           Array.from(Array(cols * rows)).map((n, i) => {
             return <div key={`tile_${i}`} className="Tile" onClick={() => handleOnClick(i)}></div>
@@ -164,7 +163,7 @@ export default function QuoteTiles () {
         <div
           tabIndex="0"
           role="button"
-          className="Key Tiles__key-sc"
+          className="Key Key--long Tiles__key-sc"
           onKeyDown={(e) => {
             if (e.key === 'Enter' || e.key === ' ') navigate("/")
           }}
@@ -208,6 +207,20 @@ export default function QuoteTiles () {
           role="button"
           className="Key Tiles__key-sc"
           onKeyDown={(e) => {
+            if (e.key === 'Enter' || e.key === ' ') toggleBackground()
+          }}
+          onClick={() => toggleBackground()}
+        >
+          <div className="Key__icon Tiles__key-sc-icon"><i className="fa-solid fa-b"></i></div>
+          
+          <span className="Key__info Tiles__key-sc-label">background</span>
+        </div>
+
+        <div
+          tabIndex="0"
+          role="button"
+          className="Key Tiles__key-sc"
+          onKeyDown={(e) => {
             if (e.key === 'Enter' || e.key === ' ') toggleFullScreen()
           }}
           onClick={() => toggleFullScreen()}
@@ -229,20 +242,6 @@ export default function QuoteTiles () {
           <div className="Key__icon Tiles__key-sc-icon"><i className="fa-solid fa-h"></i></div>
           
           <span className="Key__info Tiles__key-sc-label">hide</span>
-        </div>
-
-        <div
-          tabIndex="0"
-          role="button"
-          className="Key Tiles__key-sc"
-          onKeyDown={(e) => {
-            if (e.key === 'Enter' || e.key === ' ') toggleBackground()
-          }}
-          onClick={() => toggleBackground()}
-        >
-          <div className="Key__icon Tiles__key-sc-icon"><i className="fa-solid fa-b"></i></div>
-          
-          <span className="Key__info Tiles__key-sc-label">background</span>
         </div>
       </div>
     </div>
