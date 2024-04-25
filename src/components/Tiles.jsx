@@ -102,8 +102,8 @@ export default function Tiles () {
   };
 
   const handleMouseMove = (e) => {
-    const imageX = Math.floor(((e.clientX / windowWidth) - 0.5) * 40);
-    const imageY = Math.floor(((e.clientY / windowHeight) - 0.5) * 40);
+    const imageX = ((e.clientX / windowWidth) - 0.5) * 20;
+    const imageY = ((e.clientY / windowHeight) - 0.5) * 20;
 
     setImagePosition({
       x: 50 + imageX,
