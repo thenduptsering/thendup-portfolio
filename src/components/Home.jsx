@@ -1,3 +1,4 @@
+import Tooltip from './Tooltip';
 
 const RESUME_URL = 'src/assets/tt_resume.pdf';
 
@@ -36,37 +37,49 @@ export default function Home () {
 
       <div className="Home__footer">
         <div className="Home__section-socials-container">
-          <a
-            className="Home__section-link Home__section-link--icon"
-            href="https://www.linkedin.com/in/thendup-tsering"
-            target="_blank"
-          >
-            <i className="fa-brands fa-linkedin" />
-          </a>
+          <Tooltip direction="top" content="LinkedIn profile">
+            <a
+              className="Home__section-link Home__section-link--icon"
+              href="https://www.linkedin.com/in/thendup-tsering"
+              target="_blank"
+              rel="noreferrer"
+            >
+              <i className="fa-brands fa-linkedin" />
+            </a>
+          </Tooltip>
 
-          <a
-            className="Home__section-link Home__section-link--icon"
-            href="https://github.com/thenduptsering"
-            target="_blank"
-          >
-            <i className="fa-brands fa-github" />
-          </a>
+          <Tooltip direction="top" content="Github profile">          
+            <a
+              className="Home__section-link Home__section-link--icon"
+              href="https://github.com/thenduptsering"
+              target="_blank"
+              rel="noreferrer"
+            >
+              <i className="fa-brands fa-github" />
+            </a>
+          </Tooltip>
 
-          <a
-            className="Home__section-link Home__section-link--icon"
-            href="https://www.instagram.com/thendup.tsering"
-            target="_blank"
-          >
-            <i className="fa-brands fa-instagram" />
-          </a>
+          <Tooltip direction="top" content="Instagram profile">  
+            <a
+              className="Home__section-link Home__section-link--icon"
+              href="https://www.instagram.com/thendup.tsering"
+              target="_blank"
+              rel="noreferrer"
+            >
+              <i className="fa-brands fa-instagram" />
+            </a>
+          </Tooltip>
 
-          <a
-            className="Home__section-link Home__section-link--icon"
-            href="https://twitter.com/thenduptsering"
-            target="_blank"
-          >
-            <i className="fa-brands fa-x-twitter" />
-          </a>
+          <Tooltip direction="top" content="Twitter (X) profile">  
+            <a
+              className="Home__section-link Home__section-link--icon"
+              href="https://twitter.com/thenduptsering"
+              target="_blank"
+              rel="noreferrer"
+            >
+              <i className="fa-brands fa-x-twitter" />
+            </a>
+          </Tooltip>
         </div>
       </div>
     </div>
