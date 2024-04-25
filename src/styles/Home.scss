@@ -1,23 +1,52 @@
 .Home {
   margin-top: 24px;
 
-  &__body {
+  &__section {
     display: flex;
+    flex-direction: column;
     justify-content: center;
+    align-items: center;
     color: $body-color;
 
-    &-hero {
-      text-align: center;
+    &-pic {
+      border-radius: 50%;
+      max-width: 400px;
+    }
 
-      &-logo {
-        border-radius: 50%;
-        max-width: 400px;
-      }
+    &-text-main {
+      font-family: "Bebas Neue";
+      font-size: 60px;
+    }
 
-      &-text {
-        font-family: "Hanken Grotesk";
-        font-size: 60px;
+    &-text-1 {
+      font-size: 40px;
+    }
+
+    &-button-container {
+      .Home__section-button {
+        margin: 4px 16px;
       }
     }
+
+    &-socials-container {
+      .Home__section-link--icon {
+        margin: 0 8px;
+        font-size: 24px;
+
+        &:hover {
+          i {
+            color: $teal;
+          }
+        }
+      }
+    }
+  }
+
+  &__footer {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    display: flex;
+    justify-content: center;
   }
 }
