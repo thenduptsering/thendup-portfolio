@@ -11,10 +11,10 @@ import mod from '../helpers/mod';
 import toggleFullScreen from '../helpers/toggleFullScreen';
 import useThrottle from '../helpers/useThrottle';
 
-export default function QuoteTiles () {
+export default function Tiles () {
   const navigate = useNavigate();
-  const [tilesToggled, setTilesToggled] = useState(true);
-  const [backgroundToggled, setBackgroundToggled] = useState(true);
+  const [tilesToggled, setTilesToggled] = useState(false);
+  const [backgroundToggled, setBackgroundToggled] = useState(false);
   const [slowLoad, setSlowLoad] = useState(false);
   const [hideControls, setHideControls] = useState(false);
   const [fade, setFade] = useState(false);
