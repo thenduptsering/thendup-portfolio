@@ -21,13 +21,18 @@ $red: #ae2013;
 $dark-red: #9b2227;
 
 
+$border-radius-box-small: 8px;
+$border-radius-box: 16px;
+$border-radius-button: 24px;
+
+
 @mixin box-shadow {
   -webkit-box-shadow: -8px 16px 16px 4px rgba(0,0,0,0.5);
   -moz-box-shadow: -8px 16px 16px 4px rgba(0,0,0,0.5);
   box-shadow: -8px 16px 16px 4px rgba(0,0,0,0.5);
 }
 
-@mixin box-shadow {
+@mixin box-shadow-light {
   -webkit-box-shadow: -8px 16px 16px 4px rgba(0,0,0,0.3);
   -moz-box-shadow: -8px 16px 16px 4px rgba(0,0,0,0.3);
   box-shadow: -8px 16px 16px 4px rgba(0,0,0,0.3);
