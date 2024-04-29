@@ -1,6 +1,6 @@
 import Tooltip from './Tooltip';
 
-const RESUME_URL = '/tt_resume.pdf';
+const RESUME_URL = '/_thenduptsering_resume.pdf';
 
 export default function Home () {
 
@@ -15,25 +15,74 @@ export default function Home () {
 
   return (
     <div className="Home">
-      <div className="Home__section">
+      <section id="hero" className="Home__section Home__section--hero">
         <div className="Home__section-pic-container">
           <img className="Home__section-pic" src="/headshot.jpg" alt="Thendup headshot" />
         </div>
 
-        <div className="Home__section-info">
+        <div className="Home__section-info-right">
           <p className="Home__section-text-2">Hello, I am</p>
 
-          <p className="Home__section-text-main">Thendup Tsering</p>
+          <h1 className="Home__section-text-main">Thendup Tsering</h1>
 
-          <p className="Home__section-text-1">Senior Frontend Developer</p>
+          <p className="Home__section-text-1">Senior Front-End Software&nbsp;Engineer</p>
 
           <div className="Home__section-buttons">
-            <button className="Home__section-button Button" onClick={downloadResume}>Download resume</button>
+            <button className="Home__section-button Button Button--primary" onClick={downloadResume}>My resume</button>
 
-            <button className="Home__section-button Button Button--secondary">Contact</button>
+            <button className="Home__section-button Button Button--secondary">Contact me</button>
           </div>
         </div>
-      </div>
+      </section>
+
+      <section id="about" className="Home__section Home__section--about">
+        <h1 className="Home__section-heading">About me</h1>
+        
+        <div className="Home__section-info">
+          <div className="Home__section-info-left">
+            <img className="Home__section-info-pic" src="/headshot.jpg" alt="Thendup headshot" />
+          </div>
+
+          <div className="Home__section-info-right">
+            <div className="Home__section-info-box-container">
+              <div className="Home__section-info-box">
+                <div className="Home__section-info-box-icon">
+                  <i className="fa-solid fa-medal" />
+                </div>
+
+                <h3 className="Home__section-info-box-title">
+                  Experience
+                </h3>
+
+                <p className="Home__section-info-box-details">
+                  8+ years<br />Front-end software development
+                </p>
+              </div>
+
+              <div className="Home__section-info-box">
+                <div className="Home__section-info-box-icon">
+                  <i className="fa-solid fa-graduation-cap" />
+                </div>
+
+                <h3 className="Home__section-info-box-title">
+                  Education
+                </h3>
+
+                <p className="Home__section-info-box-details">
+                  Bachelors of Computer Science
+                  <br />
+                  University of Waterloo 2017
+                </p>
+              </div>
+            </div>
+
+            <div className="Home__section-info-text">
+              Hello! I am Thendup Tsering....
+              Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur?
+            </div>
+          </div>
+        </div>
+      </section>
 
       <div className="Home__footer">
         <div className="Home__section-socials-container">

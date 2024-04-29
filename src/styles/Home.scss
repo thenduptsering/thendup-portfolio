@@ -1,19 +1,74 @@
 .Home {
-  margin-top: 24px;
-
   &__section {
     color: $body-color;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    height: 100vh;
+    padding: 0 40px;
+
+    &--hero {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    &--about {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+    }
+
+    &-heading {
+      text-align: center;
+      margin-bottom: 24px;
+    }
 
     &-pic {
       border-radius: 50%;
       max-width: 400px;
+      margin: 0 24px;
     }
 
     &-info {
-      margin-left: 48px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+      &-right {
+        max-width: 50%;
+      }
+
+      &-pic {
+        border-radius: $border-radius-box;
+        max-width: 400px;
+        margin-right: 24px;
+      }
+      
+      &-box {
+        padding: 16px 24px;
+        border: 1px solid $gray;
+        border-radius: $border-radius-box;
+        width: 100%;
+        max-width: 360px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+
+        &:not(:last-child) {
+          margin-right: 24px;
+        }
+
+        &-container {
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          margin-bottom: 24px;
+        }
+
+        &-details {
+          text-align: center;
+        }
+      }
     }
 
     &-text-main {
@@ -31,7 +86,9 @@
 
     &-buttons {
       .Home__section-button {
-        margin: 4px 16px;
+        &:not(:last-child) {
+          margin-right: 16px;
+        }
       }
     }
 
@@ -50,11 +107,10 @@
   }
 
   &__footer {
-    position: absolute;
-    bottom: 0;
     width: 100%;
     display: flex;
     justify-content: center;
+    margin: 24px 0;
   }
 }
 
@@ -69,6 +125,11 @@
       &-info {
         margin: 24px 0 0 0;
         text-align: center;
+
+        &-right {
+          max-width: 100%;
+          text-align: center;
+        }
       }
     }
   }
