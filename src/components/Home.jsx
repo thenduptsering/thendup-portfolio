@@ -35,9 +35,7 @@ export default function Home () {
           </p>
 
           <div className="Home__section-buttons">
-            <button className="Home__section-button Button Button--primary" onClick={downloadResume}>My resume</button>
-
-            <button className="Home__section-button Button Button--secondary">Contact me</button>
+            <button className="Home__section-button Button Button--default" onClick={downloadResume}>Download resume</button>
           </div>
         </div>
       </section>
