@@ -6,7 +6,6 @@ const RESUME_URL = '/_thenduptsering_resume.pdf';
 const DATE_STARTED_WORKING = '06/01/2015';
 
 export default function Home () {
-
   const downloadResume = () => {
     const anchor = document.createElement('a')
     anchor.href = RESUME_URL
@@ -24,12 +23,16 @@ export default function Home () {
   return (
     <div className="Home">
       <section id="hero" className="Home__section Home__section--hero">
-        <div className="Home__section-info-right">
-          <p className="Home__section-text-2">Hello, I am</p>
+        <div className="Home__section-info-main">
+          <p className="Home__section-text-2">Hey, my name is</p>
 
-          <h1 className="Home__section-text-main">Thendup Tsering</h1>
+          <h1 className="Home__section-text-main">Thendup Tsering.</h1>
 
           <p className="Home__section-text-1">Senior Front-End Software Engineer</p>
+
+          <p className="Home__section-text-3">
+            I enjoy crafting pixel-perfect and performant front-end products. One line of code at a time.
+          </p>
 
           <div className="Home__section-buttons">
             <button className="Home__section-button Button Button--primary" onClick={downloadResume}>My resume</button>
@@ -48,7 +51,7 @@ export default function Home () {
           </div>
 
           <div className="Home__section-info-right">
-            <div className="Home__section-info-box-container">
+            {/* <div className="Home__section-info-box-container">
               <div className="Home__section-info-box">
                 <div className="Home__section-info-box-icon">
                   <i className="fa-solid fa-medal" />
@@ -78,11 +81,22 @@ export default function Home () {
                   University of Waterloo 2017
                 </p>
               </div>
-            </div>
+            </div> */}
 
             <div className="Home__section-info-text">
-              Hello! I am Thendup Tsering....
-              Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur?
+              <p className="Home__section-text-para">
+                Hello! 👋
+              </p>
+              <p className="Home__section-text-para">
+                My name is Thendup and I&apos;m a Senior Front-End Software Engineer. My interest in web development started back in 2013 when I took a Computer Science course in university and enjoyed it so much that I ended up switching into it from a finance major – best decision ever! I&apos;ve had the pleasure of working with companies big and small during my co-op terms, and eventually joined <a className="Home__section-text-link" href="https://www.thinkdataworks.com" target="blank">ThinkData Works</a> full time after graduation, crafting awesome UIs and pushing the boundaries of innovation.
+              </p>
+              <p className="Home__section-text-para">
+                Now, I&apos;m on the lookout for my next adventure, eager to bring my skills and passion to a new team. Let&apos;s build something amazing together!
+              </p>
+              <p className="Home__section-text-para">
+                
+              </p>
+
             </div>
           </div>
         </div>
