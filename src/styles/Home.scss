@@ -8,7 +8,7 @@
     &--hero {
       display: flex;
       align-items: center;
-      margin-top: -60px;
+      margin-top: -$nav-bar-height;
     }
 
     &--about,
@@ -78,6 +78,7 @@
     &-text-main {
       font-size: $font-size-heading;
       font-weight: $font-weight-heavy;
+      color: $beige;
     }
 
     &-text-1 {
@@ -104,7 +105,7 @@
       color: $yellow;
 
       &:hover {
-        color: $teal-1;
+        color: $beige;
       }
  
       &:after {

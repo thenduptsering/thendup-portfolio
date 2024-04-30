@@ -1,6 +1,6 @@
 .Hamburger-Menu {
   display: none;
-  height: 60px;
+  height: $nav-bar-height;
 
   &__logo {
     font-size: $font-size-icon;

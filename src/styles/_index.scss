@@ -9,6 +9,7 @@
 @import './HamburgerMenu';
 @import './Navbar';
 @import './Key';
+@import './Logo';
 @import './Tile';
 @import './Tooltip';
 
@@ -33,7 +34,7 @@
 
 a {
   font-weight: $font-weight-regular;
-  color: $teal-1;
+  color: $yellow;
   text-decoration: none;
   position: relative;
 
@@ -44,13 +45,13 @@ a {
     height: 1px;
     left: 50%;
     position: absolute;
-    background: $teal-2;
+    background: $beige;
     transition: width 0.3s ease 0s, left 0.3s ease 0s;
     width: 0;
   }
 
   &:hover {
-    color: $teal-2;
+    color: $beige;
   
     &:after {
       width: 100%; 
