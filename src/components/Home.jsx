@@ -29,10 +29,8 @@ export default function Home () {
 
           <h1 className="Home__section-text-main">Thendup Tsering.</h1>
 
-          <p className="Home__section-text-1">Senior Front-End React Developer & Mentor</p>
-
-          <p className="Home__section-text-3">
-            I am a senior front-end react developer based in Toronto, Canada 🇨🇦
+          <p className="Home__section-text-1">
+            I am a senior front-end react developer based in Toronto, Canada
           </p>
 
           <div className="Home__section-buttons">
@@ -60,11 +58,37 @@ export default function Home () {
                 My name is Thendup and I&apos;m a senior front-end software engineer with over 8 years of hands-on experience. My interest in web development started back in 2013 when I took a Computer Science course in university and enjoyed it so much that I ended up switching majors – best decision ever! I&apos;ve had the pleasure of working with companies big and small during my co-op terms, and eventually joined <a className="Home__section-text-link" href="https://www.thinkdataworks.com" target="blank">ThinkData Works</a> full time after graduation. 
               </p>
               <p className="Home__section-text-para">
-                Over the years, I have led and mentored a team of 9 talented engineers, successfully spearheaded dozens of front-end projects for the company&apos;s flagship enterprise software, as well as excelled in triaging and resolving hundreds of production-level issues. One of my most successful projects at ThinkData Works involved migrating our entire front-end framework from Angular to React which revitalized our team&apos;s ability and efficiency in building subsequent front-end features.
+                Over the years, I have led and mentored a team of 9 talented engineers, successfully spearheaded dozens of front-end projects for the company&apos;s flagship enterprise software, as well as excelled in triaging and resolving hundreds of production-level issues. One of my most successful projects at ThinkData Works involved migrating our entire front-end framework from Angular to React w/TypeScipt which revitalized our team&apos;s ability and efficiency in building subsequent front-end features.
               </p>
               <p className="Home__section-text-para">
                 I am currently on the lookout for my next adventure, eager to bring my skills and passion to a new team.
               </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="projects" className="Home__section Home__section--experience">
+        <h2 className="Home__section-heading">work experience</h2>
+        
+        <div className="Home__section-info">
+          <div className="Home__section-info-main">
+            <div className="Job">
+              <div className="Job__heading">
+                <div className="Job__heading-company">
+
+                </div>
+
+                <div className="Job__heading-period">
+                  
+                </div>
+              </div>
+
+              <div className="Job__body">
+                <div className="Job__body-position">
+                  
+                </div>
+              </div>
             </div>
           </div>
         </div>

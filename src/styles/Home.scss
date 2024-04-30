@@ -12,6 +12,7 @@
     }
 
     &--about,
+    &--experience,
     &--skills,
     &--projects,
     &--contact {
@@ -140,18 +141,14 @@
     }
 
     &-text-1 {
-      font-size: $font-size-subheading;
-      margin-bottom: 16px;
+      font-size: $font-size-xl;
+      margin: 16px 0;
     }
 
     &-text-2 {
       font-family: $font-family-mono;
       font-size: $font-size-lg;
       margin-bottom: 16px;
-    }
-
-    &-text-3 {
-      font-size: $font-size-lg;
     }
 
     &-text-para {
