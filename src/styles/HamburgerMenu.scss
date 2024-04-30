@@ -3,7 +3,7 @@
   height: 60px;
 
   &__logo {
-    font-size: 30px;
+    font-size: $font-size-icon;
   }
 
   &__button {
@@ -39,7 +39,7 @@
     user-select: none;
     width: 100%;
     text-align: center;
-    font-size: 24px;
+    font-size: $font-size-xl;
 
     &:hover {
       cursor: pointer;

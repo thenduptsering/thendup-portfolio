@@ -22,8 +22,39 @@ $dark-red: #9b2227;
 
 
 $border-radius-box-small: 8px;
-$border-radius-box: 16px;
-$border-radius-button: 24px;
+$border-radius-box: 12px;
+
+$font-weight-1: 100;
+$font-weight-2: 200;
+$font-weight-3: 300;
+$font-weight-4: 400;
+$font-weight-5: 500;
+$font-weight-6: 600;
+$font-weight-7: 700;
+$font-weight-8: 800;
+$font-weight-9: 900;
+
+$font-weight-regular: $font-weight-4;
+
+$font-weight-light: $font-weight-2;
+$font-weight-lightest: $font-weight-1;
+$font-weight-medium: $font-weight-6;
+$font-weight-heavy: $font-weight-7;
+$font-weight-heaviest: $font-weight-9;
+
+$font-family-regular: "Poppins", "Montserrat", sans-serif;
+$font-family-mono: "PT Mono", monospace;
+
+$font-size-xxs: 10px;
+$font-size-xs: 12px;
+$font-size-sm: 14px;
+$font-size-md: 16px;
+$font-size-lg: 18px;
+$font-size-xl: 20px;
+$font-size-xxl: 24px;
+$font-size-icon: 32px;
+$font-size-subheading: 40px;
+$font-size-heading: 72px;
 
 
 @mixin box-shadow {

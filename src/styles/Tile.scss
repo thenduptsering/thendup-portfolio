@@ -96,14 +96,14 @@ $c7: #ae2012;
       }
 
       &-text {
-        font-size: 50px;
+        font-size: $font-size-subheading;
         font-family: "Sacramento";
       }
 
       &-author {
         display: flex;
         justify-content: end;
-        font-size: 30px;
+        font-size: $font-size-xxl;
         font-family: "Bebas Neue";
       }
     }

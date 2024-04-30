@@ -1,13 +1,14 @@
 .Home {
+  margin: 0 200px;
+
   &__section {
     color: $body-color;
     height: 100vh;
-    padding: 0 40px;
 
     &--hero {
       display: flex;
-      justify-content: center;
       align-items: center;
+      margin-top: -60px;
     }
 
     &--about,
@@ -75,19 +76,45 @@
     }
 
     &-text-main {
-      font-family: "Bebas Neue";
-      font-size: 60px;
+      font-size: $font-size-heading;
+      font-weight: $font-weight-heavy;
     }
 
     &-text-1 {
-      font-size: 40px;
+      font-size: $font-size-subheading;
+      margin-bottom: 16px;
     }
 
     &-text-2 {
-      font-size: 30px;
+      font-family: $font-family-mono;
+      font-size: $font-size-lg;
+      margin-bottom: 16px;
+    }
+
+    &-text-3 {
+      font-size: $font-size-lg;
+    }
+
+    &-text-para {
+      font-size: $font-size-md;
+      margin: 12px 0;
+    }
+
+    &-text-link {
+      color: $yellow;
+
+      &:hover {
+        color: $teal-1;
+      }
+ 
+      &:after {
+        display: none;
+      }
     }
 
     &-buttons {
+      margin-top: 24px;
+
       .Home__section-button {
         &:not(:last-child) {
           margin-right: 16px;
@@ -98,7 +125,7 @@
     &-socials-container {
       .Home__section-link--icon {
         margin: 0 8px;
-        font-size: 24px;
+        font-size: $font-size-xxl;
 
         &:hover {
           i {

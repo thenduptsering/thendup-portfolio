@@ -5,10 +5,10 @@
   align-items: center;
   justify-content: space-between;
   height: 60px;
-  font-size: 18px;
+  font-size: $font-size-md;
 
   &__logo {
-    font-size: 24px;
+    font-size: $font-size-xl;
   }
 
   &__link {
