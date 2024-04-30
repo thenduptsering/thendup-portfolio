@@ -83,18 +83,17 @@ export default function Home () {
 
             <div className="Home__section-info-text">
               <p className="Home__section-text-para">
-                Hello! 👋
+                Hello! ✌️
               </p>
               <p className="Home__section-text-para">
-                My name is Thendup and I&apos;m a Senior Front-End Software Engineer. My interest in web development started back in 2013 when I took a Computer Science course in university and enjoyed it so much that I ended up switching into it from a finance major – best decision ever! I&apos;ve had the pleasure of working with companies big and small during my co-op terms, and eventually joined <a className="Home__section-text-link" href="https://www.thinkdataworks.com" target="blank">ThinkData Works</a> full time after graduation, crafting awesome UIs and pushing the boundaries of innovation.
+                My name is Thendup and I&apos;m a senior front-end software engineer with over 8 years of hands-on experience. My interest in web development started back in 2013 when I took a Computer Science course in university and enjoyed it so much that I ended up switching majors – best decision ever! I&apos;ve had the pleasure of working with companies big and small during my co-op terms, and eventually joined <a className="Home__section-text-link" href="https://www.thinkdataworks.com" target="blank">ThinkData Works</a> full time after graduation. 
               </p>
               <p className="Home__section-text-para">
-                Now, I&apos;m on the lookout for my next adventure, eager to bring my skills and passion to a new team. Let&apos;s build something amazing together!
+                Over the years, I have led and mentored a team of 9 talented engineers, successfully spearheaded dozens of front-end projects for the company&apos;s flagship enterprise software, as well as excelled in triaging and resolving hundreds of production-level issues. One of my most successful projects at ThinkData Works involved migrating our entire front-end framework from Angular to React which revitalized our team&apos;s ability and efficiency in building subsequent front-end features.
               </p>
               <p className="Home__section-text-para">
-                
+                I am currently on the lookout for my next adventure, eager to bring my skills and passion to a new team.
               </p>
-
             </div>
           </div>
         </div>
