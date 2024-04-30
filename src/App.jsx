@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react';
 import { Link, Outlet, useLocation } from 'react-router-dom';
 
 import Home from './components/Home';
+import Logo from './components/Logo';
 
 function App() {
   const location = useLocation();
@@ -38,15 +39,13 @@ function App() {
               <div className="App__navbar">
                 <nav id="desktop-nav" className="Navbar">
                   <div className="Navbar__logo">
-                    <div className="Logo fa-stack fa-2x">
-                      <i className="Logo__left fa-solid fa-angle-left fa-stack-2x" />
-                      <i className="Logo__right fa-solid fa-angle-right fa-stack-2x" />
-                    </div>
+                    <Logo />
                   </div>
 
                   <div className="Navbar__links">
                     <Link className="Navbar__link">About me</Link>
                     <Link className="Navbar__link">Experience</Link>
+                    <Link className="Navbar__link">Skills</Link>
                     <Link className="Navbar__link">Projects</Link>
                     <Link className="Navbar__link">Contact</Link>
                   </div>
@@ -54,10 +53,7 @@ function App() {
 
                 <nav id="hamburger-nav" className="Hamburger-Menu">
                   <div className="Hamburger-Menu__logo">
-                    <div className="Logo fa-stack fa-2x">
-                      <i className="Logo__left fa-solid fa-angle-left fa-stack-2x" />
-                      <i className="Logo__right fa-solid fa-angle-right fa-stack-2x" />
-                    </div>
+                   <Logo />
                   </div>
 
                   <button className="Hamburger-Menu__button Button Button--icon" onClick={toggleMenu}>
@@ -72,6 +68,7 @@ function App() {
                     <div className="Hamburger-Menu__links">
                       <Link className="Hamburger-Menu__link">About me</Link>
                       <Link className="Hamburger-Menu__link">Experience</Link>
+                      <Link className="Hamburger-Menu__link">Skills</Link>
                       <Link className="Hamburger-Menu__link">Projects</Link>
                       <Link className="Hamburger-Menu__link">Contact</Link>
                     </div>
