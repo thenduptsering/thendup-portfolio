@@ -10,7 +10,10 @@
       align-items: center;
     }
 
-    &--about {
+    &--about,
+    &--skills,
+    &--projects,
+    &--contact {
       display: flex;
       flex-direction: column;
       justify-content: center;
@@ -60,7 +63,7 @@
 
         &-container {
           display: flex;
-          justify-content: space-between;
+          justify-content: space-around;
           align-items: center;
           margin-bottom: 24px;
         }
