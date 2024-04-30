@@ -53,7 +53,12 @@ function App() {
                 </nav>
 
                 <nav id="hamburger-nav" className="Hamburger-Menu">
-                  <div className="Hamburger-Menu__logo">Thendup Tsering</div>
+                  <div className="Hamburger-Menu__logo">
+                    <div className="Logo fa-stack fa-2x">
+                      <i className="Logo__left fa-solid fa-angle-left fa-stack-2x" />
+                      <i className="Logo__right fa-solid fa-angle-right fa-stack-2x" />
+                    </div>
+                  </div>
 
                   <button className="Hamburger-Menu__button Button Button--icon" onClick={toggleMenu}>
                     {showMenu ? (
