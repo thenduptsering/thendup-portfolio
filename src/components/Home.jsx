@@ -1,6 +1,7 @@
 import Tooltip from './Tooltip';
 
 import { millisecondsYear } from '../constants/constants';
+import jobs from '../constants/jobs.json';
 import skills from '../constants/skills.json';
 
 const RESUME_URL = '/_thenduptsering_resume.pdf';
@@ -68,28 +69,34 @@ export default function Home () {
         </div>
       </section>
 
-      <section id="projects" className="Home__section Home__section--experience">
+      <section id="experience" className="Home__section Home__section--experience">
         <h2 className="Home__section-heading">work experience</h2>
         
         <div className="Home__section-info">
           <div className="Home__section-info-main">
-            <div className="Job">
-              <div className="Job__heading">
-                <div className="Job__heading-company">
+            <div className="Home__section-info-jobs">
+              {jobs.map((job) => {
+                return (
+                  <div key={job.period} className="Job">
+                    <div className="Job__heading">
+                      <div className="Job__heading-company">
+                        {job.company}
+                      </div>
 
-                </div>
+                      <div className="Job__heading-period">
+                        {job.period}
+                      </div>
+                    </div>
 
-                <div className="Job__heading-period">
-                  
-                </div>
-              </div>
-
-              <div className="Job__body">
-                <div className="Job__body-position">
-                  
-                </div>
-              </div>
-            </div>
+                    <div className="Job__body">
+                      <div className="Job__body-position">
+                        {job.title}
+                      </div>
+                    </div>
+                  </div>
+                );
+              })}
+            </div>  
           </div>
         </div>
       </section>

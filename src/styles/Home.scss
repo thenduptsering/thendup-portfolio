@@ -22,11 +22,27 @@
       align-items: center;
     }
 
+    &--experience {
+      .Home__section {
+        &-info {
+          width: 100%;
+
+          &-main {
+            width: 60%;
+          }
+        }
+      }
+    }
+
     &--contact {
       .Home__section {
-        &-info-main {
-          text-align: center;
-          max-width: 60%;
+        &-info {
+          width: 100%;
+
+          &-main {
+            text-align: center;
+            width: 60%;
+          }
         }
 
         &-buttons {
