@@ -1,6 +1,7 @@
 import Tooltip from './Tooltip';
 
 import { millisecondsYear } from '../constants/constants';
+import skills from '../constants/skills.json';
 
 const RESUME_URL = '/_thenduptsering_resume.pdf';
 const DATE_STARTED_WORKING = '06/01/2015';
@@ -28,10 +29,10 @@ export default function Home () {
 
           <h1 className="Home__section-text-main">Thendup Tsering.</h1>
 
-          <p className="Home__section-text-1">Senior Front-End Software Engineer</p>
+          <p className="Home__section-text-1">Senior Front-End React Developer & Mentor</p>
 
           <p className="Home__section-text-3">
-            I enjoy crafting pixel-perfect and performant front-end products. One line of code at a time.
+            I am a senior front-end react developer based in Toronto, Canada 🇨🇦
           </p>
 
           <div className="Home__section-buttons">
@@ -41,7 +42,7 @@ export default function Home () {
       </section>
 
       <section id="about" className="Home__section Home__section--about">
-        <h1 className="Home__section-heading">About me</h1>
+        <h2 className="Home__section-heading">about me</h2>
         
         <div className="Home__section-info">
           <div className="Home__section-info-left">
@@ -49,38 +50,6 @@ export default function Home () {
           </div>
 
           <div className="Home__section-info-right">
-            {/* <div className="Home__section-info-box-container">
-              <div className="Home__section-info-box">
-                <div className="Home__section-info-box-icon">
-                  <i className="fa-solid fa-medal" />
-                </div>
-
-                <h3 className="Home__section-info-box-title">
-                  Experience
-                </h3>
-
-                <p className="Home__section-info-box-details">
-                  {yearsSince}+ years<br />Front-end development
-                </p>
-              </div>
-
-              <div className="Home__section-info-box">
-                <div className="Home__section-info-box-icon">
-                  <i className="fa-solid fa-graduation-cap" />
-                </div>
-
-                <h3 className="Home__section-info-box-title">
-                  Education
-                </h3>
-
-                <p className="Home__section-info-box-details">
-                  Bachelors of Computer Science
-                  <br />
-                  University of Waterloo 2017
-                </p>
-              </div>
-            </div> */}
-
             <div className="Home__section-info-text">
               <p className="Home__section-text-para">
                 Hello! ✌️
@@ -100,40 +69,24 @@ export default function Home () {
       </section>
 
       <section id="skills" className="Home__section Home__section--skills">
-        <h1 className="Home__section-heading">Skills</h1>
+        <h2 className="Home__section-heading">skills</h2>
         
         <div className="Home__section-info">
-          <div className="Home__section-info-right">
-            <div className="Home__section-info-box-container">
-              <div className="Home__section-info-box">
-                <div className="Home__section-info-box-icon">
-                  <i className="fa-solid fa-medal" />
+          <div className="Home__section-info-main">
+            <div className="Home__section-info-skills">
+              {skills.map((skill) => {
+                return (
+                  <div key={skill.label} className="Skill">
+                    <div className="Skill__icon">
+                      <img className="Skill__icon-pic" src={skill.icon} alt={`${skill.label} icon`} />
                 </div>
 
-                <h3 className="Home__section-info-box-title">
-                  Experience
-                </h3>
-
-                <p className="Home__section-info-box-details">
-                  {yearsSince}+ years<br />Front-end development
-                </p>
+                    <div className="Skill__label">
+                      {skill.label}
               </div>
-
-              <div className="Home__section-info-box">
-                <div className="Home__section-info-box-icon">
-                  <i className="fa-solid fa-graduation-cap" />
                 </div>
-
-                <h3 className="Home__section-info-box-title">
-                  Education
-                </h3>
-
-                <p className="Home__section-info-box-details">
-                  Bachelors of Computer Science
-                  <br />
-                  University of Waterloo 2017
-                </p>
-              </div>
+                );
+              })}
             </div>
           </div>
         </div>

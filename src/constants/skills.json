@@ -1,0 +1,58 @@
+[
+  {
+    "icon": "/icons/react.png",
+    "label": "React"
+  },
+  {
+    "icon": "/icons/redux.png",
+    "label": "Redux"
+  },
+  {
+    "icon": "/icons/typescript.png",
+    "label": "TypeScript"
+  },
+  {
+    "icon": "/icons/javascript.png",
+    "label": "JavaScript"
+  },
+  {
+    "icon": "/icons/html.png",
+    "label": "HTML"
+  },
+  {
+    "icon": "/icons/css.png",
+    "label": "CSS"
+  },
+  {
+    "icon": "/icons/sass.png",
+    "label": "SASS"
+  },
+  {
+    "icon": "/icons/angular.png",
+    "label": "Angular"
+  },
+  {
+    "icon": "/icons/jquery.png",
+    "label": "jQuery"
+  },
+  {
+    "icon": "/icons/webpack.png",
+    "label": "Webpack"
+  },
+  {
+    "icon": "/icons/yarn.png",
+    "label": "Yarn"
+  },
+  {
+    "icon": "/icons/npm.png",
+    "label": "NPM"
+  },
+  {
+    "icon": "/icons/node.png",
+    "label": "NodeJS"
+  },
+  {
+    "icon": "/icons/git.png",
+    "label": "Git"
+  }
+]
