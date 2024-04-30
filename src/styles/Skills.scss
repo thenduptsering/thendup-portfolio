@@ -20,7 +20,7 @@
   &:hover {
     .Skill {
       &__icon-pic {
-        transform: scale(1.1);
+        transform: translateY(-4px);
         opacity: 1;
       }
     }
