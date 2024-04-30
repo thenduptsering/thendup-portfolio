@@ -87,6 +87,10 @@ function App() {
           <Outlet />
         </div>
       )}
+
+      <div className="App__footer">
+        <p>Built by Thendup Tsering</p>
+      </div>
     </div>
   )
 }
