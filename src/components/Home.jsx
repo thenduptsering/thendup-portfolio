@@ -26,7 +26,7 @@ export default function Home () {
     <div className="Home">
       <section id="hero" className="Home__section Home__section--hero">
         <div className="Home__section-info-main">
-          <p className="Home__section-text-2">Hey, my name is</p>
+          <p className="Home__section-text-2">Hello, my name is</p>
 
           <h1 className="Home__section-text-main">Thendup Tsering.</h1>
 
