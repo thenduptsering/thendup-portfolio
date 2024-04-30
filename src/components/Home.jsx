@@ -46,7 +46,9 @@ export default function Home () {
         
         <div className="Home__section-info">
           <div className="Home__section-info-left">
-            <img className="Home__section-info-pic" src="/headshot.jpg" alt="Thendup headshot" />
+            <div className="Home__section-info-headshot">
+              <img className="Home__section-info-headshot-pic" src="/headshot.jpg" alt="Thendup headshot" />
+            </div>
           </div>
 
           <div className="Home__section-info-right">
@@ -79,12 +81,12 @@ export default function Home () {
                   <div key={skill.label} className="Skill">
                     <div className="Skill__icon">
                       <img className="Skill__icon-pic" src={skill.icon} alt={`${skill.label} icon`} />
-                </div>
+                    </div>
 
                     <div className="Skill__label">
                       {skill.label}
-              </div>
-                </div>
+                    </div>
+                  </div>
                 );
               })}
             </div>
@@ -93,7 +95,7 @@ export default function Home () {
       </section>
 
       <section id="projects" className="Home__section Home__section--projects">
-        <h1 className="Home__section-heading">Projects</h1>
+        <h2 className="Home__section-heading">some things i have worked on</h2>
         
         <div className="Home__section-info">
           <div className="Home__section-info-right">
@@ -133,40 +135,16 @@ export default function Home () {
       </section>
 
       <section id="contact" className="Home__section Home__section--contact">
-        <h1 className="Home__section-heading">Contact me</h1>
+        <h2 className="Home__section-heading">get in touch</h2>
         
         <div className="Home__section-info">
-          <div className="Home__section-info-right">
-            <div className="Home__section-info-box-container">
-              <div className="Home__section-info-box">
-                <div className="Home__section-info-box-icon">
-                  <i className="fa-solid fa-medal" />
-                </div>
+          <div className="Home__section-info-main">
+            <p className="Home__section-text-para">
+              I&apos;m on the lookout for my next adventure, eager to bring my skills and passion to a new team. Whether it&apos;s about a potential job opportunity, shared interests or just a friendly chat, let&apos;s connect!!
+            </p>
 
-                <h3 className="Home__section-info-box-title">
-                  Experience
-                </h3>
-
-                <p className="Home__section-info-box-details">
-                  {yearsSince}+ years<br />Front-end development
-                </p>
-              </div>
-
-              <div className="Home__section-info-box">
-                <div className="Home__section-info-box-icon">
-                  <i className="fa-solid fa-graduation-cap" />
-                </div>
-
-                <h3 className="Home__section-info-box-title">
-                  Education
-                </h3>
-
-                <p className="Home__section-info-box-details">
-                  Bachelors of Computer Science
-                  <br />
-                  University of Waterloo 2017
-                </p>
-              </div>
+            <div className="Home__section-buttons">
+              <a className="Home__section-button Button Button--link Button--default Button--wiggle" href='mailto:thendupcodes@gmail.com?subject=Hello&body=I would like to discuss...'>Say hi! <span className="Button__emoji Button__emoji--wiggle">👋</span></a>
             </div>
           </div>
         </div>
