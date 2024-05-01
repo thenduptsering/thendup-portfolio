@@ -52,6 +52,7 @@ $font-size-icon: 32px;
 $font-size-subheading: 40px;
 $font-size-heading: 72px;
 
+$z-layer-navbar: 100;
 
 @mixin box-shadow {
   -webkit-box-shadow: -8px 16px 16px 4px rgba(0,0,0,0.5);
@@ -60,9 +61,9 @@ $font-size-heading: 72px;
 }
 
 @mixin box-shadow-light {
-  -webkit-box-shadow: -8px 16px 16px 4px rgba(0,0,0,0.3);
-  -moz-box-shadow: -8px 16px 16px 4px rgba(0,0,0,0.3);
-  box-shadow: -8px 16px 16px 4px rgba(0,0,0,0.3);
+  -webkit-box-shadow: -8px 16px 16px 4px rgba(0,0,0,0.1);
+  -moz-box-shadow: -8px 16px 16px 4px rgba(0,0,0,0.1);
+  box-shadow: -8px 16px 16px 4px rgba(0,0,0,0.1);
 }
 
 @mixin box-shadow-heavy {

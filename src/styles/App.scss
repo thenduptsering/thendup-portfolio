@@ -8,10 +8,25 @@
     height: 0;
     overflow: hidden;
     background: $teal-5;
+
+    .App__navbar {
+      background: $teal-5;
+    }
   }
 
   &__navbar {
     padding: 0 24px;
+    z-index: $z-layer-navbar;
+    background: $dark-gray;
+    position: sticky;
+    top: -100px;
+    transition: all 0.5s ease, background 0.7s ease;
+
+    &--sticky {
+      @include box-shadow-light;
+
+      top: 0px;
+    }
   }
 
   &__footer {
