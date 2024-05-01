@@ -26,6 +26,20 @@
     left: calc(50% + 8px);
   }
 
+  &--animate {
+    .Logo {
+      &__left {
+        opacity: 0;
+        animation: slide-left-rotate 2s ease;
+      }
+
+      &__right {
+        opacity: 0;
+        animation: slide-right-rotate 2s ease;
+      }
+    }
+  }
+
   &:hover {
     .Logo {
       &__left {

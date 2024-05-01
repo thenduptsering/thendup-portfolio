@@ -7,7 +7,8 @@ import Logo from './components/Logo';
 function App() {
   const location = useLocation();
 
-  const [loadingPage, setLoadingPage] = useState(true);
+  const [showingLoader, setShowingLoader] = useState(true);
+  // const [loadingPage, setLoadingPage] = useState(false);
   const [showMenu, setShowMenu] = useState(false);
   
   const isHome = location.pathname === '/';
@@ -18,8 +19,9 @@ function App() {
 
   const loadPage = () => {
     setTimeout(() => {
-      setLoadingPage(false);
-    }, 2000)
+      setShowingLoader(false);
+      // setLoadingPage(true);
+    }, 2500)
   }
 
   useEffect(() => {
@@ -27,70 +29,70 @@ function App() {
   }, [])
 
   return (
-    <div className="App">
+    <div className="App-Container">
       {isHome ? (
         <>
-          {loadingPage ? (
-            <>
-            LOADER
-            </>
-          ) : (
-            <>
-              <div className="App__navbar">
-                <nav id="desktop-nav" className="Navbar">
-                  <div className="Navbar__logo">
-                    <Logo />
-                  </div>
+          <div className={`App-Loader ${showingLoader ? 'App-Loader--loading' : ''}`}>
+            <Logo animationClassName="Logo--animate" />
+          </div>
 
-                  <div className="Navbar__links">
-                    <Link className="Navbar__link">About me</Link>
-                    <Link className="Navbar__link">Experience</Link>
-                    <Link className="Navbar__link">Skills</Link>
-                    <Link className="Navbar__link">Projects</Link>
-                    <Link className="Navbar__link">Contact</Link>
-                  </div>
-                </nav>
+          <div className={`App ${showingLoader ? 'App--loading' : ''}`}>
+            <div className="App__navbar">
+              <nav id="desktop-nav" className="Navbar">
+                <div className="Navbar__logo">
+                  <Logo />
+                </div>
 
-                <nav id="hamburger-nav" className="Hamburger-Menu">
-                  <div className="Hamburger-Menu__logo">
-                   <Logo />
-                  </div>
+                <div className="Navbar__links">
+                  <Link className="Navbar__link">About me</Link>
+                  <Link className="Navbar__link">Experience</Link>
+                  <Link className="Navbar__link">Skills</Link>
+                  <Link className="Navbar__link">Projects</Link>
+                  <Link className="Navbar__link">Contact</Link>
+                </div>
+              </nav>
 
-                  <button className="Hamburger-Menu__button Button Button--icon" onClick={toggleMenu}>
-                    {showMenu ? (
-                      <i className="fa-solid fa-x" />
-                    ) : (
-                      <i className="fa-solid fa-bars" />
-                    )}
-                  </button>
+              <nav id="hamburger-nav" className="Hamburger-Menu">
+                <div className="Hamburger-Menu__logo">
+                  <Logo />
+                </div>
 
-                  {showMenu && (
-                    <div className="Hamburger-Menu__links">
-                      <Link className="Hamburger-Menu__link">About me</Link>
-                      <Link className="Hamburger-Menu__link">Experience</Link>
-                      <Link className="Hamburger-Menu__link">Skills</Link>
-                      <Link className="Hamburger-Menu__link">Projects</Link>
-                      <Link className="Hamburger-Menu__link">Contact</Link>
-                    </div>
+                <button className="Hamburger-Menu__button Button Button--icon" onClick={toggleMenu}>
+                  {showMenu ? (
+                    <i className="fa-solid fa-x" />
+                  ) : (
+                    <i className="fa-solid fa-bars" />
                   )}
-                </nav>
-              </div>
+                </button>
 
-              <div className="App__body">
-                <Home />
-              </div>
-            </>
-          )}
+                {showMenu && (
+                  <div className="Hamburger-Menu__links">
+                    <Link className="Hamburger-Menu__link">About me</Link>
+                    <Link className="Hamburger-Menu__link">Experience</Link>
+                    <Link className="Hamburger-Menu__link">Skills</Link>
+                    <Link className="Hamburger-Menu__link">Projects</Link>
+                    <Link className="Hamburger-Menu__link">Contact</Link>
+                  </div>
+                )}
+              </nav>
+            </div>
+
+            <div className="App__body">
+              <Home />
+            </div>
+
+            <div className="App__footer">
+              <p>Built by Thendup Tsering</p>
+            </div>
+          </div>
         </>
       ) : (
-        <div className="App__body">
-          <Outlet />
+        <div className="App">
+          <div className="App__body">
+            <Outlet />
+          </div>
         </div>
       )}
-
-      <div className="App__footer">
-        <p>Built by Thendup Tsering</p>
-      </div>
     </div>
   )
 }
