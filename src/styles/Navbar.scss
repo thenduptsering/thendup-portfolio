@@ -17,6 +17,21 @@
   }
 }
 
+.App--loading {
+  .Navbar__logo {
+    opacity: 0;
+    animation: drop-in 0.7s ease;
+    animation-fill-mode: forwards;
+  }
+
+  .Navbar__link {
+    display: inline-block;
+    opacity: 0;
+    animation: drop-in 0.7s ease;
+    animation-fill-mode: forwards;
+  }
+}
+
 @media screen and (max-width: $min-device-width) {
   .Navbar {
     display: none;

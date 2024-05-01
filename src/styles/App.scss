@@ -1,12 +1,13 @@
 .App {
   display: block;
   width: 100vw;
-  height: 100%;
-  transition: height 3s ease;
+  background: $dark-gray;
+  transition: background 0.3s ease;
 
-  &--loading {
+  &--hide {
     height: 0;
     overflow: hidden;
+    background: $teal-5;
   }
 
   &__navbar {
@@ -28,10 +29,11 @@
   display: none;
   justify-content: center;
   align-items: center;
-  transition: height 3s ease;
+  background: $teal-5;
 
   &--loading {
     display: flex;
     height: 100vh;
+    opacity: 1;
   }
 }

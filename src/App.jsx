@@ -8,7 +8,7 @@ function App() {
   const location = useLocation();
 
   const [showingLoader, setShowingLoader] = useState(true);
-  // const [loadingPage, setLoadingPage] = useState(false);
+  const [loadingPage, setLoadingPage] = useState(false);
   const [showMenu, setShowMenu] = useState(false);
   
   const isHome = location.pathname === '/';
@@ -20,8 +20,16 @@ function App() {
   const loadPage = () => {
     setTimeout(() => {
       setShowingLoader(false);
-      // setLoadingPage(true);
+      setLoadingPage(true);
     }, 2500)
+
+    setTimeout(() => {
+      setLoadingPage(false);
+    }, 4000)
+  }
+
+  const startAnimation = () => {
+    loadPage();
   }
 
   useEffect(() => {
@@ -36,19 +44,19 @@ function App() {
             <Logo animationClassName="Logo--animate" />
           </div>
 
-          <div className={`App ${showingLoader ? 'App--loading' : ''}`}>
+          <div className={`App ${showingLoader ? 'App--hide' : ''} ${loadingPage ? 'App--loading' : ''}`}>
             <div className="App__navbar">
               <nav id="desktop-nav" className="Navbar">
-                <div className="Navbar__logo">
+                <div className="Navbar__logo" style={{animationDelay: '200ms'}}>
                   <Logo />
                 </div>
 
                 <div className="Navbar__links">
-                  <Link className="Navbar__link">About me</Link>
-                  <Link className="Navbar__link">Experience</Link>
-                  <Link className="Navbar__link">Skills</Link>
-                  <Link className="Navbar__link">Projects</Link>
-                  <Link className="Navbar__link">Contact</Link>
+                  <Link className="Navbar__link" style={{animationDelay: '0ms'}}>About me</Link>
+                  <Link className="Navbar__link" style={{animationDelay: '200ms'}}>Experience</Link>
+                  <Link className="Navbar__link" style={{animationDelay: '400ms'}}>Skills</Link>
+                  <Link className="Navbar__link" style={{animationDelay: '600ms'}}>Projects</Link>
+                  <Link className="Navbar__link" style={{animationDelay: '800ms'}}>Contact</Link>
                 </div>
               </nav>
 
@@ -76,6 +84,8 @@ function App() {
                 )}
               </nav>
             </div>
+
+            <button onClick={startAnimation}>Animate</button>
 
             <div className="App__body">
               <Home />
