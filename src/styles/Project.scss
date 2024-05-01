@@ -1,0 +1,21 @@
+.Project {
+  height: 240px;
+  padding: 16px 24px;
+  border: 1px solid $body-color;
+  border-radius: $border-radius-box;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  transition: all 0.3s ease;
+
+  &:hover {
+    transform: translateY(-8px);
+    border: 1px solid $beige;
+
+    .Project {
+      &__title {
+        color: $beige;
+      }
+    }
+  }
+}

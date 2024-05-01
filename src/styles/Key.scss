@@ -11,12 +11,12 @@
 
   &__icon {
     width: 14px;
-    font-family: "Ubuntu Mono", monospace;
-    font-size: 14px;
+    font-family: $font-family-regular;
+    font-size: $font-size-sm;
     padding: 4px 8px;
-    border-radius: 8px;
+    border-radius: $border-radius-box-small;
     text-align: center;
-    font-weight: bold;
+    font-weight: $font-weight-regular;
     background: #646669;
     color: #323437;
   }
@@ -24,6 +24,6 @@
   &__info {
     color: #323437;
     margin-left: 8px;
-    font-weight: 500;
+    font-weight: $font-weight-medium;
   }
 }

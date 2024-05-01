@@ -1,44 +1,234 @@
 .Home {
-  margin-top: 24px;
+  margin: 0 200px;
+
+  &--loading {
+    .Home__section {
+      &-line1,
+      &-line2,
+      &-line3,
+      &-line4 {
+        animation: slide-up 1s ease;
+        animation-fill-mode: forwards;
+      }
+    }
+  }
+
+  &--standby {
+    height: 100vh;
+    overflow: hidden;
+
+    .Home__section {
+      &-line1,
+      &-line2,
+      &-line3,
+      &-line4 {
+        opacity: 0;
+      }
+    }
+  }
 
   &__section {
     color: $body-color;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    opacity: 1;
 
-    &-pic {
-      border-radius: 50%;
-      max-width: 400px;
+    &--standby {
+      opacity: 0;
+    }
+
+    &--animate {
+      animation: slide-up-slow 1s ease;
+      animation-fill-mode: forwards;
+    }
+
+    &--hero {
+      display: flex;
+      align-items: center;
+      margin-top: -$nav-bar-height;
+      min-height: 100vh;
+    }
+
+    &--about,
+    &--experience,
+    &--skills,
+    &--projects,
+    &--contact {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      min-height: 70vh;
+
+      &:hover {
+        .Home__section-heading {
+          &:before {
+            left: -150px;
+          }
+  
+          &:after {
+            right: -150px;
+          }
+        }
+      }
+    }
+
+    &--projects {
+      .Home__section {
+        &-info {
+          width: 100%;
+
+          &-main {
+            width: 100%;
+          }
+        }
+      }
+    }
+
+    &--experience {
+      .Home__section {
+        &-info {
+          width: 100%;
+
+          &-main {
+            width: 60%;
+          }
+        }
+      }
+    }
+
+    &--contact {
+      .Home__section {
+        &-info {
+          width: 100%;
+
+          &-main {
+            text-align: center;
+            width: 60%;
+          }
+        }
+
+        &-buttons {
+          text-align: center;
+        }
+      }
+    }
+
+    &-heading {
+      font-family: $font-family-mono;
+      text-align: center;
+      margin-bottom: 40px;
+      position: relative;
+      color: $beige;
+
+      &:before,
+      &:after {
+        content: '';
+        display: block;
+        position: absolute;
+        height: 1px;
+        width: 100px;
+        background: $body-color;
+        transition: all 0.3s ease;
+        top: 50%;
+      }
+
+      &:before {
+        left: -120px;
+      }
+
+      &:after {
+        right: -120px;
+      }
     }
 
     &-info {
-      margin-left: 48px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+      &-right {
+        max-width: 50%;
+      }
+
+      &-headshot {
+        border-radius: $border-radius-box;
+        max-width: 400px;
+        max-height: 400px;
+        margin-right: 24px;
+        overflow: hidden;
+
+        &-pic {
+          width: 100%;
+          height: 100%;
+          border-radius: $border-radius-box;
+          transition: transform 0.3s ease;
+
+          &:hover {
+            transform: scale(1.1);
+          }
+        }
+      }
+
+      &-skills {
+        display: grid;
+        grid-template-columns: repeat(7, 1fr);
+        gap: 32px 48px;
+      }
+
+      &-projects {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 32px 48px;
+      }
     }
 
-    &-text-main {
-      font-family: "Bebas Neue";
-      font-size: 60px;
+    &-line1 {
+      font-family: $font-family-mono;
+      font-size: $font-size-lg;
+      margin-bottom: 16px;
     }
 
-    &-text-1 {
-      font-size: 40px;
+    &-line2 {
+      font-size: $font-size-heading;
+      font-weight: $font-weight-heavy;
+      color: $beige;
     }
 
-    &-text-2 {
-      font-size: 30px;
+    &-line3 {
+      font-size: $font-size-xl;
+      margin: 16px 0;
+    }
+
+    &-text-para {
+      font-size: $font-size-md;
+      margin: 12px 0;
+    }
+
+    &-text-link {
+      color: $yellow;
+
+      &:hover {
+        color: $beige;
+      }
+ 
+      &:after {
+        display: none;
+      }
     }
 
     &-buttons {
+      margin-top: 24px;
+
       .Home__section-button {
-        margin: 4px 16px;
+        &:not(:last-child) {
+          margin-right: 16px;
+        }
       }
     }
 
     &-socials-container {
       .Home__section-link--icon {
         margin: 0 8px;
-        font-size: 24px;
+        font-size: $font-size-xxl;
 
         &:hover {
           i {
@@ -50,11 +240,10 @@
   }
 
   &__footer {
-    position: absolute;
-    bottom: 0;
     width: 100%;
     display: flex;
     justify-content: center;
+    margin-top: 80px;
   }
 }
 
@@ -69,6 +258,11 @@
       &-info {
         margin: 24px 0 0 0;
         text-align: center;
+
+        &-right {
+          max-width: 100%;
+          text-align: center;
+        }
       }
     }
   }

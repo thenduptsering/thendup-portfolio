@@ -1,32 +1,56 @@
 .Button {
-  border-radius: 24px;
+  border-radius: $border-radius-box;
   border: none;
-  background: $teal-3;
-  color: $teal-1;
-  font-size: 20px;
+  font-size: $font-size-md;
   padding: 12px 16px;
   user-select: none;
   cursor: pointer;
   border: 1px solid transparent;
+  transition: all 0.3s ease;
 
-  &:hover {
-    background-color: $white;
-    color: $teal-5;
-  }
-
-  &--secondary {
+  &--default {
+    min-width: 160px;
     background: transparent;
-    border: 1px solid $teal-1;
-    color: $teal-1;
+    border: 1px solid $yellow;
+    color: $yellow;
   }
 
   &--icon {
     background: transparent;
+    color: $teal-1;
     border: 0;
     padding: 0;
 
     &:hover {
       background-color: transparent;
     }
+  }
+
+  &--link {
+    display: inline-block;
+    text-align: center;
+    min-width: 100px;
+
+    &:after {
+      display: none;
+    }
+  }
+
+  &--wiggle {
+    &:hover {
+      .Button__emoji--wiggle {
+        animation: wiggle 1.2s infinite;
+      }
+    }
+  }
+
+  &__emoji {
+    display: inline-block;
+    margin-left: 4px;
+  }
+
+  &:hover {
+    background-color: $yellow;
+    color: $teal-4;
   }
 }

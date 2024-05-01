@@ -1,8 +1,39 @@
 .App {
   display: block;
   width: 100vw;
+  background: $dark-gray;
+  transition: background 0.7s ease;
+
+  &--hide {
+    height: 0;
+    overflow: hidden;
+    background: $teal-5;
+  }
 
   &__navbar {
     padding: 0 24px;
+  }
+
+  &__footer {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin: 24px 0;
+    font-size: $font-size-sm;
+  }
+}
+
+.App-Loader {
+  height: 0;
+  width: 100vw;
+  display: none;
+  justify-content: center;
+  align-items: center;
+  background: $teal-5;
+
+  &--loading {
+    display: flex;
+    height: 100vh;
+    opacity: 1;
   }
 }

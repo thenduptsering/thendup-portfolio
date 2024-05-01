@@ -96,14 +96,14 @@ $c7: #ae2012;
       }
 
       &-text {
-        font-size: 50px;
+        font-size: $font-size-subheading;
         font-family: "Sacramento";
       }
 
       &-author {
         display: flex;
         justify-content: end;
-        font-size: 30px;
+        font-size: $font-size-xxl;
         font-family: "Bebas Neue";
       }
     }
@@ -179,18 +179,6 @@ $c7: #ae2012;
     }
   }
 }
-
-
-@keyframes slide {
-  from {
-    background-position: 0% center;
-  }
-
-  to {
-    background-position: -200% center;
-  }
-}
-
 
 @media screen and (max-width: $tablet-width) {
   .Tiles {

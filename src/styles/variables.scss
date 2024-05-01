@@ -4,21 +4,53 @@ $teal-3: #3a506c;
 $teal-4: #1c2542;
 $teal-5: #0b132c;
 
+$beige: #e9d8a7;
+$yellow: #ee9b01;
 $gray: #2a9d8f;
 $dark-gray: #292c35;
 $body-color: $teal-2;
 $black: #000000;
 $white: #ffffff;
 
+$nav-bar-height: 100px;
+
 $min-device-width: 854px;
 $tablet-width: 1024px;
 
-$beige: #e9d8a7;
-$yellow: #ee9b01;
-$orange: #ca6703;
-$dark-orange: #bb3e04;
-$red: #ae2013;
-$dark-red: #9b2227;
+$border-radius-box-small: 8px;
+$border-radius-box: 12px;
+
+$font-weight-1: 100;
+$font-weight-2: 200;
+$font-weight-3: 300;
+$font-weight-4: 400;
+$font-weight-5: 500;
+$font-weight-6: 600;
+$font-weight-7: 700;
+$font-weight-8: 800;
+$font-weight-9: 900;
+
+$font-weight-regular: $font-weight-4;
+
+$font-weight-light: $font-weight-2;
+$font-weight-lightest: $font-weight-1;
+$font-weight-medium: $font-weight-6;
+$font-weight-heavy: $font-weight-7;
+$font-weight-heaviest: $font-weight-9;
+
+$font-family-regular: "Montserrat", sans-serif;
+$font-family-mono: "Courier Prime", monospace;
+
+$font-size-xxs: 10px;
+$font-size-xs: 12px;
+$font-size-sm: 14px;
+$font-size-md: 16px;
+$font-size-lg: 18px;
+$font-size-xl: 20px;
+$font-size-xxl: 24px;
+$font-size-icon: 32px;
+$font-size-subheading: 40px;
+$font-size-heading: 72px;
 
 
 @mixin box-shadow {
@@ -27,7 +59,7 @@ $dark-red: #9b2227;
   box-shadow: -8px 16px 16px 4px rgba(0,0,0,0.5);
 }
 
-@mixin box-shadow {
+@mixin box-shadow-light {
   -webkit-box-shadow: -8px 16px 16px 4px rgba(0,0,0,0.3);
   -moz-box-shadow: -8px 16px 16px 4px rgba(0,0,0,0.3);
   box-shadow: -8px 16px 16px 4px rgba(0,0,0,0.3);

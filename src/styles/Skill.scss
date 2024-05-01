@@ -1,0 +1,28 @@
+.Skill {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  &__icon {
+    &-pic {
+      max-width: 64px;
+      transition: all 0.3s ease;
+      opacity: 0.6;
+    }
+  }
+
+  &__label {
+    transition: all 0.3s ease;
+    font-size: $font-size-sm;
+  }
+
+  &:hover {
+    .Skill {
+      &__icon-pic {
+        transform: translateY(-4px);
+        opacity: 1;
+      }
+    }
+  }
+}
