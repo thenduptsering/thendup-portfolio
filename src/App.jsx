@@ -224,10 +224,10 @@ function App() {
                       duration={500}
                       onClick={closeHamburger}
                     >
-                      Contact
+                      Contact me
                     </ScrollLink>
 
-                    <button className="Hamburger-Menu__slideover-button Button Button--default" onClick={downloadResume}>Resume</button>
+                    <button className="Hamburger-Menu__slideover-button Button Button--default" onClick={downloadResume}>Download resume</button>
                   </div>
                 </div>
               </nav>

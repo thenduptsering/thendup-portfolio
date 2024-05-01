@@ -56,11 +56,13 @@
 
     &-button {
       margin: 24px;
+      font-size: $font-size-xl;
     }
   }
 
   &__logo {
     font-size: $font-size-icon;
+    cursor: default;
   }
 
   &__button {
