@@ -8,27 +8,48 @@
   font-size: $font-size-md;
 
   &--loading {
-    .Navbar__logo {
-      opacity: 0;
-      animation: drop-in 1s ease;
-      animation-fill-mode: forwards;
+    .Navbar {
+      &__logo,
+      &__link,
+      &__button {
+        animation: drop-in 1s ease;
+        animation-fill-mode: forwards;
+      }
+
+      &__link {
+        display: inline-block;
+      }
     }
-  
-    .Navbar__link {
-      display: inline-block;
-      opacity: 0;
-      animation: drop-in 1s ease;
-      animation-fill-mode: forwards;
+  }
+
+  &--loaded {
+    .Navbar {
+      &__logo,
+      &__link,
+      &__button {
+        opacity: 1;
+      }
     }
   }
 
   &__logo {
+    opacity: 0;
     font-size: $font-size-xl;
   }
 
   &__link {
+    opacity: 0;
     font-size: $font-size-lg;
     margin: 8px 16px;
+  }
+
+  &__button {
+    opacity: 0;
+    margin: 8px 16px;
+    min-width: 80px;
+    padding: 8px 12px;
+    font-size: $font-size-lg;
+    border-radius: $border-radius-box-small;
   }
 }
 

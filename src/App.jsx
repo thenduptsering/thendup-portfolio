@@ -1,6 +1,8 @@
 import { useEffect, useState } from 'react';
 import { Link, Outlet, useLocation } from 'react-router-dom';
 
+import downloadResume from './helpers/downloadResume';
+
 import Home from './components/Home';
 import Logo from './components/Logo';
 
@@ -9,6 +11,7 @@ function App() {
 
   const [showingAppLoader, setShowingAppLoader] = useState(true);
   const [loadingNavBar, setLoadingNavBar] = useState(false);
+  const [loadedNavBar, setLoadedNavBar] = useState(false);
   const [loadingHero, setLoadingHero] = useState(false);
   const [allLoaded, setAllLoaded] = useState(false);
   const [showMenu, setShowMenu] = useState(false);
@@ -34,8 +37,9 @@ function App() {
     return new Promise((resolve) => {
       setTimeout(() => {
         setLoadingNavBar(false);
+        setLoadedNavBar(true);
         resolve();
-      }, 2000)
+      }, 2200)
     })
   }
 
@@ -77,7 +81,7 @@ function App() {
 
           <div className={`App ${showingAppLoader ? 'App--hide' : ''}`}>
             <div className="App__navbar">
-              <nav id="desktop-nav" className={`Navbar ${loadingNavBar ? 'Navbar--loading' : ''}`}>
+              <nav id="desktop-nav" className={`Navbar ${loadingNavBar ? 'Navbar--loading' : ''} ${loadedNavBar ? 'Navbar--loaded' : ''}`}>
                 <div role="button" onClick={loadPage} className="Navbar__logo" style={{animationDelay: '0ms'}}>
                   <Logo />
                 </div>
@@ -88,6 +92,7 @@ function App() {
                   <Link className="Navbar__link" style={{animationDelay: '600ms'}}>Skills</Link>
                   <Link className="Navbar__link" style={{animationDelay: '800ms'}}>Projects</Link>
                   <Link className="Navbar__link" style={{animationDelay: '1000ms'}}>Contact</Link>
+                  <button className="Navbar__button Button Button--default" onClick={downloadResume} style={{animationDelay: '1200ms'}}>Resume</button>
                 </div>
               </nav>
 
