@@ -11,7 +11,7 @@ export default function useIsOnScreen({ ref }) {
     }, {
       root: null, // Use viewport as the root
       rootMargin: '0px', // No margin
-      threshold: 0.5, // 50% visibility threshold
+      threshold: 0.3, // 30% visibility threshold
     }
   ), [ref])
 
