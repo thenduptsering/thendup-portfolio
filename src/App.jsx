@@ -34,7 +34,6 @@ function App() {
   }
 
   const initialLoad = () => {
-    setShowingAppLoader(true);
     return new Promise((resolve) => {
       setTimeout(() => {
         setShowingAppLoader(false);
@@ -65,7 +64,12 @@ function App() {
   }
 
   const loadPage = () => {
+    setShowingAppLoader(true);
+    setLoadingNavBar(false);
+    setLoadedNavBar(false);
+    setLoadingHero(false);
     setAllLoaded(false);
+
     initialLoad()
       .then(() => {
         return loadNavBar();
