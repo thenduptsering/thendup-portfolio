@@ -188,14 +188,15 @@
     }
 
     &-line1 {
-      font-family: $font-family-mono;
-      font-size: $font-size-lg;
+      font-size: $font-size-xl;
       margin-bottom: 16px;
     }
 
     &-line2 {
+      font-family: 'Kode Mono';
       font-size: $font-size-heading;
       font-weight: $font-weight-heavy;
+      text-transform: uppercase;
       color: $beige;
     }
 

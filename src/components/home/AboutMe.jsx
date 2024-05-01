@@ -12,7 +12,7 @@ export default function AboutMe () {
   const ref = useRef(null);
   const [animate, setAnimate] = useState(false);
   const [animated, setAnimated] = useState(false);
-  const isVisible = useIsOnScreen({ ref: ref, threshold: 0.1 });
+  const isVisible = useIsOnScreen({ ref: ref, threshold: 0.3 });
 
   useEffect(() => {
     if (isVisible && !animated) {
