@@ -7,6 +7,21 @@
   height: $nav-bar-height;
   font-size: $font-size-md;
 
+  &--loading {
+    .Navbar__logo {
+      opacity: 0;
+      animation: drop-in 1s ease;
+      animation-fill-mode: forwards;
+    }
+  
+    .Navbar__link {
+      display: inline-block;
+      opacity: 0;
+      animation: drop-in 1s ease;
+      animation-fill-mode: forwards;
+    }
+  }
+
   &__logo {
     font-size: $font-size-xl;
   }
@@ -14,21 +29,6 @@
   &__link {
     font-size: $font-size-lg;
     margin: 8px 16px;
-  }
-}
-
-.App--loading {
-  .Navbar__logo {
-    opacity: 0;
-    animation: drop-in 0.7s ease;
-    animation-fill-mode: forwards;
-  }
-
-  .Navbar__link {
-    display: inline-block;
-    opacity: 0;
-    animation: drop-in 0.7s ease;
-    animation-fill-mode: forwards;
   }
 }
 

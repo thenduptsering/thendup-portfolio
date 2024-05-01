@@ -7,8 +7,10 @@ import Logo from './components/Logo';
 function App() {
   const location = useLocation();
 
-  const [showingLoader, setShowingLoader] = useState(true);
-  const [loadingPage, setLoadingPage] = useState(false);
+  const [showingAppLoader, setShowingAppLoader] = useState(true);
+  const [loadingNavBar, setLoadingNavBar] = useState(false);
+  const [loadingHero, setLoadingHero] = useState(false);
+  const [allLoaded, setAllLoaded] = useState(false);
   const [showMenu, setShowMenu] = useState(false);
   
   const isHome = location.pathname === '/';
@@ -17,19 +19,47 @@ function App() {
     setShowMenu(!showMenu)
   }
 
-  const loadPage = () => {
-    setTimeout(() => {
-      setShowingLoader(false);
-      setLoadingPage(true);
-    }, 2500)
-
-    setTimeout(() => {
-      setLoadingPage(false);
-    }, 4000)
+  const initialLoad = () => {
+    return new Promise((resolve) => {
+      setTimeout(() => {
+        setShowingAppLoader(false);
+        resolve();
+      }, 2400)
+    })
   }
 
-  const startAnimation = () => {
-    loadPage();
+  const loadNavBar = () => {
+    setLoadingNavBar(true);
+    return new Promise((resolve) => {
+      setTimeout(() => {
+        setLoadingNavBar(false);
+        resolve();
+      }, 2000)
+    })
+  }
+
+  const loadHero = () => {
+    setLoadingHero(true);
+    return new Promise((resolve) => {
+      setTimeout(() => {
+        setLoadingHero(false);
+        resolve();
+      }, 2000)
+    })
+  }
+
+  const loadPage = () => {
+    setAllLoaded(false);
+    initialLoad()
+      .then(() => {
+        return loadNavBar();
+      })
+      .then(() => {
+        return loadHero();
+      })
+      .then(() => {
+        setAllLoaded(true);
+      })
   }
 
   useEffect(() => {
@@ -40,23 +70,23 @@ function App() {
     <div className="App-Container">
       {isHome ? (
         <>
-          <div className={`App-Loader ${showingLoader ? 'App-Loader--loading' : ''}`}>
+          <div className={`App-Loader ${showingAppLoader ? 'App-Loader--loading' : ''}`}>
             <Logo animationClassName="Logo--animate" />
           </div>
 
-          <div className={`App ${showingLoader ? 'App--hide' : ''} ${loadingPage ? 'App--loading' : ''}`}>
+          <div className={`App ${showingAppLoader ? 'App--hide' : ''}`}>
             <div className="App__navbar">
-              <nav id="desktop-nav" className="Navbar">
-                <div className="Navbar__logo" style={{animationDelay: '200ms'}}>
+              <nav id="desktop-nav" className={`Navbar ${loadingNavBar ? 'Navbar--loading' : ''}`}>
+                <div className="Navbar__logo" style={{animationDelay: '0ms'}}>
                   <Logo />
                 </div>
 
                 <div className="Navbar__links">
-                  <Link className="Navbar__link" style={{animationDelay: '0ms'}}>About me</Link>
-                  <Link className="Navbar__link" style={{animationDelay: '200ms'}}>Experience</Link>
-                  <Link className="Navbar__link" style={{animationDelay: '400ms'}}>Skills</Link>
-                  <Link className="Navbar__link" style={{animationDelay: '600ms'}}>Projects</Link>
-                  <Link className="Navbar__link" style={{animationDelay: '800ms'}}>Contact</Link>
+                  <Link className="Navbar__link" style={{animationDelay: '200ms'}}>About me</Link>
+                  <Link className="Navbar__link" style={{animationDelay: '400ms'}}>Experience</Link>
+                  <Link className="Navbar__link" style={{animationDelay: '600ms'}}>Skills</Link>
+                  <Link className="Navbar__link" style={{animationDelay: '800ms'}}>Projects</Link>
+                  <Link className="Navbar__link" style={{animationDelay: '1000ms'}}>Contact</Link>
                 </div>
               </nav>
 
@@ -85,10 +115,8 @@ function App() {
               </nav>
             </div>
 
-            <button onClick={startAnimation}>Animate</button>
-
             <div className="App__body">
-              <Home />
+              <Home allLoaded={allLoaded} loadingHero={loadingHero} />
             </div>
 
             <div className="App__footer">
