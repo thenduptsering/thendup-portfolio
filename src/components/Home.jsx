@@ -1,10 +1,10 @@
 import Tooltip from './Tooltip';
 
 import AboutMe from './home/AboutMe';
-import ContactMe from './home/ContactMe';
 import Experience from './home/Experience';
-import Projects from './home/Projects';
 import Skills from './home/Skills';
+// import Projects from './home/Projects';
+import ContactMe from './home/ContactMe';
 
 const RESUME_URL = '/_thenduptsering_resume.pdf';
 
@@ -16,7 +16,6 @@ const downloadResume = () => {
   anchor.click()
   document.body.removeChild(anchor)
 }
-
 
 export default function Home ({ allLoaded, loadingHero = false }) {
   return (
@@ -37,63 +36,67 @@ export default function Home ({ allLoaded, loadingHero = false }) {
         </div>
       </section>
 
-      <AboutMe />
+      {allLoaded && (
+        <>
+          <AboutMe />
 
-      <Experience />
+          <Experience />
 
-      <Skills />
+          <Skills />
 
-      <Projects />
+          {/* <Projects /> */}
 
-      <ContactMe />   
+          <ContactMe />   
 
-      <div className="Home__footer">
-        <div className="Home__section-socials-container">
-          <Tooltip direction="top" delay="0" content="LinkedIn profile">
-            <a
-              className="Home__section-link Home__section-link--icon"
-              href="https://www.linkedin.com/in/thendup-tsering"
-              target="_blank"
-              rel="noreferrer"
-            >
-              <i className="fa-brands fa-linkedin" />
-            </a>
-          </Tooltip>
+          <div className="Home__footer">
+            <div className="Home__section-socials-container">
+              <Tooltip direction="top" delay="0" content="LinkedIn profile">
+                <a
+                  className="Home__section-link Home__section-link--icon"
+                  href="https://www.linkedin.com/in/thendup-tsering"
+                  target="_blank"
+                  rel="noreferrer"
+                >
+                  <i className="fa-brands fa-linkedin" />
+                </a>
+              </Tooltip>
 
-          <Tooltip direction="top" delay="0" content="Github profile">
-            <a
-              className="Home__section-link Home__section-link--icon"
-              href="https://github.com/thenduptsering"
-              target="_blank"
-              rel="noreferrer"
-            >
-              <i className="fa-brands fa-github" />
-            </a>
-          </Tooltip>
+              <Tooltip direction="top" delay="0" content="Github profile">
+                <a
+                  className="Home__section-link Home__section-link--icon"
+                  href="https://github.com/thenduptsering"
+                  target="_blank"
+                  rel="noreferrer"
+                >
+                  <i className="fa-brands fa-github" />
+                </a>
+              </Tooltip>
 
-          <Tooltip direction="top" delay="0" content="Instagram profile">
-            <a
-              className="Home__section-link Home__section-link--icon"
-              href="https://www.instagram.com/thendup.tsering"
-              target="_blank"
-              rel="noreferrer"
-            >
-              <i className="fa-brands fa-instagram" />
-            </a>
-          </Tooltip>
+              <Tooltip direction="top" delay="0" content="Instagram profile">
+                <a
+                  className="Home__section-link Home__section-link--icon"
+                  href="https://www.instagram.com/thendup.tsering"
+                  target="_blank"
+                  rel="noreferrer"
+                >
+                  <i className="fa-brands fa-instagram" />
+                </a>
+              </Tooltip>
 
-          <Tooltip direction="top" delay="0" content="Twitter(X) profile">
-            <a
-              className="Home__section-link Home__section-link--icon"
-              href="https://twitter.com/thenduptsering"
-              target="_blank"
-              rel="noreferrer"
-            >
-              <i className="fa-brands fa-x-twitter" />
-            </a>
-          </Tooltip>
-        </div>
-      </div>
+              <Tooltip direction="top" delay="0" content="Twitter(X) profile">
+                <a
+                  className="Home__section-link Home__section-link--icon"
+                  href="https://twitter.com/thenduptsering"
+                  target="_blank"
+                  rel="noreferrer"
+                >
+                  <i className="fa-brands fa-x-twitter" />
+                </a>
+              </Tooltip>
+            </div>
+          </div>
+        </>
+      )}
     </div>
   );
 }
