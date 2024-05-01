@@ -1,4 +1,7 @@
+import { useEffect, useRef, useState } from 'react';
 import Tooltip from './Tooltip';
+
+import useIsOnScreen from '../hooks/useIsOnScreen';
 
 import { millisecondsYear } from '../constants/constants';
 import jobs from '../constants/jobs.json';
@@ -8,20 +11,37 @@ import skills from '../constants/skills.json';
 const RESUME_URL = '/_thenduptsering_resume.pdf';
 const DATE_STARTED_WORKING = '06/01/2015';
 
+const now = new Date();
+const experienceStart = new Date(DATE_STARTED_WORKING);
+
+const yearsSince = Math.floor((now.getTime() - experienceStart.getTime()) / millisecondsYear);
+
+const downloadResume = () => {
+  const anchor = document.createElement('a')
+  anchor.href = RESUME_URL
+  anchor.download = RESUME_URL.split('/').pop()
+  document.body.appendChild(anchor)
+  anchor.click()
+  document.body.removeChild(anchor)
+}
+
+
 export default function Home ({ allLoaded, loadingHero = false }) {
-  const downloadResume = () => {
-    const anchor = document.createElement('a')
-    anchor.href = RESUME_URL
-    anchor.download = RESUME_URL.split('/').pop()
-    document.body.appendChild(anchor)
-    anchor.click()
-    document.body.removeChild(anchor)
-  }
+  const aboutMeRef = useRef(null);
+  const [animateAboutMe, setAnimateAboutMe] = useState(false);
+  const [aboutMeAnimated, setAboutMeAnimated] = useState(false);
+  const aboutMeIsVisible = useIsOnScreen({ ref: aboutMeRef });
 
-  const now = new Date();
-  const experienceStart = new Date(DATE_STARTED_WORKING);
+  useEffect(() => {
+    if (aboutMeIsVisible && !aboutMeAnimated) {
+      setAnimateAboutMe(true);
 
-  const yearsSince = Math.floor((now.getTime() - experienceStart.getTime()) / millisecondsYear);
+      setTimeout(() => {
+        setAnimateAboutMe(false);
+        setAboutMeAnimated(true);  
+      }, 2000);
+    }
+  }, [aboutMeIsVisible])
 
   return (
     <div className={`Home ${allLoaded ? '' : 'Home--standby' } ${loadingHero ? 'Home--loading' : ''}`}>
@@ -41,7 +61,7 @@ export default function Home ({ allLoaded, loadingHero = false }) {
         </div>
       </section>
 
-      <section id="about" className="Home__section Home__section--about">
+      <section ref={aboutMeRef} id="about" className={`Home__section Home__section--about ${!aboutMeAnimated ? 'Home__section--standby' : ''} ${animateAboutMe ? 'Home__section--animate' : ''}`}>
         <h2 className="Home__section-heading">about me</h2>
         
         <div className="Home__section-info">

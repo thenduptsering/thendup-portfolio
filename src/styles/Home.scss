@@ -29,12 +29,22 @@
 
   &__section {
     color: $body-color;
-    height: 100vh;
+    opacity: 1;
+
+    &--standby {
+      opacity: 0;
+    }
+
+    &--animate {
+      animation: slide-up-slow 1s ease;
+      animation-fill-mode: forwards;
+    }
 
     &--hero {
       display: flex;
       align-items: center;
       margin-top: -$nav-bar-height;
+      height: 100vh;
     }
 
     &--about,
@@ -44,8 +54,8 @@
     &--contact {
       display: flex;
       flex-direction: column;
-      justify-content: center;
       align-items: center;
+      min-height: 80vh;
     }
 
     &--projects {

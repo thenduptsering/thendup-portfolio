@@ -140,3 +140,24 @@
     opacity: 1;
   }
 }
+
+@keyframes slide-up-slow {
+  from {
+    transform: translateY(1500px);
+    opacity: 0;
+  }
+
+  50% {
+    opacity: 0;
+  }
+
+  80% {
+    transform: translateY(-10px);
+    opacity: 0.8;
+  }
+
+  to {
+    transform: translateY(0%);
+    opacity: 1;
+  }
+}
