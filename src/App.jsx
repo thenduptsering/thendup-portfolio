@@ -20,6 +20,7 @@ function App() {
   }
 
   const initialLoad = () => {
+    setShowingAppLoader(true);
     return new Promise((resolve) => {
       setTimeout(() => {
         setShowingAppLoader(false);
@@ -77,7 +78,7 @@ function App() {
           <div className={`App ${showingAppLoader ? 'App--hide' : ''}`}>
             <div className="App__navbar">
               <nav id="desktop-nav" className={`Navbar ${loadingNavBar ? 'Navbar--loading' : ''}`}>
-                <div className="Navbar__logo" style={{animationDelay: '0ms'}}>
+                <div role="button" onClick={loadPage} className="Navbar__logo" style={{animationDelay: '0ms'}}>
                   <Logo />
                 </div>
 
