@@ -1,6 +1,6 @@
 import { useEffect, useMemo, useState } from 'react';
 
-export default function useIsOnScreen({ ref }) {
+export default function useIsOnScreen({ ref, threshold = 0.5 }) {
   if (ref == null) return false;
 
   const [isOnScreen, setIsOnScreen] = useState(false)
@@ -11,7 +11,7 @@ export default function useIsOnScreen({ ref }) {
     }, {
       root: null, // Use viewport as the root
       rootMargin: '0px', // No margin
-      threshold: 0.3, // 30% visibility threshold
+      threshold, // % visibility threshold
     }
   ), [ref])
 
