@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react';
-import { Link, Outlet, useLocation } from 'react-router-dom';
+import { Outlet, useLocation } from 'react-router-dom';
+import { Link as ScrollLink } from 'react-scroll';
 
 import downloadResume from './helpers/downloadResume';
 import useScroll from './hooks/useScroll';
@@ -102,11 +103,56 @@ function App() {
                 </div>
 
                 <div className="Navbar__links">
-                  <Link className="Navbar__link" style={{animationDelay: '200ms'}}>About me</Link>
-                  <Link className="Navbar__link" style={{animationDelay: '400ms'}}>Experience</Link>
-                  <Link className="Navbar__link" style={{animationDelay: '600ms'}}>Skills</Link>
-                  <Link className="Navbar__link" style={{animationDelay: '800ms'}}>Projects</Link>
-                  <Link className="Navbar__link" style={{animationDelay: '1000ms'}}>Contact</Link>
+                  <ScrollLink
+                    className="Navbar__link"
+                    to="about"
+                    style={{ animationDelay: '200ms' }}
+                    smooth={true}
+                    duration={500}
+                  >
+                    About me
+                  </ScrollLink>
+
+                  <ScrollLink
+                    className="Navbar__link"
+                    to="experience"
+                    style={{ animationDelay: '400ms' }}
+                    smooth={true}
+                    duration={500}
+                  >
+                    Experience
+                  </ScrollLink>
+
+                  <ScrollLink
+                    className="Navbar__link"
+                    to="skills"
+                    style={{ animationDelay: '600ms' }}
+                    smooth={true}
+                    duration={500}
+                  >
+                    Skills
+                  </ScrollLink>
+
+                  {/* <ScrollLink
+                    className="Navbar__link"
+                    to="projects"
+                    style={{ animationDelay: '800ms' }}
+                    smooth={true}
+                    duration={500}
+                  >
+                    Projects
+                  </ScrollLink> */}
+
+                  <ScrollLink
+                    className="Navbar__link"
+                    to="contact"
+                    style={{ animationDelay: '800ms' }}
+                    smooth={true}
+                    duration={500}
+                  >
+                    Contact
+                  </ScrollLink>
+
                   <button className="Navbar__button Button Button--default" onClick={downloadResume} style={{animationDelay: '1200ms'}}>Resume</button>
                 </div>
               </nav>
@@ -126,11 +172,55 @@ function App() {
 
                 {showMenu && (
                   <div className="Hamburger-Menu__links">
-                    <Link className="Hamburger-Menu__link">About me</Link>
-                    <Link className="Hamburger-Menu__link">Experience</Link>
-                    <Link className="Hamburger-Menu__link">Skills</Link>
-                    <Link className="Hamburger-Menu__link">Projects</Link>
-                    <Link className="Hamburger-Menu__link">Contact</Link>
+                    <ScrollLink
+                      className="Hamburger-Menu__link"
+                      to="about"
+                      style={{ animationDelay: '200ms' }}
+                      smooth={true}
+                      duration={500}
+                    >
+                      About me
+                    </ScrollLink>
+
+                    <ScrollLink
+                      className="Hamburger-Menu__link"
+                      to="experience"
+                      style={{ animationDelay: '400ms' }}
+                      smooth={true}
+                      duration={500}
+                    >
+                      Experience
+                    </ScrollLink>
+
+                    <ScrollLink
+                      className="Hamburger-Menu__link"
+                      to="skills"
+                      style={{ animationDelay: '600ms' }}
+                      smooth={true}
+                      duration={500}
+                    >
+                      Skills
+                    </ScrollLink>
+
+                    {/* <ScrollLink
+                      className="Hamburger-Menu__link"
+                      to="projects"
+                      style={{ animationDelay: '800ms' }}
+                      smooth={true}
+                      duration={500}
+                    >
+                      Projects
+                    </ScrollLink> */}
+
+                    <ScrollLink
+                      className="Hamburger-Menu__link"
+                      to="contact"
+                      style={{ animationDelay: '800ms' }}
+                      smooth={true}
+                      duration={500}
+                    >
+                      Contact
+                    </ScrollLink>
                   </div>
                 )}
               </nav>
