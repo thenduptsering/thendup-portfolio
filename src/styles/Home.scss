@@ -1,5 +1,6 @@
 .Home {
   margin: 0 200px;
+  transition: margin 0.5s ease;
 
   &--loading {
     .Home__section {
@@ -145,6 +146,10 @@
       justify-content: center;
       align-items: center;
 
+      &-main {
+        transition: width 0.5s ease;
+      }
+
       &-right {
         max-width: 50%;
       }
@@ -170,6 +175,7 @@
 
       &-skills {
         display: grid;
+        transition: 500ms;
         grid-template-columns: repeat(7, 1fr);
         gap: 32px 48px;
       }
@@ -247,22 +253,132 @@
   }
 }
 
+@media screen and (max-width: $tablet-large-width) {
+  .Home {
+    margin: 0 120px;
 
-@media screen and (max-width: $min-device-width) {
+    &__section {
+      &--experience,
+      &--contact {
+        .Home__section-info-main {
+          width: 80%;
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: $tablet-width) {
+  .Home {
+    margin: 0 40px;
+
+    &__section {
+      &-heading {
+        font-size: $font-size-xl;
+      }
+
+      &--hero {
+        .Home__section {
+          &-line1 {
+            font-size: $font-size-md;
+          }
+
+          &-line2 {
+            font-size: $font-size-subheading;
+          }
+
+          &-line3 {
+            font-size: $font-size-lg;
+          }
+        }
+      }
+
+      &--about {
+        .Home__section-info {
+          flex-direction: column;
+
+          &-headshot {
+            margin-right: 0;
+            margin-bottom: 24px;
+          }
+
+          &-right {
+            max-width: 80%;
+          }
+        }
+      }
+
+      &--skills {
+        .Home__section-info-skills {
+          gap: 16px 20px;
+        }
+      }
+
+      &--experience,
+      &--contact {
+        .Home__section-info-main {
+          width: 80%;
+        }
+      }
+    }
+  }
+}
+
+
+@media screen and (max-width: $small-device-width) {
   .Home {
     &__section {
       flex-direction: column;
       justify-content: center;
       align-items: center;
 
-      &-info {
-        margin: 24px 0 0 0;
-        text-align: center;
-
-        &-right {
-          max-width: 100%;
-          text-align: center;
+      &--about {
+        .Home__section-info {
+          &-right {
+            max-width: 100%;
+          }
         }
+      }
+
+      &--skills {
+        .Home__section {
+          &-info {
+            width: 100%;
+
+            &-main {
+              width: 80%;
+            }
+
+            &-skills {
+              width: 100%;
+              grid-template-columns: repeat(2, 1fr);
+              gap: 32px 40px;
+            }
+          }
+        }
+      }
+
+      &--experience,
+      &--contact {
+        .Home__section-info-main {
+          width: 100%;
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: $min-device-width) {
+  .Home {
+    &__section {
+      &--experience {
+        .Job {
+          &__heading {
+            display: block;
+            margin-bottom: 0;
+          }
+        }
+
       }
     }
   }
