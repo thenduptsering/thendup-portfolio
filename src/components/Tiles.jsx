@@ -9,7 +9,7 @@ import quotes from '../constants/quotes.json';
 
 import mod from '../helpers/mod';
 import toggleFullScreen from '../helpers/toggleFullScreen';
-import useThrottle from '../helpers/useThrottle';
+import useThrottle from '../hooks/useThrottle';
 
 export default function Tiles () {
   const navigate = useNavigate();
