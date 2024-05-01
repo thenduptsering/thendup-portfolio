@@ -2,6 +2,7 @@ import Tooltip from './Tooltip';
 
 import { millisecondsYear } from '../constants/constants';
 import jobs from '../constants/jobs.json';
+import projects from '../constants/projects.json';
 import skills from '../constants/skills.json';
 
 const RESUME_URL = '/_thenduptsering_resume.pdf';
@@ -56,7 +57,7 @@ export default function Home () {
                 Hello! ✌️
               </p>
               <p className="Home__section-text-para">
-                My name is Thendup and I&apos;m a senior front-end software engineer with over 8 years of hands-on experience. My interest in web development started back in 2013 when I took a Computer Science course in university and enjoyed it so much that I ended up switching majors – best decision ever! I&apos;ve had the pleasure of working with companies big and small during my co-op terms, and eventually joined <a className="Home__section-text-link" href="https://www.thinkdataworks.com" target="blank">ThinkData Works</a> full time after graduation. 
+                My name is Thendup and I&apos;m a senior front-end software engineer with over {yearsSince} years of hands-on experience. My interest in web development started back in 2013 when I took a Computer Science course in university and enjoyed it so much that I ended up switching majors – best decision ever! I&apos;ve had the pleasure of working with companies big and small during my co-op terms, and eventually joined <a className="Home__section-text-link" href="https://www.thinkdataworks.com" target="blank">ThinkData Works</a> full time after graduation. 
               </p>
               <p className="Home__section-text-para">
                 Over the years, I have led and mentored teams of varying sizes, successfully spearheaded dozens of front-end projects for flagship enterprise software at the companies I&apos;ve worked with, as well as excelled in triaging and resolving hundreds of production-level issues. One of my most successful projects was at ThinkData Works and involved a year-long migration of the entire front-end framework from Angular to React w/TypeScript which revitalized my team&apos;s ability and efficiency in building subsequent front-end features.
@@ -77,7 +78,7 @@ export default function Home () {
             <div className="Home__section-info-jobs">
               {jobs.map((job) => {
                 return (
-                  <div key={job.period} className="Job">
+                  <div key={job.key} className="Job">
                     <div className="Job__heading">
                       <div className="Job__heading-company">
                         {job.company}
@@ -102,14 +103,14 @@ export default function Home () {
       </section>
 
       <section id="skills" className="Home__section Home__section--skills">
-        <h2 className="Home__section-heading">skills</h2>
+        <h2 className="Home__section-heading">technologies</h2>
         
         <div className="Home__section-info">
           <div className="Home__section-info-main">
             <div className="Home__section-info-skills">
               {skills.map((skill) => {
                 return (
-                  <div key={skill.label} className="Skill">
+                  <div key={skill.key} className="Skill">
                     <div className="Skill__icon">
                       <img className="Skill__icon-pic" src={skill.icon} alt={`${skill.label} icon`} />
                     </div>
@@ -129,37 +130,25 @@ export default function Home () {
         <h2 className="Home__section-heading">some things i have worked on</h2>
         
         <div className="Home__section-info">
-          <div className="Home__section-info-right">
-            <div className="Home__section-info-box-container">
-              <div className="Home__section-info-box">
-                <div className="Home__section-info-box-icon">
-                  <i className="fa-solid fa-medal" />
-                </div>
+          <div className="Home__section-info-main">
+            <div className="Home__section-info-projects">
+              {projects.map((project) => {
+                  return (
+                    <div key={project.key} className="Project">
+                      <div className="Project__icon">
+                        <i className="fa-solid fa-graduation-cap" />
+                      </div>
 
-                <h3 className="Home__section-info-box-title">
-                  Experience
-                </h3>
+                      <h3 className="Project__title">
+                        {project.label}
+                      </h3>
 
-                <p className="Home__section-info-box-details">
-                  {yearsSince}+ years<br />Front-end development
-                </p>
-              </div>
-
-              <div className="Home__section-info-box">
-                <div className="Home__section-info-box-icon">
-                  <i className="fa-solid fa-graduation-cap" />
-                </div>
-
-                <h3 className="Home__section-info-box-title">
-                  Education
-                </h3>
-
-                <p className="Home__section-info-box-details">
-                  Bachelors of Computer Science
-                  <br />
-                  University of Waterloo 2017
-                </p>
-              </div>
+                      <p className="Project__details">
+                        {project.description}
+                      </p>
+                    </div>
+                  );
+                })}
             </div>
           </div>
         </div>

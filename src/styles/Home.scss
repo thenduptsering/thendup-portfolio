@@ -22,6 +22,18 @@
       align-items: center;
     }
 
+    &--projects {
+      .Home__section {
+        &-info {
+          width: 100%;
+
+          &-main {
+            width: 100%;
+          }
+        }
+      }
+    }
+
     &--experience {
       .Home__section {
         &-info {
@@ -116,37 +128,16 @@
           }
         }
       }
-      
-      &-box {
-        padding: 16px 24px;
-        border: 1px solid $gray;
-        border-radius: $border-radius-box;
-        width: 100%;
-        max-width: 360px;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-
-        &:not(:last-child) {
-          margin-right: 24px;
-        }
-
-        &-container {
-          display: flex;
-          justify-content: space-around;
-          align-items: center;
-          margin-bottom: 24px;
-        }
-
-        &-details {
-          text-align: center;
-        }
-      }
 
       &-skills {
         display: grid;
         grid-template-columns: repeat(7, 1fr);
+        gap: 32px 48px;
+      }
+
+      &-projects {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
         gap: 32px 48px;
       }
     }

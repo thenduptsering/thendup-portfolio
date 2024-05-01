@@ -1,0 +1,20 @@
+[
+  {
+    "key": "clickTiles",
+    "label": "Click Tiles",
+    "url": "https://thendupcodes@github.io",
+    "description": "Click tiles description"
+  },
+  {
+    "key": "wordleClone",
+    "label": "Wordle Clone",
+    "url": "https://thendupcodes@github.io",
+    "description": "Wordle clone description"
+  },
+  {
+    "key": "passwordValidator",
+    "label": "Password Validator",
+    "url": "https://thendupcodes@github.io",
+    "description": "Password validator description"
+  }
+]
