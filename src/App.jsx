@@ -2,12 +2,14 @@ import { useEffect, useState } from 'react';
 import { Link, Outlet, useLocation } from 'react-router-dom';
 
 import downloadResume from './helpers/downloadResume';
+import useScroll from './hooks/useScroll';
 
 import Home from './components/Home';
 import Logo from './components/Logo';
 
 function App() {
   const location = useLocation();
+  const { scrollY, scrollDir } = useScroll();
 
   const [showingAppLoader, setShowingAppLoader] = useState(true);
   const [loadingNavBar, setLoadingNavBar] = useState(false);
@@ -15,8 +17,17 @@ function App() {
   const [loadingHero, setLoadingHero] = useState(false);
   const [allLoaded, setAllLoaded] = useState(false);
   const [showMenu, setShowMenu] = useState(false);
+  const [stickNavbar, setStickNavbar] = useState(false);
   
   const isHome = location.pathname === '/';
+
+  useEffect(() => {
+    if (scrollDir === 'up' && scrollY > 200) {
+      setStickNavbar(true);
+    } else if (scrollDir === 'down' || scrollY <= 10) {
+      setStickNavbar(false);
+    }
+  }, [scrollDir, scrollY]);
 
   const toggleMenu = () => {
     setShowMenu(!showMenu)
@@ -80,7 +91,7 @@ function App() {
           </div>
 
           <div className={`App ${showingAppLoader ? 'App--hide' : ''}`}>
-            <div className="App__navbar">
+            <div className={`App__navbar ${stickNavbar ? 'App__navbar--sticky' : ''}`}>
               <nav id="desktop-nav" className={`Navbar ${loadingNavBar ? 'Navbar--loading' : ''} ${loadedNavBar ? 'Navbar--loaded' : ''}`}>
                 <div role="button" onClick={loadPage} className="Navbar__logo" style={{animationDelay: '0ms'}}>
                   <Logo />
