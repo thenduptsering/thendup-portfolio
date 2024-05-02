@@ -44,7 +44,7 @@ function App() {
       setTimeout(() => {
         setShowingAppLoader(false);
         resolve();
-      }, 2400)
+      }, 3600);
     })
   }
 
@@ -55,7 +55,7 @@ function App() {
         setLoadingNavBar(false);
         setLoadedNavBar(true);
         resolve();
-      }, 2200)
+      }, 2200);
     })
   }
 
@@ -65,16 +65,18 @@ function App() {
       setTimeout(() => {
         setLoadingHero(false);
         resolve();
-      }, 2000)
+      }, 2000);
     })
   }
 
   const loadPage = () => {
-    setShowingAppLoader(true);
+    if (!allLoaded) return;
+
     setLoadingNavBar(false);
     setLoadedNavBar(false);
     setLoadingHero(false);
     setAllLoaded(false);
+    setShowingAppLoader(true);
 
     initialLoad()
       .then(() => {
