@@ -61,7 +61,7 @@ function App() {
   }
 
   const loadPage = () => {
-    if (showingAppLoader || loadingNavBar || loadingHero) return;
+    if (loadingNavBar || loadingHero) return;
 
     setLoadingNavBar(false);
     setLoadedNavBar(false);

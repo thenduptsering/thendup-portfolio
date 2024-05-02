@@ -272,6 +272,37 @@
     &__section {
       &-heading {
         font-size: $font-size-xl;
+
+        &:before,
+        &:after {
+          width: 40px
+        }
+
+        &:before {
+          left: -60px;
+        }
+
+        &:after {
+          right: -60px;
+        }
+      }
+
+      &--about,
+      &--experience,
+      &--skills,
+      &--projects,
+      &--contact {
+        &:hover {
+          .Home__section-heading {
+            &:before {
+              left: -90px;
+            }
+    
+            &:after {
+              right: -90px;
+            }
+          }
+        }
       }
 
       &--hero {
