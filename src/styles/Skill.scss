@@ -5,23 +5,47 @@
   align-items: center;
 
   &__icon {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 8px;
+    border-radius: 50%;
+    transition: all 0.3s ease;
+    position: relative;
+
+    &-backdrop {
+      height: 100%;
+      width: 100%;
+      position: absolute;
+      border-radius: 50%;
+      
+    }
+
     &-pic {
       max-width: 64px;
-      transition: all 0.3s ease;
       opacity: 0.6;
     }
   }
 
   &__label {
     transition: all 0.3s ease;
-    font-size: $font-size-sm;
+    font-size: $font-size-md;
   }
 
   &:hover {
     .Skill {
-      &__icon-pic {
+      &__icon {
         transform: translateY(-4px);
-        opacity: 1;
+
+        &-backdrop {
+          background: transparentize($black, 0.7);
+          filter: blur(10px);
+          z-index: -1;
+        }
+
+        &-pic {
+          opacity: 1;
+        }
       }
     }
   }
