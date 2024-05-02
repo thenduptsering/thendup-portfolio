@@ -4,7 +4,7 @@ import { Route, RouterProvider, createHashRouter, createRoutesFromElements } fro
 
 import App from './App.jsx';
 
-import Tiles from './components/Tiles.jsx';
+import Tiles from '@/components/Tiles.jsx';
 import './styles/_index.scss';
 
 const router = createHashRouter(

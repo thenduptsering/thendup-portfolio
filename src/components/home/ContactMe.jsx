@@ -1,6 +1,6 @@
 import { useEffect, useRef, useState } from 'react';
 
-import useIsOnScreen from '../../hooks/useIsOnScreen';
+import useIsOnScreen from '@/hooks/useIsOnScreen';
 
 export default function ContactMe () {
   const ref = useRef(null);

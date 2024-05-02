@@ -1,8 +1,8 @@
 import { useEffect, useRef, useState } from 'react';
 
-import useIsOnScreen from '../../hooks/useIsOnScreen';
+import useIsOnScreen from '@/hooks/useIsOnScreen';
 
-import skills from '../../constants/skills.json';
+import skills from '@/constants/skills.json';
 
 export default function Skills () {
   const ref = useRef(null);

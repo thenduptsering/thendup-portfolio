@@ -1,8 +1,8 @@
 import { useEffect, useRef, useState } from 'react';
 
-import useIsOnScreen from '../../hooks/useIsOnScreen';
+import useIsOnScreen from '@/hooks/useIsOnScreen';
 
-import projects from '../../constants/projects.json';
+import projects from '@/constants/projects.json';
 
 export default function Projects () {
   const ref = useRef(null);

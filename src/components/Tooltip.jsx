@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState } from 'react';
 
 export default function Tooltip ({ content, children, direction, delay = 200 }) {
   const [show, setShow] = useState();

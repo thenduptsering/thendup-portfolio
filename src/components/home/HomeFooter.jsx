@@ -1,4 +1,4 @@
-import Tooltip from '../Tooltip';
+import Tooltip from '@/components/Tooltip';
 
 export default function HomeFooter () {
   return (
