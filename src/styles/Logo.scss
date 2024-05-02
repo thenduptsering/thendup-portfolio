@@ -29,15 +29,15 @@
     .Logo {
       &__left {
         opacity: 0;
-        animation-delay: 400ms;
-        animation: slide-left-rotate 2s ease;
+        animation: slide-left-rotate 2.6s ease;
+        animation-delay: 800ms;
         animation-fill-mode: forwards;
       }
 
       &__right {
         opacity: 0;
-        animation-delay: 400ms;
-        animation: slide-right-rotate 2s ease;
+        animation: slide-right-rotate 2.6s ease;
+        animation-delay: 800ms;
         animation-fill-mode: forwards;
       }
     }

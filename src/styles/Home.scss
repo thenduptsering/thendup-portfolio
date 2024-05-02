@@ -199,6 +199,7 @@
       font-weight: $font-weight-heavy;
       text-transform: uppercase;
       color: $beige;
+      width: fit-content;
     }
 
     &-line3 {
@@ -237,12 +238,6 @@
       .Home__section-link--icon {
         margin: 0 8px;
         font-size: $font-size-xxl;
-
-        &:hover {
-          i {
-            color: $teal-2;
-          }
-        }
       }
     }
   }
@@ -277,6 +272,37 @@
     &__section {
       &-heading {
         font-size: $font-size-xl;
+
+        &:before,
+        &:after {
+          width: 40px
+        }
+
+        &:before {
+          left: -60px;
+        }
+
+        &:after {
+          right: -60px;
+        }
+      }
+
+      &--about,
+      &--experience,
+      &--skills,
+      &--projects,
+      &--contact {
+        &:hover {
+          .Home__section-heading {
+            &:before {
+              left: -90px;
+            }
+    
+            &:after {
+              right: -90px;
+            }
+          }
+        }
       }
 
       &--hero {

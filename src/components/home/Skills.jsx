@@ -32,6 +32,8 @@ export default function Skills () {
               return (
                 <div key={skill.key} className="Skill">
                   <div className="Skill__icon">
+                    <div className="Skill__icon-backdrop" />
+
                     <img className="Skill__icon-pic" src={skill.icon} alt={`${skill.label} icon`} />
                   </div>
 

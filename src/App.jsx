@@ -1,13 +1,13 @@
 import { useEffect, useState } from 'react';
 import { Outlet, useLocation } from 'react-router-dom';
-import { Link as ScrollLink } from 'react-scroll';
 
-import downloadResume from './helpers/downloadResume';
 import useScroll from './hooks/useScroll';
 
 import Blob from './components/Blob';
 import Home from './components/Home';
 import Logo from './components/Logo';
+import HamburgerNav from './components/home/HamburgerNav';
+import Navbar from './components/home/Navbar';
 
 function App() {
   const location = useLocation();
@@ -18,7 +18,6 @@ function App() {
   const [loadedNavBar, setLoadedNavBar] = useState(false);
   const [loadingHero, setLoadingHero] = useState(false);
   const [allLoaded, setAllLoaded] = useState(false);
-  const [showHamburger, setShowHamburger] = useState(false);
   const [stickNavbar, setStickNavbar] = useState(false);
   
   const isHome = location.pathname === '/';
@@ -31,20 +30,12 @@ function App() {
     }
   }, [scrollDir, scrollY]);
 
-  const closeHamburger = () => {
-    setShowHamburger(false)
-  }
-
-  const openHamburger = () => {
-    setShowHamburger(true)
-  }
-
   const initialLoad = () => {
     return new Promise((resolve) => {
       setTimeout(() => {
         setShowingAppLoader(false);
         resolve();
-      }, 2400)
+      }, 3600);
     })
   }
 
@@ -55,7 +46,7 @@ function App() {
         setLoadingNavBar(false);
         setLoadedNavBar(true);
         resolve();
-      }, 2200)
+      }, 2200);
     })
   }
 
@@ -65,16 +56,18 @@ function App() {
       setTimeout(() => {
         setLoadingHero(false);
         resolve();
-      }, 2000)
+      }, 2000);
     })
   }
 
   const loadPage = () => {
-    setShowingAppLoader(true);
+    if (loadingNavBar || loadingHero) return;
+
     setLoadingNavBar(false);
     setLoadedNavBar(false);
     setLoadingHero(false);
     setAllLoaded(false);
+    setShowingAppLoader(true);
 
     initialLoad()
       .then(() => {
@@ -106,136 +99,13 @@ function App() {
 
           <div className={`App ${showingAppLoader ? 'App--hide' : ''}`}>
             <div className={`App__navbar ${stickNavbar ? 'App__navbar--sticky' : ''}`}>
-              <nav id="desktop-nav" className={`Navbar ${loadingNavBar ? 'Navbar--loading' : ''} ${loadedNavBar ? 'Navbar--loaded' : ''}`}>
-                <div role="button" onClick={loadPage} className="Navbar__logo" style={{animationDelay: '0ms'}}>
-                  <Logo />
-                </div>
+              <Navbar
+                loadingNavBar={loadingNavBar}
+                loadedNavBar={loadedNavBar}
+                loadPage={loadPage}
+              />
 
-                <div className="Navbar__links">
-                  <ScrollLink
-                    className="Navbar__link"
-                    to="about"
-                    style={{ animationDelay: '200ms' }}
-                    smooth={true}
-                    duration={500}
-                  >
-                    About me
-                  </ScrollLink>
-
-                  <ScrollLink
-                    className="Navbar__link"
-                    to="experience"
-                    style={{ animationDelay: '400ms' }}
-                    smooth={true}
-                    duration={500}
-                  >
-                    Experience
-                  </ScrollLink>
-
-                  <ScrollLink
-                    className="Navbar__link"
-                    to="skills"
-                    style={{ animationDelay: '600ms' }}
-                    smooth={true}
-                    duration={500}
-                  >
-                    Skills
-                  </ScrollLink>
-
-                  {/* <ScrollLink
-                    className="Navbar__link"
-                    to="projects"
-                    style={{ animationDelay: '800ms' }}
-                    smooth={true}
-                    duration={500}
-                  >
-                    Projects
-                  </ScrollLink> */}
-
-                  <ScrollLink
-                    className="Navbar__link"
-                    to="contact"
-                    style={{ animationDelay: '800ms' }}
-                    smooth={true}
-                    duration={500}
-                  >
-                    Contact
-                  </ScrollLink>
-
-                  <button className="Navbar__button Button Button--default" onClick={downloadResume} style={{animationDelay: '1200ms'}}>Resume</button>
-                </div>
-              </nav>
-
-              <nav id="hamburger-nav" className="Hamburger-Menu">
-                <div className="Hamburger-Menu__logo">
-                  <Logo />
-                </div>
-
-                <button className="Hamburger-Menu__button Button Button--icon" onClick={openHamburger}>
-                  <i className="fa-solid fa-bars" />
-                </button>
-
-                <div className={`Hamburger-Menu__slideover ${showHamburger ? 'Hamburger-Menu__slideover--open' : ''}`}>
-                  <div className="Hamburger-Menu__slideover-close">
-                    <button className="Hamburger-Menu__button Button Button--icon" onClick={closeHamburger}>
-                      <i className="fa-solid fa-x" />
-                    </button>
-                  </div>
-
-                  <div className="Hamburger-Menu__slideover-links">
-                    <ScrollLink
-                      className="Hamburger-Menu__slideover-link"
-                      to="about"
-                      smooth={true}
-                      duration={500}
-                      onClick={closeHamburger}
-                    >
-                      About me
-                    </ScrollLink>
-
-                    <ScrollLink
-                      className="Hamburger-Menu__slideover-link"
-                      to="experience"
-                      smooth={true}
-                      duration={500}
-                      onClick={closeHamburger}
-                    >
-                      Experience
-                    </ScrollLink>
-
-                    <ScrollLink
-                      className="Hamburger-Menu__slideover-link"
-                      to="skills"
-                      smooth={true}
-                      duration={500}
-                      onClick={closeHamburger}
-                    >
-                      Skills
-                    </ScrollLink>
-
-                    {/* <ScrollLink
-                      className="Hamburger-Menu__slideover-link"
-                      to="projects"
-                      smooth={true}
-                      duration={500}
-                    >
-                      Projects
-                    </ScrollLink> */}
-
-                    <ScrollLink
-                      className="Hamburger-Menu__slideover-link"
-                      to="contact"
-                      smooth={true}
-                      duration={500}
-                      onClick={closeHamburger}
-                    >
-                      Contact me
-                    </ScrollLink>
-
-                    <button className="Hamburger-Menu__slideover-button Button Button--default" onClick={downloadResume}>Download resume</button>
-                  </div>
-                </div>
-              </nav>
+              <HamburgerNav />
             </div>
 
             <div className="App__body">
