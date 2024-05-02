@@ -1,0 +1,31 @@
+.Blob {
+  position: absolute;
+  width: 500px;
+  height: 500px;
+  background: linear-gradient(
+    to right,
+    $teal-3,
+    transparentize($yellow, 0.5),
+  );
+  border-radius: 50%;
+  pointer-events: none;
+  animation: rotate360 16s linear infinite;
+  // transform-origin: center;
+
+  &__blur {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    backdrop-filter: blur(120px);
+  }
+
+  &-Container {
+    height: 100vh;
+    width: 100vw;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 0;
+    background: transparent;
+  }
+}

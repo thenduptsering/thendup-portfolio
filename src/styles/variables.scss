@@ -6,10 +6,9 @@ $teal-5: #0b132c;
 
 $beige: #e9d8a7;
 $yellow: #ee9b01;
-$gray: #2a9d8f;
-$dark-gray: #292c35;
 $body-color: $teal-2;
 $black: #000000;
+$dark-gray: #292c35;
 $white: #ffffff;
 
 $nav-bar-height: 100px;
@@ -54,7 +53,9 @@ $font-size-icon: 32px;
 $font-size-subheading: 40px;
 $font-size-heading: 80px;
 
-$z-layer-navbar: 100;
+$z-layer-navbar: 300;
+$z-layer-body: 200;
+$z-layer-blob: 100;
 
 @mixin box-shadow {
   -webkit-box-shadow: -8px 16px 16px 4px rgba(0,0,0,0.5);

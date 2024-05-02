@@ -161,3 +161,17 @@
     opacity: 1;
   }
 }
+
+@keyframes rotate360 {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  50% {
+    transform: rotate(180deg) scale(1, 1.4);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
+}

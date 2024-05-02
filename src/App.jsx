@@ -5,6 +5,7 @@ import { Link as ScrollLink } from 'react-scroll';
 import downloadResume from './helpers/downloadResume';
 import useScroll from './hooks/useScroll';
 
+import Blob from './components/Blob';
 import Home from './components/Home';
 import Logo from './components/Logo';
 
@@ -98,6 +99,10 @@ function App() {
           <div className={`App-Loader ${showingAppLoader ? 'App-Loader--loading' : ''}`}>
             <Logo animationClassName="Logo--animate" />
           </div>
+
+          {!showingAppLoader && (
+            <Blob />
+          )}
 
           <div className={`App ${showingAppLoader ? 'App--hide' : ''}`}>
             <div className={`App__navbar ${stickNavbar ? 'App__navbar--sticky' : ''}`}>

@@ -116,7 +116,7 @@
     &-heading {
       font-family: $font-family-mono;
       text-align: center;
-      margin-bottom: 40px;
+      margin: 80px 0 40px 0;
       position: relative;
       color: $beige;
 
@@ -145,6 +145,7 @@
       display: flex;
       justify-content: center;
       align-items: center;
+      margin-bottom: 80px;
 
       &-main {
         transition: width 0.5s ease;
