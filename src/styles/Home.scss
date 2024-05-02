@@ -199,6 +199,7 @@
       font-weight: $font-weight-heavy;
       text-transform: uppercase;
       color: $beige;
+      width: fit-content;
     }
 
     &-line3 {
@@ -237,12 +238,6 @@
       .Home__section-link--icon {
         margin: 0 8px;
         font-size: $font-size-xxl;
-
-        &:hover {
-          i {
-            color: $teal-2;
-          }
-        }
       }
     }
   }
