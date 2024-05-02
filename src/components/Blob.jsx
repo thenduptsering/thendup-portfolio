@@ -1,4 +1,4 @@
-import { useRef } from 'react';
+import { useEffect, useRef } from 'react';
 import useMouseMove from '../hooks/useMouseMove';
 
 export default function Blob () {
@@ -6,11 +6,20 @@ export default function Blob () {
   const blobRef = useRef(null);
 
   if (blobRef?.current != null && mouseX != null && mouseY != null) {
-    blobRef?.current.animate({
+    blobRef.current.animate({
       left: `${mouseX - 250}px`,
       top: `${mouseY - 250}px`,
-    }, { duration: 5000, fill: 'forwards' });
+    }, { duration: 10000, fill: 'forwards' });
   }
+
+  useEffect(() => {
+    if (blobRef?.current != null) {
+      blobRef.current.animate({
+        left: `${mouseX - 250}px`,
+        top: `${mouseY - 250}px`,
+      }, { duration: 0, fill: 'forwards' });
+    }
+  }, []);
 
   return (
     <div className="Blob-Container">
