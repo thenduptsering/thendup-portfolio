@@ -1,6 +1,10 @@
 import anime from "animejs";
 import { useNavigate } from 'react-router-dom';
 
+import TilesBackground from "@/components/tiles/Background";
+import TileControls from "@/components/tiles/Controls";
+import TileQuotes from "@/components/tiles/Quotes";
+
 import { useResizer } from "@/hooks/useResizer";
 import { useEffect, useMemo, useState } from "react";
 
@@ -13,6 +17,7 @@ import useThrottle from '@/hooks/useThrottle';
 
 export default function Tiles () {
   const navigate = useNavigate();
+
   const [tilesToggled, setTilesToggled] = useState(false);
   const [backgroundToggled, setBackgroundToggled] = useState(false);
   const [slowLoad, setSlowLoad] = useState(false);
@@ -24,7 +29,7 @@ export default function Tiles () {
 
   const { windowWidth, windowHeight } = useResizer();
 
-  const currentQuote = useMemo(() => quotes[quoteIdx], [quoteIdx])
+  const currentQuote = useMemo(() => quotes[quoteIdx], [quoteIdx]);
 
   const [cols, rows] = useMemo(() => {
     return [Math.floor(windowWidth / 30), Math.floor(windowHeight / 30)];
@@ -123,21 +128,11 @@ export default function Tiles () {
 
   return (
     <div className="Tiles" style={style}>
-      <div className="Tiles__background" style={{
-        opacity: backgroundToggled ? 1 : 0
-      }}>
-        {imageUrls.map((url, idx) => {
-          return (
-            <div key={url} className="Tiles__background-image" style={{
-              backgroundImage: `url(${imageUrls[idx]})`,
-              opacity: idx === imageIdx ? 1 : 0,
-              backgroundPosition: `${imagePosition.x}% ${imagePosition.y}%`
-            }}></div>
-          );
-        })}
-
-        <div className="Tiles__background-overlay" />
-      </div>
+      <TilesBackground
+        imageIdx={imageIdx}
+        imagePosition={imagePosition}
+        backgroundToggled={backgroundToggled}
+      />
 
       <div className={`Tiles__main ${tilesToggled ? 'Tiles__main--toggled' : ''} ${!backgroundToggled ? 'Tiles__main--gradient' : ''}`}>
         {
@@ -147,103 +142,22 @@ export default function Tiles () {
         }
       </div>
 
-      <div className={`Tiles__body ${tilesToggled ? 'Tiles__body--show' : ''}`}>
-        <div className={`Tiles__body-quote ${fade ? 'Tiles__body-quote--fade' : ''}`}>
-          <div className="Tiles__body-quote-text">
-            &quot;{currentQuote.quote}&quot;
-          </div>
+      <TileQuotes
+        tilesToggled={tilesToggled}
+        fade={fade}
+        currentQuote={currentQuote}
+      />
 
-          <div className="Tiles__body-quote-author">
-            - {currentQuote.author}
-          </div>
-        </div>
-      </div>
-
-      <div className={`Tiles__footer ${tilesToggled && !hideControls ? 'Tiles__footer--show' : ''} ${slowLoad ? 'Tiles__footer--slow-load' : ''}`}>
-        <div
-          tabIndex="0"
-          role="button"
-          className="Key Key--long Tiles__key-sc"
-          onKeyDown={(e) => {
-            if (e.key === 'Enter' || e.key === ' ') navigate("/")
-          }}
-          onClick={() => navigate("/")}
-        >
-          <div className="Key__icon Tiles__key-sc-icon"><i className="fa-solid fa-delete-left"></i></div>
-          
-          <span className="Key__info Tiles__key-sc-label">go&nbsp;home</span>
-        </div>
-
-        <div
-          tabIndex="0"
-          role="button"
-          className="Key Tiles__key-sc"
-          onKeyDown={(e) => {
-            if (e.key === 'Enter' || e.key === ' ') handleQuotePrevious()
-          }}
-          onClick={() => handleQuotePrevious()}
-        >
-          <div className="Key__icon Tiles__key-sc-icon"><i className="fa-solid fa-caret-left" /></div>
-          
-          <span className="Key__info Tiles__key-sc-label">previous</span>
-        </div>
-
-        <div
-          tabIndex="0"
-          role="button"
-          className="Key Tiles__key-sc"
-          onKeyDown={(e) => {
-            if (e.key === 'Enter' || e.key === ' ') handleQuoteNext()
-          }}
-          onClick={() => handleQuoteNext()}
-        >
-          <div className="Key__icon Tiles__key-sc-icon"><i className="fa-solid fa-caret-right" /></div>
-          
-          <span className="Key__info Tiles__key-sc-label">next</span>
-        </div>
-
-        <div
-          tabIndex="0"
-          role="button"
-          className="Key Tiles__key-sc"
-          onKeyDown={(e) => {
-            if (e.key === 'Enter' || e.key === ' ') toggleBackground()
-          }}
-          onClick={() => toggleBackground()}
-        >
-          <div className="Key__icon Tiles__key-sc-icon"><i className="fa-solid fa-b"></i></div>
-          
-          <span className="Key__info Tiles__key-sc-label">background</span>
-        </div>
-
-        <div
-          tabIndex="0"
-          role="button"
-          className="Key Tiles__key-sc"
-          onKeyDown={(e) => {
-            if (e.key === 'Enter' || e.key === ' ') toggleFullScreen()
-          }}
-          onClick={() => toggleFullScreen()}
-        >
-          <div className="Key__icon Tiles__key-sc-icon"><i className="fa-solid fa-f"></i></div>
-          
-          <span className="Key__info Tiles__key-sc-label">fullscreen</span>
-        </div>
-
-        <div
-          tabIndex="0"
-          role="button"
-          className="Key Tiles__key-sc"
-          onKeyDown={(e) => {
-            if (e.key === 'Enter' || e.key === ' ') toggleControls()
-          }}
-          onClick={() => toggleControls()}
-        >
-          <div className="Key__icon Tiles__key-sc-icon"><i className="fa-solid fa-h"></i></div>
-          
-          <span className="Key__info Tiles__key-sc-label">hide</span>
-        </div>
-      </div>
+      <TileControls
+        tilesToggled={tilesToggled}
+        hideControls={hideControls}
+        slowLoad={slowLoad}
+        handleQuoteNext={handleQuoteNext}
+        handleQuotePrevious={handleQuotePrevious}
+        toggleControls={toggleControls}
+        toggleBackground={toggleBackground}
+        toggleFullScreen={toggleFullScreen}
+      />
     </div>
   );
 }
