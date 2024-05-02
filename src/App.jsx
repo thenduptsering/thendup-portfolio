@@ -7,6 +7,7 @@ import useScroll from './hooks/useScroll';
 
 import Blob from './components/Blob';
 import Home from './components/Home';
+import Navbar from './components/home/Navbar';
 import Logo from './components/Logo';
 
 function App() {
@@ -70,7 +71,7 @@ function App() {
   }
 
   const loadPage = () => {
-    if (!allLoaded) return;
+    if (showingAppLoader || loadingNavBar || loadingHero) return;
 
     setLoadingNavBar(false);
     setLoadedNavBar(false);
@@ -108,65 +109,11 @@ function App() {
 
           <div className={`App ${showingAppLoader ? 'App--hide' : ''}`}>
             <div className={`App__navbar ${stickNavbar ? 'App__navbar--sticky' : ''}`}>
-              <nav id="desktop-nav" className={`Navbar ${loadingNavBar ? 'Navbar--loading' : ''} ${loadedNavBar ? 'Navbar--loaded' : ''}`}>
-                <div role="button" onClick={loadPage} className="Navbar__logo" style={{animationDelay: '0ms'}}>
-                  <Logo />
-                </div>
-
-                <div className="Navbar__links">
-                  <ScrollLink
-                    className="Navbar__link"
-                    to="about"
-                    style={{ animationDelay: '200ms' }}
-                    smooth={true}
-                    duration={500}
-                  >
-                    About me
-                  </ScrollLink>
-
-                  <ScrollLink
-                    className="Navbar__link"
-                    to="experience"
-                    style={{ animationDelay: '400ms' }}
-                    smooth={true}
-                    duration={500}
-                  >
-                    Experience
-                  </ScrollLink>
-
-                  <ScrollLink
-                    className="Navbar__link"
-                    to="skills"
-                    style={{ animationDelay: '600ms' }}
-                    smooth={true}
-                    duration={500}
-                  >
-                    Skills
-                  </ScrollLink>
-
-                  {/* <ScrollLink
-                    className="Navbar__link"
-                    to="projects"
-                    style={{ animationDelay: '800ms' }}
-                    smooth={true}
-                    duration={500}
-                  >
-                    Projects
-                  </ScrollLink> */}
-
-                  <ScrollLink
-                    className="Navbar__link"
-                    to="contact"
-                    style={{ animationDelay: '800ms' }}
-                    smooth={true}
-                    duration={500}
-                  >
-                    Contact
-                  </ScrollLink>
-
-                  <button className="Navbar__button Button Button--default" onClick={downloadResume} style={{animationDelay: '1200ms'}}>Resume</button>
-                </div>
-              </nav>
+              <Navbar
+                loadingNavBar={loadingNavBar}
+                loadedNavBar={loadedNavBar}
+                loadPage={loadPage}
+              />
 
               <nav id="hamburger-nav" className="Hamburger-Menu">
                 <div className="Hamburger-Menu__logo">
