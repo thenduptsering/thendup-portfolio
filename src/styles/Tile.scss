@@ -203,7 +203,7 @@ $c7: #ae2012;
   }
 }
 
-@media screen and (max-width: $min-device-width) {
+@media screen and (max-width: $small-device-width) {
   .Tiles {
     &__body-quote {
       &-text {

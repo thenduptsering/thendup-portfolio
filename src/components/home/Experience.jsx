@@ -37,7 +37,7 @@ export default function Experience () {
                     </div>
 
                     <div className="Job__heading-period">
-                      {job.period}
+                      [&nbsp;{job.period}&nbsp;]
                     </div>
                   </div>
 

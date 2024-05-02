@@ -56,7 +56,7 @@
   }
 }
 
-@media screen and (max-width: $min-device-width) {
+@media screen and (max-width: $small-device-width) {
   .Navbar {
     display: none;
   }

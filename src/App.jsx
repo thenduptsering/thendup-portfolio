@@ -5,6 +5,7 @@ import { Link as ScrollLink } from 'react-scroll';
 import downloadResume from './helpers/downloadResume';
 import useScroll from './hooks/useScroll';
 
+import Blob from './components/Blob';
 import Home from './components/Home';
 import Logo from './components/Logo';
 
@@ -17,7 +18,7 @@ function App() {
   const [loadedNavBar, setLoadedNavBar] = useState(false);
   const [loadingHero, setLoadingHero] = useState(false);
   const [allLoaded, setAllLoaded] = useState(false);
-  const [showMenu, setShowMenu] = useState(false);
+  const [showHamburger, setShowHamburger] = useState(false);
   const [stickNavbar, setStickNavbar] = useState(false);
   
   const isHome = location.pathname === '/';
@@ -30,8 +31,12 @@ function App() {
     }
   }, [scrollDir, scrollY]);
 
-  const toggleMenu = () => {
-    setShowMenu(!showMenu)
+  const closeHamburger = () => {
+    setShowHamburger(false)
+  }
+
+  const openHamburger = () => {
+    setShowHamburger(true)
   }
 
   const initialLoad = () => {
@@ -94,6 +99,10 @@ function App() {
           <div className={`App-Loader ${showingAppLoader ? 'App-Loader--loading' : ''}`}>
             <Logo animationClassName="Logo--animate" />
           </div>
+
+          {!showingAppLoader && (
+            <Blob />
+          )}
 
           <div className={`App ${showingAppLoader ? 'App--hide' : ''}`}>
             <div className={`App__navbar ${stickNavbar ? 'App__navbar--sticky' : ''}`}>
@@ -162,50 +171,51 @@ function App() {
                   <Logo />
                 </div>
 
-                <button className="Hamburger-Menu__button Button Button--icon" onClick={toggleMenu}>
-                  {showMenu ? (
-                    <i className="fa-solid fa-x" />
-                  ) : (
-                    <i className="fa-solid fa-bars" />
-                  )}
+                <button className="Hamburger-Menu__button Button Button--icon" onClick={openHamburger}>
+                  <i className="fa-solid fa-bars" />
                 </button>
 
-                {showMenu && (
-                  <div className="Hamburger-Menu__links">
+                <div className={`Hamburger-Menu__slideover ${showHamburger ? 'Hamburger-Menu__slideover--open' : ''}`}>
+                  <div className="Hamburger-Menu__slideover-close">
+                    <button className="Hamburger-Menu__button Button Button--icon" onClick={closeHamburger}>
+                      <i className="fa-solid fa-x" />
+                    </button>
+                  </div>
+
+                  <div className="Hamburger-Menu__slideover-links">
                     <ScrollLink
-                      className="Hamburger-Menu__link"
+                      className="Hamburger-Menu__slideover-link"
                       to="about"
-                      style={{ animationDelay: '200ms' }}
                       smooth={true}
                       duration={500}
+                      onClick={closeHamburger}
                     >
                       About me
                     </ScrollLink>
 
                     <ScrollLink
-                      className="Hamburger-Menu__link"
+                      className="Hamburger-Menu__slideover-link"
                       to="experience"
-                      style={{ animationDelay: '400ms' }}
                       smooth={true}
                       duration={500}
+                      onClick={closeHamburger}
                     >
                       Experience
                     </ScrollLink>
 
                     <ScrollLink
-                      className="Hamburger-Menu__link"
+                      className="Hamburger-Menu__slideover-link"
                       to="skills"
-                      style={{ animationDelay: '600ms' }}
                       smooth={true}
                       duration={500}
+                      onClick={closeHamburger}
                     >
                       Skills
                     </ScrollLink>
 
                     {/* <ScrollLink
-                      className="Hamburger-Menu__link"
+                      className="Hamburger-Menu__slideover-link"
                       to="projects"
-                      style={{ animationDelay: '800ms' }}
                       smooth={true}
                       duration={500}
                     >
@@ -213,16 +223,18 @@ function App() {
                     </ScrollLink> */}
 
                     <ScrollLink
-                      className="Hamburger-Menu__link"
+                      className="Hamburger-Menu__slideover-link"
                       to="contact"
-                      style={{ animationDelay: '800ms' }}
                       smooth={true}
                       duration={500}
+                      onClick={closeHamburger}
                     >
-                      Contact
+                      Contact me
                     </ScrollLink>
+
+                    <button className="Hamburger-Menu__slideover-button Button Button--default" onClick={downloadResume}>Download resume</button>
                   </div>
-                )}
+                </div>
               </nav>
             </div>
 

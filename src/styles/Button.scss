@@ -20,6 +20,7 @@
     color: $teal-1;
     border: 0;
     padding: 0;
+    font-size: $font-size-icon;
 
     &:hover {
       background-color: transparent;
@@ -50,7 +51,8 @@
   }
 
   &:hover {
-    background-color: $yellow;
-    color: $teal-4;
+    background-color: $beige;
+    border-color: $beige;
+    color: $teal-5;
   }
 }
