@@ -1,13 +1,13 @@
 import { useEffect, useState } from 'react';
 import { Outlet, useLocation } from 'react-router-dom';
 
-import useScroll from './hooks/useScroll';
+import useScroll from '@/hooks/useScroll';
 
-import Blob from './components/Blob';
-import Home from './components/Home';
-import Logo from './components/Logo';
-import HamburgerNav from './components/home/HamburgerNav';
-import Navbar from './components/home/Navbar';
+import Blob from '@/components/Blob';
+import Home from '@/components/Home';
+import Logo from '@/components/Logo';
+import HamburgerNav from '@/components/home/HamburgerNav';
+import Navbar from '@/components/home/Navbar';
 
 function App() {
   const location = useLocation();

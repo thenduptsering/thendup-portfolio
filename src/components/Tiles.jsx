@@ -1,15 +1,15 @@
 import anime from "animejs";
 import { useNavigate } from 'react-router-dom';
 
+import { useResizer } from "@/hooks/useResizer";
 import { useEffect, useMemo, useState } from "react";
-import { useResizer } from "../hooks/useResizer";
 
-import imageUrls from '../constants/images.json';
-import quotes from '../constants/quotes.json';
+import imageUrls from '@/constants/images.json';
+import quotes from '@/constants/quotes.json';
 
-import mod from '../helpers/mod';
-import toggleFullScreen from '../helpers/toggleFullScreen';
-import useThrottle from '../hooks/useThrottle';
+import mod from '@/helpers/mod';
+import toggleFullScreen from '@/helpers/toggleFullScreen';
+import useThrottle from '@/hooks/useThrottle';
 
 export default function Tiles () {
   const navigate = useNavigate();

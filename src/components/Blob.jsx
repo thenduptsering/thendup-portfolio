@@ -1,5 +1,5 @@
+import useMouseMove from '@/hooks/useMouseMove';
 import { useEffect, useRef, useState } from 'react';
-import useMouseMove from '../hooks/useMouseMove';
 
 const random = (min, max) => Math.floor(min + Math.random() * (max - min));
 const remain = (n) => 100 - n;

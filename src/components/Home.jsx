@@ -1,10 +1,10 @@
-import AboutMe from './home/AboutMe';
-import Experience from './home/Experience';
-import Hero from './home/Hero';
-import Skills from './home/Skills';
-// import Projects from './home/Projects';
-import ContactMe from './home/ContactMe';
-import HomeFooter from './home/HomeFooter';
+import AboutMe from '@/components/home/AboutMe';
+import Experience from '@/components/home/Experience';
+import Hero from '@/components/home/Hero';
+import Skills from '@/components/home/Skills';
+// import Projects from '@/components/home/Projects';
+import ContactMe from '@/components/home/ContactMe';
+import HomeFooter from '@/components/home/HomeFooter';
 
 export default function Home ({ allLoaded, loadingHero = false }) {
   return (

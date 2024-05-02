@@ -360,6 +360,14 @@
       justify-content: center;
       align-items: center;
 
+      &--hero {
+        .Home__section {
+          &-line2 {
+            pointer-events: none;
+          }
+        }
+      }
+
       &--about {
         .Home__section-info {
           &-right {

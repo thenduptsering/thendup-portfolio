@@ -8,7 +8,7 @@
     right: -100%;
     width: 50vw;
     height: 100vh;
-    transition: right 0.5s ease;
+    transition: all 0.5s ease;
     background: $teal-3;
 
     &--open {
@@ -84,5 +84,13 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
+  }
+}
+
+@media screen and (max-width: $min-device-width) {
+  .Hamburger-Menu {
+    &__slideover {
+      width: 75vw;
+    }
   }
 }

@@ -1,8 +1,8 @@
 import { Link as ScrollLink } from 'react-scroll';
 
-import Logo from '../Logo';
+import Logo from '@/components/Logo';
 
-import downloadResume from '../../helpers/downloadResume';
+import downloadResume from '@/helpers/downloadResume';
 
 export default function Navbar ({
   loadingNavBar,

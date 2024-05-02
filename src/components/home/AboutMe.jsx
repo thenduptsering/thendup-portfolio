@@ -1,8 +1,8 @@
 import { useEffect, useRef, useState } from 'react';
 
-import useIsOnScreen from '../../hooks/useIsOnScreen';
+import useIsOnScreen from '@/hooks/useIsOnScreen';
 
-import { DATE_STARTED_WORKING, millisecondsYear } from '../../constants/constants';
+import { DATE_STARTED_WORKING, millisecondsYear } from '@/constants/constants';
 
 const now = new Date();
 const experienceStart = new Date(DATE_STARTED_WORKING);

@@ -1,6 +1,6 @@
 import { useRef, useState } from 'react';
 
-import downloadResume from '../../helpers/downloadResume';
+import downloadResume from '@/helpers/downloadResume';
 
 const mainHero = 'THENDUP TSERING';
 const alphanums = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789';

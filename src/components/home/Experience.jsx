@@ -1,8 +1,8 @@
 import { useEffect, useRef, useState } from 'react';
 
-import useIsOnScreen from '../../hooks/useIsOnScreen';
+import useIsOnScreen from '@/hooks/useIsOnScreen';
 
-import jobs from '../../constants/jobs.json';
+import jobs from '@/constants/jobs.json';
 
 export default function Experience () {
   const ref = useRef(null);
