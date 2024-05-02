@@ -1,14 +1,13 @@
 import { useEffect, useState } from 'react';
 import { Outlet, useLocation } from 'react-router-dom';
-import { Link as ScrollLink } from 'react-scroll';
 
-import downloadResume from './helpers/downloadResume';
 import useScroll from './hooks/useScroll';
 
 import Blob from './components/Blob';
 import Home from './components/Home';
-import Navbar from './components/home/Navbar';
 import Logo from './components/Logo';
+import HamburgerNav from './components/home/HamburgerNav';
+import Navbar from './components/home/Navbar';
 
 function App() {
   const location = useLocation();
@@ -19,7 +18,6 @@ function App() {
   const [loadedNavBar, setLoadedNavBar] = useState(false);
   const [loadingHero, setLoadingHero] = useState(false);
   const [allLoaded, setAllLoaded] = useState(false);
-  const [showHamburger, setShowHamburger] = useState(false);
   const [stickNavbar, setStickNavbar] = useState(false);
   
   const isHome = location.pathname === '/';
@@ -31,14 +29,6 @@ function App() {
       setStickNavbar(false);
     }
   }, [scrollDir, scrollY]);
-
-  const closeHamburger = () => {
-    setShowHamburger(false)
-  }
-
-  const openHamburger = () => {
-    setShowHamburger(true)
-  }
 
   const initialLoad = () => {
     return new Promise((resolve) => {
@@ -115,76 +105,7 @@ function App() {
                 loadPage={loadPage}
               />
 
-              <nav id="hamburger-nav" className="Hamburger-Menu">
-                <div className="Hamburger-Menu__logo">
-                  <Logo />
-                </div>
-
-                <button className="Hamburger-Menu__button Button Button--icon" onClick={openHamburger}>
-                  <i className="fa-solid fa-bars" />
-                </button>
-
-                <div className={`Hamburger-Menu__slideover ${showHamburger ? 'Hamburger-Menu__slideover--open' : ''}`}>
-                  <div className="Hamburger-Menu__slideover-close">
-                    <button className="Hamburger-Menu__button Button Button--icon" onClick={closeHamburger}>
-                      <i className="fa-solid fa-x" />
-                    </button>
-                  </div>
-
-                  <div className="Hamburger-Menu__slideover-links">
-                    <ScrollLink
-                      className="Hamburger-Menu__slideover-link"
-                      to="about"
-                      smooth={true}
-                      duration={500}
-                      onClick={closeHamburger}
-                    >
-                      About me
-                    </ScrollLink>
-
-                    <ScrollLink
-                      className="Hamburger-Menu__slideover-link"
-                      to="experience"
-                      smooth={true}
-                      duration={500}
-                      onClick={closeHamburger}
-                    >
-                      Experience
-                    </ScrollLink>
-
-                    <ScrollLink
-                      className="Hamburger-Menu__slideover-link"
-                      to="skills"
-                      smooth={true}
-                      duration={500}
-                      onClick={closeHamburger}
-                    >
-                      Skills
-                    </ScrollLink>
-
-                    {/* <ScrollLink
-                      className="Hamburger-Menu__slideover-link"
-                      to="projects"
-                      smooth={true}
-                      duration={500}
-                    >
-                      Projects
-                    </ScrollLink> */}
-
-                    <ScrollLink
-                      className="Hamburger-Menu__slideover-link"
-                      to="contact"
-                      smooth={true}
-                      duration={500}
-                      onClick={closeHamburger}
-                    >
-                      Contact me
-                    </ScrollLink>
-
-                    <button className="Hamburger-Menu__slideover-button Button Button--default" onClick={downloadResume}>Download resume</button>
-                  </div>
-                </div>
-              </nav>
+              <HamburgerNav />
             </div>
 
             <div className="App__body">
