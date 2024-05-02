@@ -17,13 +17,13 @@ Welcome to my portfolio website! This repository contains the source code for my
 1. Clone the repository:
 
 ```
-git clone https://github.com/thendupcodes/portfolio-website.git
+git clone https://github.com/thendupcodes/thendup-portfolio.git
 ```
 
 2. Navigate to the project directory:
 
 ```
-cd portfolio-website
+cd thendup-portfolio
 ```
 
 3. Install dependencies
