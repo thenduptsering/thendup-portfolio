@@ -15,7 +15,7 @@ function App() {
   const [loadingNavBar, setLoadingNavBar] = useState(false);
   const [loadedNavBar, setLoadedNavBar] = useState(false);
   const [loadingHero, setLoadingHero] = useState(false);
-  const [allLoaded, setAllLoaded] = useState(false);
+  const [loadedHero, setLoadedHero] = useState(false);
   const [stickNavbar, setStickNavbar] = useState(false);
 
   useEffect(() => {
@@ -31,49 +31,52 @@ function App() {
       setTimeout(() => {
         setShowingAppLoader(false);
         resolve();
-      }, 3600);
+      }, 4000);
+      // Animation = 3s + Delay on logo = 1s
     })
   }
 
   const loadNavBar = () => {
     setLoadingNavBar(true);
-    return new Promise((resolve) => {
-      setTimeout(() => {
-        setLoadingNavBar(false);
-        setLoadedNavBar(true);
-        resolve();
-      }, 2200);
-    })
+    setTimeout(() => {
+      setLoadingNavBar(false);
+      setLoadedNavBar(true);
+    }, 2200); 
+    // Last elem => Resume button
+    // Animtation = 1s + delay = 1200ms
   }
 
   const loadHero = () => {
     setLoadingHero(true);
-    return new Promise((resolve) => {
-      setTimeout(() => {
-        setLoadingHero(false);
-        resolve();
-      }, 2000);
-    })
+    setTimeout(() => {
+      setLoadingHero(false);
+      setLoadedHero(true);
+    }, 1600);
+    // Last elem => Download button
+    // Animtation = 1s + delay = 600ms
+  }
+
+  const loadHome = () => {
+    loadHero();
+
+    setTimeout(() => {
+      // Start Navbar animation while hero is animating
+      loadNavBar();
+    }, 1000);
   }
 
   const loadPage = () => {
     if (loadingNavBar || loadingHero) return;
 
+    setLoadingHero(false);
+    setLoadedHero(false);
     setLoadingNavBar(false);
     setLoadedNavBar(false);
-    setLoadingHero(false);
-    setAllLoaded(false);
     setShowingAppLoader(true);
 
     initialLoad()
       .then(() => {
-        return loadNavBar();
-      })
-      .then(() => {
-        return loadHero();
-      })
-      .then(() => {
-        setAllLoaded(true);
+        loadHome();
       })
   }
 
@@ -103,7 +106,7 @@ function App() {
         </div>
 
         <div className="App__body">
-          <Home allLoaded={allLoaded} loadingHero={loadingHero} />
+          <Home standBy={loadedHero} loadingHero={loadingHero} />
         </div>
 
         <div className="App__footer">

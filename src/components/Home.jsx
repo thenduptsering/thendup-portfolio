@@ -6,12 +6,12 @@ import HomeFooter from '@/components/home/HomeFooter';
 import Projects from '@/components/home/Projects';
 import Skills from '@/components/home/Skills';
 
-export default function Home ({ allLoaded, loadingHero = false }) {
+export default function Home ({ standBy, loadingHero = false }) {
   return (
-    <div className={`Home ${allLoaded ? '' : 'Home--standby' } ${loadingHero ? 'Home--loading' : ''}`}>
+    <div className={`Home ${standBy ? '' : 'Home--standby' } ${loadingHero ? 'Home--loading' : ''}`}>
       <Hero />
 
-      {allLoaded && (
+      {standBy && (
         <>
           <AboutMe />
 
