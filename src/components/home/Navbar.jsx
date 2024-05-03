@@ -46,7 +46,7 @@ export default function Navbar ({
           Skills
         </ScrollLink>
 
-        {/* <ScrollLink
+        <ScrollLink
           className="Navbar__link"
           to="projects"
           style={{ animationDelay: '800ms' }}
@@ -54,12 +54,12 @@ export default function Navbar ({
           duration={500}
         >
           Projects
-        </ScrollLink> */}
+        </ScrollLink>
 
         <ScrollLink
           className="Navbar__link"
           to="contact"
-          style={{ animationDelay: '800ms' }}
+          style={{ animationDelay: '1000ms' }}
           smooth={true}
           duration={500}
         >

@@ -1,5 +1,6 @@
 import { useEffect, useRef, useState } from 'react';
 
+import navigateAnchor from '@/helpers/navigateAnchor';
 import useIsOnScreen from '@/hooks/useIsOnScreen';
 
 import projects from '@/constants/projects.json';
@@ -30,18 +31,65 @@ export default function Projects () {
           <div className="Home__section-info-projects">
             {projects.map((project) => {
                 return (
-                  <div key={project.key} className="Project">
-                    <div className="Project__icon">
-                      <i className="fa-solid fa-graduation-cap" />
+                  <div
+                    role="button"
+                    onClick={() => {
+                      if (project.url != null && project.key == 'inProgress') return;
+
+                      navigateAnchor(project.url);
+                    }}
+                    key={project.key}
+                    className={`Project ${project.key === 'inProgress' ? 'Project--in-progress' : ''}`}
+                  >
+                    <div className="Project__header">
+
+
+                      <div className="Project__header-icons">
+                        {project.github != null && (
+                          <a
+                            onClick={(e) => e.stopPropagation()}
+                            target="blank"
+                            rel="noopener noreferrer"
+                            href={project.github}
+                            className="Project__header-icon Project__header-icon--github"
+                          >
+                            <i className="fa-brands fa-github"></i>
+                          </a>
+                        )}
+
+                        {project.url != null && (
+                          <a
+                            onClick={(e) => e.stopPropagation()}
+                            target="blank"
+                            rel="noopener noreferrer"
+                            href={project.url}
+                            className="Project__header-icon Project__header-icon--url"
+                          >
+                            <i className="fa-solid fa-up-right-from-square"></i>
+                          </a>
+                        )}
+                      </div>
                     </div>
 
-                    <h3 className="Project__title">
-                      {project.label}
-                    </h3>
+                    <div className="Project__body">
+                      <h3 className="Project__title">
+                        {project.label}
+                      </h3>
 
-                    <p className="Project__details">
-                      {project.description}
-                    </p>
+                      <p className="Project__details">
+                        {project.description}
+                      </p>
+                    </div>
+
+                    <div className="Project__footer">
+                      <div className="Project__tech-pills">
+                        {project.tools.map((tool) => {
+                          return (
+                            <div key={`${project.key}-${tool}`} className="Project__tech-pill">{tool}</div>
+                          )
+                        })}
+                      </div>
+                    </div>
                   </div>
                 );
               })}

@@ -45,7 +45,7 @@ export default function AboutMe () {
               My name is Thendup and I&apos;m a senior front-end software engineer with over {yearsSince} years of hands-on experience. My interest in web development started back in 2013 when I took a Computer Science course in university and enjoyed it so much that I ended up switching majors – best decision ever! I&apos;ve had the pleasure of working with companies big and small during my co-op terms, and eventually joined <a className="Home__section-text-link" href="https://www.thinkdataworks.com" target="blank">ThinkData Works</a> full time after graduation. 
             </p>
             <p className="Home__section-text-para">
-              Over the years, I have led and mentored teams of varying sizes, successfully spearheaded dozens of front-end projects for flagship enterprise software at the companies I&apos;ve worked with, as well as excelled in triaging and resolving hundreds of production-level issues. One of my most successful projects was at ThinkData Works and involved a year-long migration of the entire front-end framework from Angular to React w/TypeScript which revitalized my team&apos;s ability and efficiency in building subsequent front-end features.
+              Over the years, I have led and mentored teams of varying sizes, successfully spearheaded dozens of front-end projects for flagship enterprise software at the companies I&apos;ve worked with, as well as excelled in triaging and resolving hundreds of production-level issues.
             </p>
             <p className="Home__section-text-para">
               I am currently on the lookout for my next adventure, eager to bring my skills and passion to a new team.

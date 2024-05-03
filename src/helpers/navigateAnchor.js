@@ -1,9 +1,8 @@
-const RESUME_URL = '/_thenduptsering_resume.pdf';
-
-const downloadResume = () => {
+const downloadResume = (url) => {
   const anchor = document.createElement('a')
-  anchor.href = RESUME_URL
-  anchor.download = RESUME_URL.split('/').pop()
+  anchor.href = url;
+  anchor.target='blank';
+  anchor.rel='noopener noreferrer';
   anchor.style='display: none';
   document.body.appendChild(anchor)
   anchor.click()

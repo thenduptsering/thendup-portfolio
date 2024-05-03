@@ -237,7 +237,7 @@
     &-socials-container {
       .Home__section-link--icon {
         margin: 0 8px;
-        font-size: $font-size-xxl;
+        font-size: $font-size-xxxl;
       }
     }
   }
@@ -390,6 +390,15 @@
               grid-template-columns: repeat(2, 1fr);
               gap: 32px 40px;
             }
+          }
+        }
+      }
+
+      &--projects {
+        .Home__section-info {
+          &-projects {
+            grid-template-columns: 1fr;
+            gap: 24px 32px;
           }
         }
       }

@@ -23,16 +23,6 @@
   }
 }
 
-@keyframes slide {
-  from {
-    background-position: 0% center;
-  }
-
-  to {
-    background-position: -200% center;
-  }
-}
-
 @keyframes slide-left-rotate {
   0% {
     transform: translate(1000%, -100%);

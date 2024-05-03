@@ -9,7 +9,7 @@ export default function HomeFooter () {
             className="Home__section-link Home__section-link--icon"
             href="https://www.linkedin.com/in/thendup-tsering"
             target="_blank"
-            rel="noreferrer"
+            rel="noopener noreferrer"
           >
             <i className="fa-brands fa-linkedin" />
           </a>
@@ -20,7 +20,7 @@ export default function HomeFooter () {
             className="Home__section-link Home__section-link--icon"
             href="https://github.com/thenduptsering"
             target="_blank"
-            rel="noreferrer"
+            rel="noopener noreferrer"
           >
             <i className="fa-brands fa-github" />
           </a>
@@ -31,7 +31,7 @@ export default function HomeFooter () {
             className="Home__section-link Home__section-link--icon"
             href="https://www.instagram.com/thendup.tsering"
             target="_blank"
-            rel="noreferrer"
+            rel="noopener noreferrer"
           >
             <i className="fa-brands fa-instagram" />
           </a>
@@ -42,7 +42,7 @@ export default function HomeFooter () {
             className="Home__section-link Home__section-link--icon"
             href="https://twitter.com/thenduptsering"
             target="_blank"
-            rel="noreferrer"
+            rel="noopener noreferrer"
           >
             <i className="fa-brands fa-x-twitter" />
           </a>

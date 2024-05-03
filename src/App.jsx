@@ -1,5 +1,4 @@
 import { useEffect, useState } from 'react';
-import { Outlet, useLocation } from 'react-router-dom';
 
 import useScroll from '@/hooks/useScroll';
 
@@ -10,17 +9,14 @@ import HamburgerNav from '@/components/home/HamburgerNav';
 import Navbar from '@/components/home/Navbar';
 
 function App() {
-  const location = useLocation();
   const { scrollY, scrollDir } = useScroll();
 
   const [showingAppLoader, setShowingAppLoader] = useState(true);
   const [loadingNavBar, setLoadingNavBar] = useState(false);
   const [loadedNavBar, setLoadedNavBar] = useState(false);
   const [loadingHero, setLoadingHero] = useState(false);
-  const [allLoaded, setAllLoaded] = useState(false);
+  const [loadedHero, setLoadedHero] = useState(false);
   const [stickNavbar, setStickNavbar] = useState(false);
-  
-  const isHome = location.pathname === '/';
 
   useEffect(() => {
     if (scrollDir === 'up' && scrollY > 200) {
@@ -35,49 +31,52 @@ function App() {
       setTimeout(() => {
         setShowingAppLoader(false);
         resolve();
-      }, 3600);
+      }, 4000);
+      // Animation = 3s + Delay on logo = 1s
     })
   }
 
   const loadNavBar = () => {
     setLoadingNavBar(true);
-    return new Promise((resolve) => {
-      setTimeout(() => {
-        setLoadingNavBar(false);
-        setLoadedNavBar(true);
-        resolve();
-      }, 2200);
-    })
+    setTimeout(() => {
+      setLoadingNavBar(false);
+      setLoadedNavBar(true);
+    }, 2200); 
+    // Last elem => Resume button
+    // Animtation = 1s + delay = 1200ms
   }
 
   const loadHero = () => {
     setLoadingHero(true);
-    return new Promise((resolve) => {
-      setTimeout(() => {
-        setLoadingHero(false);
-        resolve();
-      }, 2000);
-    })
+    setTimeout(() => {
+      setLoadingHero(false);
+      setLoadedHero(true);
+    }, 1600);
+    // Last elem => Download button
+    // Animtation = 1s + delay = 600ms
+  }
+
+  const loadHome = () => {
+    loadHero();
+
+    setTimeout(() => {
+      // Start Navbar animation while hero is animating
+      loadNavBar();
+    }, 1000);
   }
 
   const loadPage = () => {
     if (loadingNavBar || loadingHero) return;
 
+    setLoadingHero(false);
+    setLoadedHero(false);
     setLoadingNavBar(false);
     setLoadedNavBar(false);
-    setLoadingHero(false);
-    setAllLoaded(false);
     setShowingAppLoader(true);
 
     initialLoad()
       .then(() => {
-        return loadNavBar();
-      })
-      .then(() => {
-        return loadHero();
-      })
-      .then(() => {
-        setAllLoaded(true);
+        loadHome();
       })
   }
 
@@ -87,43 +86,33 @@ function App() {
 
   return (
     <div className="App-Container">
-      {isHome ? (
-        <>
-          <div className={`App-Loader ${showingAppLoader ? 'App-Loader--loading' : ''}`}>
-            <Logo animationClassName="Logo--animate" />
-          </div>
+      <div className={`App-Loader ${showingAppLoader ? 'App-Loader--loading' : ''}`}>
+        <Logo animationClassName="Logo--animate" />
+      </div>
 
-          {!showingAppLoader && (
-            <Blob />
-          )}
-
-          <div className={`App ${showingAppLoader ? 'App--hide' : ''}`}>
-            <div className={`App__navbar ${stickNavbar ? 'App__navbar--sticky' : ''}`}>
-              <Navbar
-                loadingNavBar={loadingNavBar}
-                loadedNavBar={loadedNavBar}
-                loadPage={loadPage}
-              />
-
-              <HamburgerNav />
-            </div>
-
-            <div className="App__body">
-              <Home allLoaded={allLoaded} loadingHero={loadingHero} />
-            </div>
-
-            <div className="App__footer">
-              <p>Built by Thendup Tsering</p>
-            </div>
-          </div>
-        </>
-      ) : (
-        <div className="App">
-          <div className="App__body">
-            <Outlet />
-          </div>
-        </div>
+      {!showingAppLoader && (
+        <Blob />
       )}
+
+      <div className={`App ${showingAppLoader ? 'App--hide' : ''}`}>
+        <div className={`App__navbar ${stickNavbar ? 'App__navbar--sticky' : ''}`}>
+          <Navbar
+            loadingNavBar={loadingNavBar}
+            loadedNavBar={loadedNavBar}
+            loadPage={loadPage}
+          />
+
+          <HamburgerNav />
+        </div>
+
+        <div className="App__body">
+          <Home standBy={loadedHero} loadingHero={loadingHero} />
+        </div>
+
+        <div className="App__footer">
+          <p>Built by Thendup Tsering</p>
+        </div>
+      </div>
     </div>
   )
 }
