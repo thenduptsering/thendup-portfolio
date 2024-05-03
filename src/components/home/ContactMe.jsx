@@ -21,7 +21,7 @@ export default function ContactMe () {
 
   return (
     <section ref={ref} id="contact" className={`Home__section Home__section--contact ${!animated ? 'Home__section--standby' : ''} ${animate ? 'Home__section--animate' : ''}`}>
-      <h2 className="Home__section-heading">get in touch</h2>
+      <h2 className="Home__section-heading">contact me</h2>
       
       <div className="Home__section-info">
         <div className="Home__section-info-main">
