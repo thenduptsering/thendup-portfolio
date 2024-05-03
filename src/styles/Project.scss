@@ -5,17 +5,67 @@
   border-radius: $border-radius-box;
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: space-between;
   transition: all 0.3s ease;
 
   &:hover {
     transform: translateY(-8px);
-    border: 1px solid $beige;
+    background: transparentize($dark-gray, 0.5);
+    border: 1px solid transparentize($dark-gray, 0.5);
+
+    ~ .sibling {
+      background: black;
+    }
 
     .Project {
       &__title {
         color: $beige;
       }
     }
+  }
+
+  &__header {
+    &-icons {
+      display: flex;
+      justify-content: end;
+    }
+
+    &-icon {
+      font-size: $font-size-xxl;
+
+      &:last-child {
+        margin-left: 12px;
+      }
+
+      &:after {
+        display: none;
+      }
+    }
+  }
+
+  &__tech-pills {
+    display: flex;
+  }
+
+  &__tech-pill {
+    padding: 4px 8px;
+    margin: 4px;
+    font-size: $font-size-xs;
+    border-radius: $border-radius-box-small;
+    border: 1px solid $body-color;
+
+    &:first-child {
+      margin-left: 0;
+    }
+
+    &:last-child {
+      margin-right: 0;
+    }
+  }
+}
+
+.Home__section-info-projects:has(.Project:hover) {
+  .Project:not(:hover) {
+    opacity: 0.5;
   }
 }

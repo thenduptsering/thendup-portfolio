@@ -394,6 +394,15 @@
         }
       }
 
+      &--projects {
+        .Home__section-info {
+          &-projects {
+            grid-template-columns: 1fr;
+            gap: 24px 32px;
+          }
+        }
+      }
+
       &--experience,
       &--contact {
         .Home__section-info-main {
