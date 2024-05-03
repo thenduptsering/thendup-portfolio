@@ -23,7 +23,7 @@ export default function Skills () {
 
   return (
     <section ref={ref} id="skills" className={`Home__section Home__section--skills ${!animated ? 'Home__section--standby' : ''} ${animate ? 'Home__section--animate' : ''}`}>
-      <h2 className="Home__section-heading">technologies</h2>
+      <h2 className="Home__section-heading">skills</h2>
       
       <div className="Home__section-info">
         <div className="Home__section-info-main">

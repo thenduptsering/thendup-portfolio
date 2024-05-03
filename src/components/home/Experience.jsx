@@ -23,7 +23,7 @@ export default function Experience () {
 
   return (
     <section ref={ref} id="experience" className={`Home__section Home__section--experience ${!animated ? 'Home__section--standby' : ''} ${animate ? 'Home__section--animate' : ''}`}>
-      <h2 className="Home__section-heading">work experience</h2>
+      <h2 className="Home__section-heading">experience</h2>
       
       <div className="Home__section-info">
         <div className="Home__section-info-main">

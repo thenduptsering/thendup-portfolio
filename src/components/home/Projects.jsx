@@ -24,7 +24,7 @@ export default function Projects () {
 
   return (
     <section ref={ref} id="projects" className={`Home__section Home__section--projects ${!animated ? 'Home__section--standby' : ''} ${animate ? 'Home__section--animate' : ''}`}>
-      <h2 className="Home__section-heading">some things i have worked on</h2>
+      <h2 className="Home__section-heading">projects</h2>
       
       <div className="Home__section-info">
         <div className="Home__section-info-main">
@@ -34,12 +34,12 @@ export default function Projects () {
                   <div
                     role="button"
                     onClick={() => {
-                      if (project.url != null && project.key == 'inProgress') return;
+                      if (project.url == null) return;
 
                       navigateAnchor(project.url);
                     }}
                     key={project.key}
-                    className={`Project ${project.key === 'inProgress' ? 'Project--in-progress' : ''}`}
+                    className={`Project ${project.url != null ? 'Project--clickable' : ''} ${project.key === 'inProgress' ? 'Project--in-progress' : ''}`}
                   >
                     <div className="Project__header">
 
