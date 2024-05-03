@@ -32,8 +32,8 @@ function App() {
       setTimeout(() => {
         setShowingAppLoader(false);
         resolve();
-      }, 4000);
-      // Animation = 3s + Delay on logo = 1s
+      }, 4500);
+      // Animation = 3s + Delay on logo = 1s + 500ms simmer
     })
   }
 

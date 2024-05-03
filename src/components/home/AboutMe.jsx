@@ -39,7 +39,7 @@ export default function AboutMe () {
         <div className="Home__section-info-right">
           <div className="Home__section-info-text">
             <p className="Home__section-text-para">
-              Hello! ✌️
+              Hello! 🤘
             </p>
             <p className="Home__section-text-para">
               My name is Thendup and I&apos;m a senior front-end software engineer with over {yearsSince} years of hands-on experience. My interest in web development started back in 2013 when I took a Computer Science course in university and enjoyed it so much that I ended up switching majors – best decision ever! I&apos;ve had the pleasure of working with companies big and small during my co-op terms, and eventually joined <a className="Home__section-text-link" href="https://www.thinkdataworks.com" target="blank">ThinkData Works</a> full time after graduation. 

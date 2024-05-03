@@ -40,10 +40,8 @@ export default function Projects () {
                     }}
                     key={project.key}
                     className={`Project ${project.url != null ? 'Project--clickable' : ''} ${project.key === 'inProgress' ? 'Project--in-progress' : ''}`}
-                  >
+                  > 
                     <div className="Project__header">
-
-
                       <div className="Project__header-icons">
                         {project.github != null && (
                           <a
