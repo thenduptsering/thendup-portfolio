@@ -30,18 +30,22 @@ export default function Projects () {
           <div className="Home__section-info-projects">
             {projects.map((project) => {
                 return (
-                  <div key={project.key} className="Project">
+                  <div key={project.key} className={`Project ${project.key === 'inProgress' ? 'Project--in-progress' : ''}`}>
                     <div className="Project__header">
 
 
                       <div className="Project__header-icons">
-                        <a target="blank" href={project.github} className="Project__header-icon">
-                          <i className="fa-brands fa-github"></i>
-                        </a>
+                        {project.github != null && (
+                          <a target="blank" href={project.github} className="Project__header-icon Project__header-icon--github">
+                            <i className="fa-brands fa-github"></i>
+                          </a>
+                        )}
 
-                        <a target="blank" href={project.url} className="Project__header-icon">
-                          <i className="fa-solid fa-up-right-from-square"></i>
-                        </a>
+                        {project.url != null && (
+                          <a target="blank" href={project.url} className="Project__header-icon Project__header-icon--url">
+                            <i className="fa-solid fa-up-right-from-square"></i>
+                          </a>
+                        )}
                       </div>
                     </div>
 

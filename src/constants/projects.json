@@ -2,25 +2,22 @@
   {
     "key": "clickTiles",
     "label": "Click Tiles",
-    "url": "https://www.thendupcodes.github.io/click-tiles",
+    "url": "https://thendupcodes.github.io/click-tiles",
     "github": "https://www.github.com/thendupcodes/click-tiles",
-    "description": "Click tiles description",
-    "tools": ["Anime.js", "React.js", "TypeScript", "HTML", "SCSS"]
+    "description": "A fun little project where I create a grid of clickable tiles on top of a scrolling gradient. Check it out!",
+    "tools": ["React.js", "TypeScript", "HTML", "SCSS", "Anime.js"]
   },
   {
-    "key": "wordleClone",
-    "label": "Wordle Clone",
-    "url": "https://www.thendupcodes.github.io",
-    "github": "https://wwwgithub.com/thendupcodes/wordle-clone",
-    "description": "Wordle clone description",
+    "key": "portfolio",
+    "label": "My Website Portfolio",
+    "github": "https://www.github.com/thendupcodes/thendup-portfolio",
+    "description": "Ta-da! It's me, distilled into pixels and packaged neatly in a nutshell. And guess what? You're already here, exploring my digital world!",
     "tools": ["React.js", "HTML", "SCSS", "JavaScript"]
   },
   {
-    "key": "passwordValidator",
-    "label": "Password Validator",
-    "url": "https://www.thendupcodes.github.io",
-    "github": "https://www.github.com/thendupcodes/password-validator",
-    "description": "Password validator description",
-    "tools": ["React.js", "HTML", "SCSS", "JavaScript"]
+    "key": "inProgress",
+    "label": "[under construction]",
+    "description": "Stay tuned! I'm in the lab cooking up something awesome!",
+    "tools": ["🚧", "🔥", "🚀"]
   }
 ]
