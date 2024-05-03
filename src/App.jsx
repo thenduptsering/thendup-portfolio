@@ -1,5 +1,4 @@
 import { useEffect, useState } from 'react';
-import { Outlet, useLocation } from 'react-router-dom';
 
 import useScroll from '@/hooks/useScroll';
 
@@ -10,7 +9,6 @@ import HamburgerNav from '@/components/home/HamburgerNav';
 import Navbar from '@/components/home/Navbar';
 
 function App() {
-  const location = useLocation();
   const { scrollY, scrollDir } = useScroll();
 
   const [showingAppLoader, setShowingAppLoader] = useState(true);
@@ -19,8 +17,6 @@ function App() {
   const [loadingHero, setLoadingHero] = useState(false);
   const [allLoaded, setAllLoaded] = useState(false);
   const [stickNavbar, setStickNavbar] = useState(false);
-  
-  const isHome = location.pathname === '/';
 
   useEffect(() => {
     if (scrollDir === 'up' && scrollY > 200) {
@@ -87,43 +83,33 @@ function App() {
 
   return (
     <div className="App-Container">
-      {isHome ? (
-        <>
-          <div className={`App-Loader ${showingAppLoader ? 'App-Loader--loading' : ''}`}>
-            <Logo animationClassName="Logo--animate" />
-          </div>
+      <div className={`App-Loader ${showingAppLoader ? 'App-Loader--loading' : ''}`}>
+        <Logo animationClassName="Logo--animate" />
+      </div>
 
-          {!showingAppLoader && (
-            <Blob />
-          )}
-
-          <div className={`App ${showingAppLoader ? 'App--hide' : ''}`}>
-            <div className={`App__navbar ${stickNavbar ? 'App__navbar--sticky' : ''}`}>
-              <Navbar
-                loadingNavBar={loadingNavBar}
-                loadedNavBar={loadedNavBar}
-                loadPage={loadPage}
-              />
-
-              <HamburgerNav />
-            </div>
-
-            <div className="App__body">
-              <Home allLoaded={allLoaded} loadingHero={loadingHero} />
-            </div>
-
-            <div className="App__footer">
-              <p>Built by Thendup Tsering</p>
-            </div>
-          </div>
-        </>
-      ) : (
-        <div className="App">
-          <div className="App__body">
-            <Outlet />
-          </div>
-        </div>
+      {!showingAppLoader && (
+        <Blob />
       )}
+
+      <div className={`App ${showingAppLoader ? 'App--hide' : ''}`}>
+        <div className={`App__navbar ${stickNavbar ? 'App__navbar--sticky' : ''}`}>
+          <Navbar
+            loadingNavBar={loadingNavBar}
+            loadedNavBar={loadedNavBar}
+            loadPage={loadPage}
+          />
+
+          <HamburgerNav />
+        </div>
+
+        <div className="App__body">
+          <Home allLoaded={allLoaded} loadingHero={loadingHero} />
+        </div>
+
+        <div className="App__footer">
+          <p>Built by Thendup Tsering</p>
+        </div>
+      </div>
     </div>
   )
 }
