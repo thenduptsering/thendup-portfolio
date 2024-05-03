@@ -64,14 +64,14 @@ export default function HamburgerNav () {
             Skills
           </ScrollLink>
 
-          {/* <ScrollLink
+          <ScrollLink
             className="Hamburger-Menu__slideover-link"
             to="projects"
             smooth={true}
             duration={500}
           >
             Projects
-          </ScrollLink> */}
+          </ScrollLink>
 
           <ScrollLink
             className="Hamburger-Menu__slideover-link"
