@@ -7,15 +7,12 @@
   flex-direction: column;
   justify-content: space-between;
   transition: all 0.3s ease;
+  user-select: none;
 
   &:hover {
     transform: translateY(-8px);
-    background: transparentize($dark-gray, 0.5);
-    border: 1px solid transparentize($dark-gray, 0.5);
-
-    ~ .sibling {
-      background: black;
-    }
+    background: transparentize($dark-gray, 0.3);
+    border: 1px solid transparent;
 
     .Project {
       &__title {

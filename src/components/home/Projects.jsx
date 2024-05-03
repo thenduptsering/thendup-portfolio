@@ -35,11 +35,11 @@ export default function Projects () {
 
 
                       <div className="Project__header-icons">
-                        <a href={project.url} className="Project__header-icon">
+                        <a target="blank" href={project.github} className="Project__header-icon">
                           <i className="fa-brands fa-github"></i>
                         </a>
 
-                        <a href={project.url} className="Project__header-icon">
+                        <a target="blank" href={project.url} className="Project__header-icon">
                           <i className="fa-solid fa-up-right-from-square"></i>
                         </a>
                       </div>

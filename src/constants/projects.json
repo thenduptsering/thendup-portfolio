@@ -2,21 +2,24 @@
   {
     "key": "clickTiles",
     "label": "Click Tiles",
-    "url": "https://www.thenduptsering.com/#/click-tiles",
+    "url": "https://www.thendupcodes.github.io/click-tiles",
+    "github": "https://www.github.com/thendupcodes/click-tiles",
     "description": "Click tiles description",
-    "tools": ["Anime.js", "React.js", "HTML", "SCSS", "JavaScript"]
+    "tools": ["Anime.js", "React.js", "TypeScript", "HTML", "SCSS"]
   },
   {
     "key": "wordleClone",
     "label": "Wordle Clone",
-    "url": "https://www.thenduptsering.com/#/wordle",
+    "url": "https://www.thendupcodes.github.io",
+    "github": "https://wwwgithub.com/thendupcodes/wordle-clone",
     "description": "Wordle clone description",
     "tools": ["React.js", "HTML", "SCSS", "JavaScript"]
   },
   {
     "key": "passwordValidator",
     "label": "Password Validator",
-    "url": "https://www.thenduptsering.com/#/password-validator",
+    "url": "https://www.thendupcodes.github.io",
+    "github": "https://www.github.com/thendupcodes/password-validator",
     "description": "Password validator description",
     "tools": ["React.js", "HTML", "SCSS", "JavaScript"]
   }
