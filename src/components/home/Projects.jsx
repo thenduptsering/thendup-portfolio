@@ -36,13 +36,13 @@ export default function Projects () {
 
                       <div className="Project__header-icons">
                         {project.github != null && (
-                          <a target="blank" href={project.github} className="Project__header-icon Project__header-icon--github">
+                          <a target="blank" rel="noopener noreferrer" href={project.github} className="Project__header-icon Project__header-icon--github">
                             <i className="fa-brands fa-github"></i>
                           </a>
                         )}
 
                         {project.url != null && (
-                          <a target="blank" href={project.url} className="Project__header-icon Project__header-icon--url">
+                          <a target="blank" rel="noopener noreferrer" href={project.url} className="Project__header-icon Project__header-icon--url">
                             <i className="fa-solid fa-up-right-from-square"></i>
                           </a>
                         )}
