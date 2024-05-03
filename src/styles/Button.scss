@@ -51,8 +51,21 @@
   }
 
   &:hover {
+    @include box-shadow;
+
     background-color: $beige;
     border-color: $beige;
     color: $teal-5;
+    transform: scale(1.05);
+  }
+
+  &:active {
+    @include box-shadow-button-pressed;
+
+    background-color: $beige;
+    border-color: $beige;
+    color: $teal-5;
+    transform: scale(1);
+    transition: all 0.1s ease;
   }
 }
