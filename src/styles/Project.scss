@@ -1,5 +1,5 @@
 .Project {
-  height: 240px;
+  min-height: 240px;
   padding: 16px 24px;
   border: 1px solid $body-color;
   border-radius: $border-radius-box;
@@ -8,6 +8,7 @@
   justify-content: space-between;
   transition: all 0.3s ease;
   user-select: none;
+  min-width: 200px;
 
   &--in-progress {
     border-style: dashed;
@@ -35,6 +36,8 @@
   }
 
   &__header {
+    min-height: 36px;
+
     &-icons {
       display: flex;
       justify-content: end;
@@ -58,13 +61,22 @@
     }
   }
 
+  &__body {
+    height: 100%;
+  }
+
+  &__footer {
+    margin-top: 16px;
+  }
+
   &__tech-pills {
     display: flex;
+    flex-flow: row wrap;
   }
 
   &__tech-pill {
     padding: 4px 8px;
-    margin: 4px;
+    margin: 4px 8px 4px 0px;
     font-size: $font-size-xs;
     border-radius: $border-radius-box-small;
     border: 1px solid $body-color;
@@ -82,5 +94,11 @@
 .Home__section-info-projects:has(.Project:hover) {
   .Project:not(:hover) {
     opacity: 0.5;
+  }
+}
+
+@media screen and (max-width: $small-device-width) {
+  .Project {
+    min-height: 180px;
   }
 }
