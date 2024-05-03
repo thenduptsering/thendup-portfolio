@@ -31,17 +31,39 @@ export default function Projects () {
             {projects.map((project) => {
                 return (
                   <div key={project.key} className="Project">
-                    <div className="Project__icon">
-                      <i className="fa-solid fa-graduation-cap" />
+                    <div className="Project__header">
+
+
+                      <div className="Project__header-icons">
+                        <a href={project.url} className="Project__header-icon">
+                          <i className="fa-brands fa-github"></i>
+                        </a>
+
+                        <a href={project.url} className="Project__header-icon">
+                          <i className="fa-solid fa-up-right-from-square"></i>
+                        </a>
+                      </div>
                     </div>
 
-                    <h3 className="Project__title">
-                      {project.label}
-                    </h3>
+                    <div className="Project__body">
+                      <h3 className="Project__title">
+                        {project.label}
+                      </h3>
 
-                    <p className="Project__details">
-                      {project.description}
-                    </p>
+                      <p className="Project__details">
+                        {project.description}
+                      </p>
+                    </div>
+
+                    <div className="Project__footer">
+                      <div className="Project__tech-pills">
+                        {project.tools.map((tool) => {
+                          return (
+                            <div key={`${project.key}-${tool}`} className="Project__tech-pill">{tool}</div>
+                          )
+                        })}
+                      </div>
+                    </div>
                   </div>
                 );
               })}
