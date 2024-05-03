@@ -69,6 +69,7 @@ export default function HamburgerNav () {
             to="projects"
             smooth={true}
             duration={500}
+            onClick={closeHamburger}
           >
             Projects
           </ScrollLink>
