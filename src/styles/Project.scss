@@ -9,14 +9,27 @@
   transition: all 0.3s ease;
   user-select: none;
 
+  &--in-progress {
+    border-style: dashed;
+
+    &:hover {
+      border-style: dashed !important;
+    }
+  }
+
   &:hover {
     transform: translateY(-8px);
     background: transparentize($dark-gray, 0.3);
-    border: 1px solid transparent;
+    border: 1px solid $beige;
 
     .Project {
       &__title {
         color: $beige;
+      }
+
+      &__tech-pill {
+        color: $teal-1;
+        border-color: transparentize($beige, 0.3);
       }
     }
   }
@@ -25,10 +38,15 @@
     &-icons {
       display: flex;
       justify-content: end;
+      align-items: center;
     }
 
     &-icon {
       font-size: $font-size-xxl;
+
+      &--url {
+        font-size: $font-size-xl;
+      }
 
       &:last-child {
         margin-left: 12px;
