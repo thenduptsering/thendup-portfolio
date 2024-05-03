@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react';
 
 import useScroll from '@/hooks/useScroll';
 
+import BackToTopButton from '@/components/BackToTopButton';
 import Blob from '@/components/Blob';
 import Home from '@/components/Home';
 import Logo from '@/components/Logo';
@@ -112,6 +113,10 @@ function App() {
         <div className="App__footer">
           <p>Built by Thendup Tsering</p>
         </div>
+
+        {!showingAppLoader && (
+          <BackToTopButton />
+        )}
       </div>
     </div>
   )

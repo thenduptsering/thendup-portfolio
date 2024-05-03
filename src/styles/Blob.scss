@@ -15,6 +15,7 @@
     height: 100%;
     position: absolute;
     backdrop-filter: blur(80px);
+    -webkit-backdrop-filter: blur(80px);
   }
 
   &-Container {
