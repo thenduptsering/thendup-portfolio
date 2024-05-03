@@ -34,12 +34,12 @@ export default function Projects () {
                   <div
                     role="button"
                     onClick={() => {
-                      if (project.url != null && project.key == 'inProgress') return;
+                      if (project.url == null) return;
 
                       navigateAnchor(project.url);
                     }}
                     key={project.key}
-                    className={`Project ${project.key === 'inProgress' ? 'Project--in-progress' : ''}`}
+                    className={`Project ${project.url != null ? 'Project--clickable' : ''} ${project.key === 'inProgress' ? 'Project--in-progress' : ''}`}
                   >
                     <div className="Project__header">
 
