@@ -11,7 +11,7 @@
     "label": "Wordle Clone",
     "url": "https://thendupcodes.github.io/wordle-clone",
     "github": "https://www.github.com/thendupcodes/wordle-clone",
-    "description": "I just love this game. So I re-created it from scratch. If you've already conquered the original game today and are craving some more daily word-guessing excitement, then look no further! Happy guessing!",
+    "description": "I just love this game, so I re-created it from scratch. If you've already conquered the original game today and are craving some more daily word-guessing excitement, then look no further! Happy guessing!",
     "tools": ["React.js", "HTML", "SCSS", "TypeScript"]
   },
   {
@@ -19,7 +19,7 @@
     "label": "Click Tiles",
     "url": "https://thendupcodes.github.io/click-tiles",
     "github": "https://www.github.com/thendupcodes/click-tiles",
-    "description": "A fun little project where I try out some coole animations on a responsive grid of clickable tiles on top of a scrolling gradient. Check it out!",
+    "description": "A fun little project where I try out some cool animations on a responsive grid of clickable tiles on top of different backgrounds. Check it out!",
     "tools": ["React.js", "TypeScript", "HTML", "SCSS", "Anime.js"]
   },
   {
