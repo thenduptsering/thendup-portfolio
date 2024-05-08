@@ -1,18 +1,26 @@
 [
   {
-    "key": "clickTiles",
-    "label": "Click Tiles",
-    "url": "https://thendupcodes.github.io/click-tiles",
-    "github": "https://www.github.com/thendupcodes/click-tiles",
-    "description": "A fun little project where I create a grid of clickable tiles on top of a scrolling gradient. Check it out!",
-    "tools": ["React.js", "TypeScript", "HTML", "SCSS", "Anime.js"]
-  },
-  {
     "key": "portfolio",
     "label": "My Website Portfolio",
     "github": "https://www.github.com/thendupcodes/thendup-portfolio",
     "description": "Ta-da! It's me, distilled into pixels and packaged neatly in a nutshell. And guess what? You're already here, exploring my digital world!",
     "tools": ["React.js", "HTML", "SCSS", "JavaScript"]
+  },
+  {
+    "key": "wordleClone",
+    "label": "Wordle Clone",
+    "url": "https://thendupcodes.github.io/wordle-clone",
+    "github": "https://www.github.com/thendupcodes/wordle-clone",
+    "description": "I just love this game. So I re-created it from scratch. If you've already conquered the original game today and are craving some more daily word-guessing excitement, then look no further! Happy guessing!",
+    "tools": ["React.js", "HTML", "SCSS", "TypeScript"]
+  },
+  {
+    "key": "clickTiles",
+    "label": "Click Tiles",
+    "url": "https://thendupcodes.github.io/click-tiles",
+    "github": "https://www.github.com/thendupcodes/click-tiles",
+    "description": "A fun little project where I try out some coole animations on a responsive grid of clickable tiles on top of a scrolling gradient. Check it out!",
+    "tools": ["React.js", "TypeScript", "HTML", "SCSS", "Anime.js"]
   },
   {
     "key": "inProgress",
