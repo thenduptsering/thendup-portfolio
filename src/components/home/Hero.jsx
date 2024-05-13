@@ -1,6 +1,7 @@
 import { useEffect, useRef, useState } from 'react';
 
 import downloadResume from '@/helpers/downloadResume';
+import useResizer from '@/hooks/useResizer';
 
 const mainHero = 'THENDUP TSERING';
 const alphanums = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789';
@@ -9,6 +10,7 @@ const LETTER_DANCE_INTERVAL = 25;
 export default function Hero () {
   const [heroName, setHeroName] = useState(mainHero);
   const [isDancing, setIsDancing] = useState(false);
+  const { windowWidth } = useResizer();
 
   const danceInterval = useRef(null);
 
@@ -56,6 +58,7 @@ export default function Hero () {
   }
 
   useEffect(() => {
+    if (windowWidth < 854) return;
     startDancing();
 
     setTimeout(() => {
