@@ -1,31 +1,31 @@
 [
-  {
-    "key": "portfolio",
-    "label": "My Website Portfolio",
-    "github": "https://www.github.com/thenduptsering/thendup-portfolio",
-    "description": "Ta-da! It's me, distilled into pixels and packaged neatly in a nutshell. And guess what? You're already here, exploring my digital world!",
-    "tools": ["React.js", "HTML", "SCSS", "JavaScript"]
-  },
-  {
-    "key": "wordleClone",
-    "label": "Wordle Clone",
-    "url": "https://thenduptsering.github.io/wordle-clone",
-    "github": "https://www.github.com/thenduptsering/wordle-clone",
-    "description": "I just love this game, so I re-created it from scratch. If you've already conquered the original game today and are craving some more daily word-guessing excitement, then look no further! Happy guessing!",
-    "tools": ["React.js", "HTML", "SCSS", "TypeScript"]
-  },
-  {
-    "key": "clickTiles",
-    "label": "Click Tiles",
-    "url": "https://thenduptsering.github.io/click-tiles",
-    "github": "https://www.github.com/thenduptsering/click-tiles",
-    "description": "A fun little project where I try out some cool animations on a responsive grid of clickable tiles on top of different backgrounds. Check it out!",
-    "tools": ["React.js", "TypeScript", "HTML", "SCSS", "Anime.js"]
-  },
-  {
-    "key": "inProgress",
-    "label": "[under construction]",
-    "description": "Stay tuned! I'm in the lab cooking up something awesome!",
-    "tools": ["🚧", "🔥", "🚀"]
-  }
+	{
+		"key": "portfolio",
+		"label": "My Website Portfolio",
+		"github": "https://www.github.com/thenduptsering/thendup-portfolio",
+		"description": "Ta-da! It's me, distilled into pixels and packaged neatly in a nutshell. And guess what? You're already here, exploring my digital world!",
+		"tools": ["React.js", "HTML", "SCSS", "JavaScript"]
+	},
+	{
+		"key": "wordleClone",
+		"label": "Wordle Clone",
+		"url": "https://thenduptsering.github.io/wordle-clone",
+		"github": "https://www.github.com/thenduptsering/wordle-clone",
+		"description": "I just love this game, so I re-created it from scratch. If you've already conquered the original game today and are craving some more daily word-guessing excitement, then look no further! Happy guessing!",
+		"tools": ["React.js", "HTML", "SCSS", "TypeScript"]
+	},
+	{
+		"key": "clickTiles",
+		"label": "Click Tiles",
+		"url": "https://thenduptsering.github.io/click-tiles",
+		"github": "https://www.github.com/thenduptsering/click-tiles",
+		"description": "A fun little project where I try out some cool animations on a responsive grid of clickable tiles on top of different backgrounds. Check it out!",
+		"tools": ["React.js", "TypeScript", "HTML", "SCSS", "Anime.js"]
+	},
+	{
+		"key": "inProgress",
+		"label": "[under construction]",
+		"description": "Stay tuned! I'm in the lab cooking up something awesome!",
+		"tools": ["🚧", "🔥", "🚀"]
+	}
 ]
