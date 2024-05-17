@@ -7,30 +7,30 @@ import { useEffect, useRef } from 'react';
  */
 
 export default function useOnClickOutside({ onClick, disabled }) {
-  const ref = useRef(null);
+	const ref = useRef(null);
 
-  useEffect(() => {
-    const listener = (e) => {
-      if (
-        disabled ||
-        ref == null ||
-        ref.current == null ||
-        ref.current.contains(e.target)
-      ) {
-        return;
-      }
+	useEffect(() => {
+		const listener = (e) => {
+			if (
+				disabled ||
+				ref == null ||
+				ref.current == null ||
+				ref.current.contains(e.target)
+			) {
+				return;
+			}
 
-      if (onClick) onClick(e);
-    };
+			if (onClick) onClick(e);
+		};
 
-    document.addEventListener('click', listener);
-    document.addEventListener('touchstart', listener);
+		document.addEventListener('click', listener);
+		document.addEventListener('touchstart', listener);
 
-    return () => {
-      document.removeEventListener('click', listener);
-      document.removeEventListener('touchstart', listener);
-    };
-  }, [ref, onClick, disabled]);
+		return () => {
+			document.removeEventListener('click', listener);
+			document.removeEventListener('touchstart', listener);
+		};
+	}, [ref, onClick, disabled]);
 
-  return ref;
+	return ref;
 }
