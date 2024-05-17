@@ -88,6 +88,12 @@ export default function Hero() {
 					{heroName}
 				</h1>
 
+				<h1 className="Home__section-line2 Home__section-line2--static">
+					THENDUP
+					<br />
+					TSERING
+				</h1>
+
 				<p className="Home__section-line3" style={{ animationDelay: '400ms' }}>
 					I am a senior front-end react developer based in Toronto, Canada
 				</p>
