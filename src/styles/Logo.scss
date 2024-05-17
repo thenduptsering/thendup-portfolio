@@ -1,57 +1,57 @@
 .Logo {
-  font-size: $font-size-icon;
-  width: 60px;
-  height: 60px;
-  color: $yellow;
+	font-size: $font-size-icon;
+	width: 60px;
+	height: 60px;
+	color: $yellow;
 
-  &__left,
-  &__right {
-    font-size: $font-size-icon;
-    width: fit-content;
-    height: fit-content;
-    position: absolute;
-    transform: translate(-50%, -50%);
-    transition: all 0.3s ease;
-  }
+	&__left,
+	&__right {
+		font-size: $font-size-icon;
+		width: fit-content;
+		height: fit-content;
+		position: absolute;
+		transform: translate(-50%, -50%);
+		transition: all 0.3s ease;
+	}
 
-  &__left {
-    top: calc(50% - 6px);
-    left: calc(50% - 6px);
-  }
+	&__left {
+		top: calc(50% - 6px);
+		left: calc(50% - 6px);
+	}
 
-  &__right {
-    color: $beige;
-    top: calc(50% + 4px);
-    left: calc(50% + 8px);
-  }
+	&__right {
+		color: $beige;
+		top: calc(50% + 4px);
+		left: calc(50% + 8px);
+	}
 
-  &--animate {
-    .Logo {
-      &__left {
-        opacity: 0;
-        animation: slide-left-rotate 3s ease;
-        animation-delay: 1s;
-        animation-fill-mode: forwards;
-      }
+	&--animate {
+		.Logo {
+			&__left {
+				opacity: 0;
+				animation: slide-left-rotate 3s ease;
+				animation-delay: 1s;
+				animation-fill-mode: forwards;
+			}
 
-      &__right {
-        opacity: 0;
-        animation: slide-right-rotate 3s ease;
-        animation-delay: 1s;
-        animation-fill-mode: forwards;
-      }
-    }
-  }
+			&__right {
+				opacity: 0;
+				animation: slide-right-rotate 3s ease;
+				animation-delay: 1s;
+				animation-fill-mode: forwards;
+			}
+		}
+	}
 
-  &:hover {
-    .Logo {
-      &__left {
-        color: $beige;
-      }
+	&:hover {
+		.Logo {
+			&__left {
+				color: $beige;
+			}
 
-      &__right {
-        color: $yellow;
-      }
-    }
-  }
+			&__right {
+				color: $yellow;
+			}
+		}
+	}
 }
