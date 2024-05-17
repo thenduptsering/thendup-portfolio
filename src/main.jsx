@@ -4,6 +4,4 @@ import App from './App.jsx';
 
 import './styles/_index.scss';
 
-ReactDOM.createRoot(document.getElementById('root')).render(
-  <App />
-)
+ReactDOM.createRoot(document.getElementById('root')).render(<App />);
