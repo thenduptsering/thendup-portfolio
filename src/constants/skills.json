@@ -1,72 +1,72 @@
 [
-  {
-    "key": "react",
-    "icon": "/icons/react.png",
-    "label": "React"
-  },
-  {
-    "key": "redux",
-    "icon": "/icons/redux.png",
-    "label": "Redux"
-  },
-  {
-    "key": "typescript",
-    "icon": "/icons/typescript.png",
-    "label": "TypeScript"
-  },
-  {
-    "key": "javascript",
-    "icon": "/icons/javascript.png",
-    "label": "JavaScript"
-  },
-  {
-    "key": "html",
-    "icon": "/icons/html.png",
-    "label": "HTML"
-  },
-  {
-    "key": "css",
-    "icon": "/icons/css.png",
-    "label": "CSS"
-  },
-  {
-    "key": "sass",
-    "icon": "/icons/sass.png",
-    "label": "SASS"
-  },
-  {
-    "key": "webpack",
-    "icon": "/icons/webpack.png",
-    "label": "Webpack"
-  },
-  {
-    "key": "nodejs",
-    "icon": "/icons/node.png",
-    "label": "NodeJS"
-  },
-  {
-    "key": "git",
-    "icon": "/icons/git.png",
-    "label": "Git"
-  },
-  {
-    "key": "angular",
-    "icon": "/icons/angular.png",
-    "label": "Angular"
-  },
-  {
-    "key": "jquery",
-    "icon": "/icons/jquery.png",
-    "label": "jQuery"
-  },
-  {
-    "key": "npm",
-    "icon": "/icons/npm.png",
-    "label": "NPM"
-  },
-  {
-    "key": "yarn",
-    "icon": "/icons/yarn.png",
-    "label": "Yarn"
-  }
+	{
+		"key": "react",
+		"icon": "/icons/react.png",
+		"label": "React"
+	},
+	{
+		"key": "redux",
+		"icon": "/icons/redux.png",
+		"label": "Redux"
+	},
+	{
+		"key": "typescript",
+		"icon": "/icons/typescript.png",
+		"label": "TypeScript"
+	},
+	{
+		"key": "javascript",
+		"icon": "/icons/javascript.png",
+		"label": "JavaScript"
+	},
+	{
+		"key": "html",
+		"icon": "/icons/html.png",
+		"label": "HTML"
+	},
+	{
+		"key": "css",
+		"icon": "/icons/css.png",
+		"label": "CSS"
+	},
+	{
+		"key": "sass",
+		"icon": "/icons/sass.png",
+		"label": "SASS"
+	},
+	{
+		"key": "webpack",
+		"icon": "/icons/webpack.png",
+		"label": "Webpack"
+	},
+	{
+		"key": "nodejs",
+		"icon": "/icons/node.png",
+		"label": "NodeJS"
+	},
+	{
+		"key": "git",
+		"icon": "/icons/git.png",
+		"label": "Git"
+	},
+	{
+		"key": "angular",
+		"icon": "/icons/angular.png",
+		"label": "Angular"
+	},
+	{
+		"key": "jquery",
+		"icon": "/icons/jquery.png",
+		"label": "jQuery"
+	},
+	{
+		"key": "npm",
+		"icon": "/icons/npm.png",
+		"label": "NPM"
+	},
+	{
+		"key": "yarn",
+		"icon": "/icons/yarn.png",
+		"label": "Yarn"
+	}
 ]

@@ -1,70 +1,72 @@
 .Back-To-Top-Button {
-  display: block;
-  position: fixed;
-  width: 50px;
-  height: 50px;
-  right: 48px;
-  bottom: -100px;
-  z-index: $z-layer-navbar;
-  transition: bottom 0.5s ease, all 0.3s ease;
+	display: block;
+	position: fixed;
+	width: 50px;
+	height: 50px;
+	right: 48px;
+	bottom: -100px;
+	z-index: $z-layer-navbar;
+	transition: bottom 0.5s ease, all 0.3s ease;
 
-  &--active {
-    bottom: 48px;
-  }
+	&--active {
+		bottom: 48px;
+	}
 
-  &:hover {
-    cursor: pointer;
-    transform: translateY(-4px);
+	&:hover {
+		cursor: pointer;
+		transform: translateY(-4px);
 
-    .Back-To-Top-Button {
-      &__progress {
-        transform: scale(1.1);
+		.Back-To-Top-Button {
+			&__progress {
+				transform: scale(1.1);
 
-        &-bar {
-          stroke: $beige;
-        }
-      }
+				&-bar {
+					stroke: $beige;
+				}
+			}
 
-      &__arrow {
-        transform: scale(1.1);
-        color: $beige;
-      }
-    }
-  }
+			&__arrow {
+				transform: scale(1.1);
+				color: $beige;
+			}
+		}
+	}
 
-  &__contents {
-    width: 100%;
-    height: 100%;
-    position: relative;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
+	&__contents {
+		width: 100%;
+		height: 100%;
+		position: relative;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+	}
 
-  &__arrow {
-    font-size: $font-size-icon;
-    color: transparentize($body-color, 0.5);
-    transition: transform 0.3s ease;
-  }
+	&__arrow {
+		font-size: $font-size-icon;
+		color: transparentize($body-color, 0.5);
+		transition: transform 0.3s ease;
+	}
 
-  &__progress {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    transition: transform 0.3s ease;
+	&__progress {
+		position: absolute;
+		width: 100%;
+		height: 100%;
+		transition: transform 0.3s ease;
 
-    &-bar {
-      fill: none;
-      stroke: transparentize($body-color, 0.5);
-      stroke-width: 4;
-      transform: rotate(-90deg); /* Rotate the circle to start at the 12 o'clock position */
-      transform-origin: center;
-    }
-  }
+		&-bar {
+			fill: none;
+			stroke: transparentize($body-color, 0.5);
+			stroke-width: 4;
+			transform: rotate(
+				-90deg
+			); /* Rotate the circle to start at the 12 o'clock position */
+			transform-origin: center;
+		}
+	}
 }
 
 @media screen and (max-width: $small-device-width) {
-  .Back-To-Top-Button {
-    display: none;
-  }
+	.Back-To-Top-Button {
+		display: none;
+	}
 }

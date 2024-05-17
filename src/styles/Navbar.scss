@@ -1,63 +1,63 @@
 .Navbar {
-  color: $body-color;
-  width: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  height: $nav-bar-height;
-  font-size: $font-size-md;
+	color: $body-color;
+	width: 100%;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	height: $nav-bar-height;
+	font-size: $font-size-md;
 
-  &--loading {
-    .Navbar {
-      &__logo,
-      &__link,
-      &__button {
-        animation: drop-in 1s ease;
-        animation-fill-mode: forwards;
-      }
+	&--loading {
+		.Navbar {
+			&__logo,
+			&__link,
+			&__button {
+				animation: drop-in 1s ease;
+				animation-fill-mode: forwards;
+			}
 
-      &__link {
-        display: inline-block;
-      }
-    }
-  }
+			&__link {
+				display: inline-block;
+			}
+		}
+	}
 
-  &--loaded {
-    .Navbar {
-      &__logo,
-      &__link,
-      &__button {
-        opacity: 1;
-      }
-    }
-  }
+	&--loaded {
+		.Navbar {
+			&__logo,
+			&__link,
+			&__button {
+				opacity: 1;
+			}
+		}
+	}
 
-  &__logo {
-    opacity: 0;
-    font-size: $font-size-xl;
-    cursor: pointer;
-  }
+	&__logo {
+		opacity: 0;
+		font-size: $font-size-xl;
+		cursor: pointer;
+	}
 
-  &__link {
-    opacity: 0;
-    font-size: $font-size-lg;
-    margin: 8px 16px;
-    cursor: pointer;
-  }
+	&__link {
+		opacity: 0;
+		font-size: $font-size-lg;
+		margin: 8px 16px;
+		cursor: pointer;
+	}
 
-  &__button {
-    opacity: 0;
-    margin: 8px 16px;
-    min-width: 80px;
-    padding: 8px 12px;
-    font-size: $font-size-lg;
-    border-radius: $border-radius-box-small;
-    cursor: pointer;
-  }
+	&__button {
+		opacity: 0;
+		margin: 8px 16px;
+		min-width: 80px;
+		padding: 8px 12px;
+		font-size: $font-size-lg;
+		border-radius: $border-radius-box-small;
+		cursor: pointer;
+	}
 }
 
 @media screen and (max-width: $small-device-width) {
-  .Navbar {
-    display: none;
-  }
+	.Navbar {
+		display: none;
+	}
 }

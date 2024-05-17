@@ -1,71 +1,71 @@
 .Button {
-  border-radius: $border-radius-box;
-  border: none;
-  font-size: $font-size-md;
-  padding: 12px 16px;
-  user-select: none;
-  cursor: pointer;
-  border: 1px solid transparent;
-  transition: all 0.3s ease;
+	border-radius: $border-radius-box;
+	border: none;
+	font-size: $font-size-md;
+	padding: 12px 16px;
+	user-select: none;
+	cursor: pointer;
+	border: 1px solid transparent;
+	transition: all 0.3s ease;
 
-  &--default {
-    min-width: 160px;
-    background: transparent;
-    border: 1px solid $yellow;
-    color: $yellow;
-  }
+	&--default {
+		min-width: 160px;
+		background: transparent;
+		border: 1px solid $yellow;
+		color: $yellow;
+	}
 
-  &--icon {
-    background: transparent;
-    color: $teal-1;
-    border: 0;
-    padding: 0;
-    font-size: $font-size-icon;
+	&--icon {
+		background: transparent;
+		color: $teal-1;
+		border: 0;
+		padding: 0;
+		font-size: $font-size-icon;
 
-    &:hover {
-      background-color: transparent;
-    }
-  }
+		&:hover {
+			background-color: transparent;
+		}
+	}
 
-  &--link {
-    display: inline-block;
-    text-align: center;
-    min-width: 100px;
+	&--link {
+		display: inline-block;
+		text-align: center;
+		min-width: 100px;
 
-    &:after {
-      display: none;
-    }
-  }
+		&:after {
+			display: none;
+		}
+	}
 
-  &--wiggle {
-    &:hover {
-      .Button__emoji--wiggle {
-        animation: wiggle 1.2s infinite;
-      }
-    }
-  }
+	&--wiggle {
+		&:hover {
+			.Button__emoji--wiggle {
+				animation: wiggle 1.2s infinite;
+			}
+		}
+	}
 
-  &__emoji {
-    display: inline-block;
-    margin-left: 4px;
-  }
+	&__emoji {
+		display: inline-block;
+		margin-left: 4px;
+	}
 
-  &:hover {
-    @include box-shadow;
+	&:hover {
+		@include box-shadow;
 
-    background-color: $beige;
-    border-color: $beige;
-    color: $teal-5;
-    transform: scale(1.05);
-  }
+		background-color: $beige;
+		border-color: $beige;
+		color: $teal-5;
+		transform: scale(1.05);
+	}
 
-  &:active {
-    @include box-shadow-button-pressed;
+	&:active {
+		@include box-shadow-button-pressed;
 
-    background-color: $beige;
-    border-color: $beige;
-    color: $teal-5;
-    transform: scale(1);
-    transition: all 0.1s ease;
-  }
+		background-color: $beige;
+		border-color: $beige;
+		color: $teal-5;
+		transform: scale(1);
+		transition: all 0.1s ease;
+	}
 }

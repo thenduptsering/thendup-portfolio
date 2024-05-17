@@ -1,44 +1,44 @@
 [
-  {
-    "key": "tdw_team_lead",
-    "company": "ThinkData Works",
-    "period": "Jan 2021 - Dec 2023",
-    "title": "Senior Front-End Software Engineer + Team Lead"
-  },
-  {
-    "key": "tdw_senior_swe",
-    "company": "ThinkData Works",
-    "period": "Jan 2019 - Dec 2020",
-    "title": "Senior Front-End Software Engineer"
-  },
-  {
-    "key": "tdw_swe",
-    "company": "ThinkData Works",
-    "period": "Jan 2017 - Dec 2018",
-    "title": "Front-End Software Engineer"
-  },
-  {
-    "key": "tdw_swe_coop_2",
-    "company": "ThinkData Works",
-    "period": "May 2016 - Aug 2016",
-    "title": "Front-End Software Engineer (COOP)"
-  },
-  {
-    "key": "tdw_swe_coop",
-    "company": "ThinkData Works",
-    "period": "May 2015 - Dec 2015",
-    "title": "Front-End Software Engineer (COOP)"
-  },
-  {
-    "key": "vibe_swe_coop",
-    "company": "Vibe SMG Inc.",
-    "period": "Sep 2014 - Dec 2014",
-    "title": "Software Engineer (COOP)"
-  },
-  {
-    "key": "vibe_junior_swe_coop",
-    "company": "Vibe SMG Inc.",
-    "period": "Jan 2014 - Apr 2014",
-    "title": "Jr. Software Engineer (COOP)"
-  }
+	{
+		"key": "tdw_team_lead",
+		"company": "ThinkData Works",
+		"period": "Jan 2021 - Dec 2023",
+		"title": "Senior Front-End Software Engineer + Team Lead"
+	},
+	{
+		"key": "tdw_senior_swe",
+		"company": "ThinkData Works",
+		"period": "Jan 2019 - Dec 2020",
+		"title": "Senior Front-End Software Engineer"
+	},
+	{
+		"key": "tdw_swe",
+		"company": "ThinkData Works",
+		"period": "Jan 2017 - Dec 2018",
+		"title": "Front-End Software Engineer"
+	},
+	{
+		"key": "tdw_swe_coop_2",
+		"company": "ThinkData Works",
+		"period": "May 2016 - Aug 2016",
+		"title": "Front-End Software Engineer (COOP)"
+	},
+	{
+		"key": "tdw_swe_coop",
+		"company": "ThinkData Works",
+		"period": "May 2015 - Dec 2015",
+		"title": "Front-End Software Engineer (COOP)"
+	},
+	{
+		"key": "vibe_swe_coop",
+		"company": "Vibe SMG Inc.",
+		"period": "Sep 2014 - Dec 2014",
+		"title": "Software Engineer (COOP)"
+	},
+	{
+		"key": "vibe_junior_swe_coop",
+		"company": "Vibe SMG Inc.",
+		"period": "Jan 2014 - Apr 2014",
+		"title": "Jr. Software Engineer (COOP)"
+	}
 ]

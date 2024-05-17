@@ -6,26 +6,30 @@ import HomeFooter from '@/components/home/HomeFooter';
 import Projects from '@/components/home/Projects';
 import Skills from '@/components/home/Skills';
 
-export default function Home ({ standBy, loadingHero = false }) {
-  return (
-    <div className={`Home ${standBy ? '' : 'Home--standby' } ${loadingHero ? 'Home--loading' : ''}`}>
-      <Hero />
+export default function Home({ standBy, loadingHero = false }) {
+	return (
+		<div
+			className={`Home ${standBy ? '' : 'Home--standby'} ${
+				loadingHero ? 'Home--loading' : ''
+			}`}
+		>
+			<Hero />
 
-      {standBy && (
-        <>
-          <AboutMe />
+			{standBy && (
+				<>
+					<AboutMe />
 
-          <Experience />
+					<Experience />
 
-          <Skills />
+					<Skills />
 
-          <Projects />
+					<Projects />
 
-          <ContactMe />   
+					<ContactMe />
 
-          <HomeFooter />
-        </>
-      )}
-    </div>
-  );
+					<HomeFooter />
+				</>
+			)}
+		</div>
+	);
 }

@@ -1,21 +1,21 @@
 .Job {
-  width: 100%;
-  margin: 24px 0;
-  transition: opacity 0.5s ease;
+	width: 100%;
+	margin: 24px 0;
+	transition: opacity 0.5s ease;
 
-  &__heading {
-    display: flex;
-    justify-content: space-between;
-    margin-bottom: 4px;
+	&__heading {
+		display: flex;
+		justify-content: space-between;
+		margin-bottom: 4px;
 
-    &-company {
-      font-weight: $font-weight-heavy;
-    }
-  }
+		&-company {
+			font-weight: $font-weight-heavy;
+		}
+	}
 }
 
 .Home__section-info-jobs:has(.Job:hover) {
-  .Job:not(:hover) {
-    opacity: 0.5;
-  }
+	.Job:not(:hover) {
+		opacity: 0.5;
+	}
 }

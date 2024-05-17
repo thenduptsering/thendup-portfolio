@@ -1,54 +1,53 @@
 .Skill {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  transition: opacity 0.5s ease;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	transition: opacity 0.5s ease;
 
-  &__icon {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding: 8px;
-    border-radius: 50%;
-    transition: all 0.3s ease;
-    position: relative;
+	&__icon {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		padding: 8px;
+		border-radius: 50%;
+		transition: all 0.3s ease;
+		position: relative;
 
-    &-backdrop {
-      height: 100%;
-      width: 100%;
-      position: absolute;
-      border-radius: 50%;
-      
-    }
+		&-backdrop {
+			height: 100%;
+			width: 100%;
+			position: absolute;
+			border-radius: 50%;
+		}
 
-    &-pic {
-      max-width: 64px;
-    }
-  }
+		&-pic {
+			max-width: 64px;
+		}
+	}
 
-  &__label {
-    transition: all 0.3s ease;
-    font-size: $font-size-md;
-  }
+	&__label {
+		transition: all 0.3s ease;
+		font-size: $font-size-md;
+	}
 
-  &:hover {
-    .Skill {
-      &__icon {
-        transform: translateY(-4px);
+	&:hover {
+		.Skill {
+			&__icon {
+				transform: translateY(-4px);
 
-        &-backdrop {
-          background: transparentize($black, 0.7);
-          filter: blur(10px);
-          z-index: -1;
-        }
-      }
-    }
-  }
+				&-backdrop {
+					background: transparentize($black, 0.7);
+					filter: blur(10px);
+					z-index: -1;
+				}
+			}
+		}
+	}
 }
 
 .Home__section-info-skills:has(.Skill:hover) {
-  .Skill:not(:hover) {
-    opacity: 0.5;
-  }
+	.Skill:not(:hover) {
+		opacity: 0.5;
+	}
 }

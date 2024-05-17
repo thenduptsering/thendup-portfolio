@@ -1,108 +1,108 @@
 .Project {
-  min-height: 240px;
-  padding: 16px 24px;
-  border: 1px solid $body-color;
-  border-radius: $border-radius-box;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  transition: all 0.3s ease;
-  user-select: none;
-  min-width: 200px;
-  
-  &--clickable {
-    cursor: pointer;
-  }
+	min-height: 240px;
+	padding: 16px 24px;
+	border: 1px solid $body-color;
+	border-radius: $border-radius-box;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	transition: all 0.3s ease;
+	user-select: none;
+	min-width: 200px;
 
-  &--in-progress {
-    border-style: dashed;
+	&--clickable {
+		cursor: pointer;
+	}
 
-    &:hover {
-      border-style: dashed !important;
-    }
-  }
+	&--in-progress {
+		border-style: dashed;
 
-  &:hover {
-    transform: translateY(-8px);
-    background: transparentize($dark-gray, 0.3);
-    border: 1px solid $beige;
+		&:hover {
+			border-style: dashed !important;
+		}
+	}
 
-    .Project {
-      &__title {
-        color: $beige;
-      }
+	&:hover {
+		transform: translateY(-8px);
+		background: transparentize($dark-gray, 0.3);
+		border: 1px solid $beige;
 
-      &__tech-pill {
-        color: $teal-1;
-        border-color: transparentize($beige, 0.3);
-      }
-    }
-  }
+		.Project {
+			&__title {
+				color: $beige;
+			}
 
-  &__header {
-    min-height: 36px;
+			&__tech-pill {
+				color: $teal-1;
+				border-color: transparentize($beige, 0.3);
+			}
+		}
+	}
 
-    &-icons {
-      display: flex;
-      justify-content: end;
-      align-items: center;
-    }
+	&__header {
+		min-height: 36px;
 
-    &-icon {
-      font-size: $font-size-xxl;
+		&-icons {
+			display: flex;
+			justify-content: end;
+			align-items: center;
+		}
 
-      &--url {
-        font-size: $font-size-xl;
-      }
+		&-icon {
+			font-size: $font-size-xxl;
 
-      &:last-child {
-        margin-left: 12px;
-      }
+			&--url {
+				font-size: $font-size-xl;
+			}
 
-      &:after {
-        display: none;
-      }
-    }
-  }
+			&:last-child {
+				margin-left: 12px;
+			}
 
-  &__body {
-    height: 100%;
-  }
+			&:after {
+				display: none;
+			}
+		}
+	}
 
-  &__footer {
-    margin-top: 16px;
-  }
+	&__body {
+		height: 100%;
+	}
 
-  &__tech-pills {
-    display: flex;
-    flex-flow: row wrap;
-  }
+	&__footer {
+		margin-top: 16px;
+	}
 
-  &__tech-pill {
-    padding: 4px 8px;
-    margin: 4px 8px 4px 0px;
-    font-size: $font-size-xs;
-    border-radius: $border-radius-box-small;
-    border: 1px solid $body-color;
+	&__tech-pills {
+		display: flex;
+		flex-flow: row wrap;
+	}
 
-    &:first-child {
-      margin-left: 0;
-    }
+	&__tech-pill {
+		padding: 4px 8px;
+		margin: 4px 8px 4px 0px;
+		font-size: $font-size-xs;
+		border-radius: $border-radius-box-small;
+		border: 1px solid $body-color;
 
-    &:last-child {
-      margin-right: 0;
-    }
-  }
+		&:first-child {
+			margin-left: 0;
+		}
+
+		&:last-child {
+			margin-right: 0;
+		}
+	}
 }
 
 .Home__section-info-projects:has(.Project:hover) {
-  .Project:not(:hover) {
-    opacity: 0.5;
-  }
+	.Project:not(:hover) {
+		opacity: 0.5;
+	}
 }
 
 @media screen and (max-width: $small-device-width) {
-  .Project {
-    min-height: 180px;
-  }
+	.Project {
+		min-height: 180px;
+	}
 }
