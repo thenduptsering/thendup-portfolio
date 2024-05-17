@@ -1,96 +1,96 @@
 .Hamburger-Menu {
-  display: none;
-  height: $nav-bar-height;
+	display: none;
+	height: $nav-bar-height;
 
-  &__slideover {
-    position: fixed;
-    top: 0;
-    right: -100%;
-    width: 50vw;
-    height: 100vh;
-    transition: all 0.5s ease;
-    background: $teal-3;
+	&__slideover {
+		position: fixed;
+		top: 0;
+		right: -100%;
+		width: 50vw;
+		height: 100vh;
+		transition: all 0.5s ease;
+		background: $teal-3;
 
-    &--open {
-      @include box-shadow-light;
+		&--open {
+			@include box-shadow-light;
 
-      right: 0;
-    }
+			right: 0;
+		}
 
-    &-close {
-      display: flex;
-      justify-content: end;
-      margin: 24px
-    }
+		&-close {
+			display: flex;
+			justify-content: end;
+			margin: 24px;
+		}
 
-    &-links {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      background: $teal-3;
-      width: 100%;
-      padding: 24px 0;
-      position: absolute;
-      top: 50%;
-      transform: translateY(-50%);
-    }
-  
-    &-link {
-      padding: 24px 0;
-      user-select: none;
-      width: 100%;
-      text-align: center;
-      font-size: $font-size-xxl;
-  
-      &:after {
-        display: none;
-      }
-  
-      &:hover {
-        cursor: pointer;
-        text-decoration: none;
-        background-color: $teal-5;
-        color: $white;
-      }
-    }
+		&-links {
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+			background: $teal-3;
+			width: 100%;
+			padding: 24px 0;
+			position: absolute;
+			top: 50%;
+			transform: translateY(-50%);
+		}
 
-    &-button {
-      margin: 24px;
-      font-size: $font-size-xl;
-    }
-  }
+		&-link {
+			padding: 24px 0;
+			user-select: none;
+			width: 100%;
+			text-align: center;
+			font-size: $font-size-xxl;
 
-  &__logo {
-    font-size: $font-size-icon;
-    cursor: default;
-  }
+			&:after {
+				display: none;
+			}
 
-  &__button {
-    width: 60px;
-    height: 60px;
+			&:hover {
+				cursor: pointer;
+				text-decoration: none;
+				background-color: $teal-5;
+				color: $white;
+			}
+		}
 
-    &:hover {
-      background: transparentize($white, 0.9);
+		&-button {
+			margin: 24px;
+			font-size: $font-size-xl;
+		}
+	}
 
-      i {
-        color: $teal-1;
-      }
-    }
-  }
+	&__logo {
+		font-size: $font-size-icon;
+		cursor: default;
+	}
+
+	&__button {
+		width: 60px;
+		height: 60px;
+
+		&:hover {
+			background: transparentize($white, 0.9);
+
+			i {
+				color: $teal-1;
+			}
+		}
+	}
 }
 
 @media screen and (max-width: $small-device-width) {
-  .Hamburger-Menu {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-  }
+	.Hamburger-Menu {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+	}
 }
 
 @media screen and (max-width: $min-device-width) {
-  .Hamburger-Menu {
-    &__slideover {
-      width: 75vw;
-    }
-  }
+	.Hamburger-Menu {
+		&__slideover {
+			width: 75vw;
+		}
+	}
 }
