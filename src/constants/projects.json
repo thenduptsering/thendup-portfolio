@@ -11,7 +11,7 @@
 		"label": "Wordle Clone",
 		"url": "https://thenduptsering.github.io/wordle-clone",
 		"github": "https://www.github.com/thenduptsering/wordle-clone",
-		"description": "I just love this game, so I re-created it from scratch. If you've already conquered the original game today and are craving some more daily word-guessing excitement, then look no further! Happy guessing!",
+		"description": "I just love this game, so I re-created it from scratch, but with a little twist of my own - the answers are inspired by terminology commonly encountered by software engineers, developers, and professionals in the tech industry! Happy guessing!",
 		"tools": ["React.js", "HTML", "SCSS", "TypeScript"]
 	},
 	{
