@@ -1,6 +1,6 @@
 import { useEffect, useMemo, useState } from 'react';
 
-export default function useIsOnScreen({ ref, threshold = 0.5 }) {
+export default function useIsOnScreen({ ref, threshold = 0.2 }) {
 	if (ref == null) return false;
 
 	const [isOnScreen, setIsOnScreen] = useState(false);
@@ -9,6 +9,7 @@ export default function useIsOnScreen({ ref, threshold = 0.5 }) {
 		() =>
 			new IntersectionObserver(
 				([entry]) => {
+					console.log({ entry });
 					setIsOnScreen(entry.isIntersecting);
 				},
 				{
