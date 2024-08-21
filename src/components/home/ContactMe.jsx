@@ -32,11 +32,8 @@ export default function ContactMe() {
 			<div className="Home__section-info">
 				<div className="Home__section-info-main">
 					<p className="Home__section-text-para">
-						I&apos;m on the lookout for my next adventure, eager to bring my
-						skills and passion to a new team.
-						<br />
-						Whether it&apos;s about a potential job opportunity, shared
-						interests or just a friendly chat, let&apos;s connect!!
+						Whether you would like to talk about shared
+						interests or just have a friendly chat, let&apos;s connect!!
 					</p>
 
 					<div className="Home__section-buttons">

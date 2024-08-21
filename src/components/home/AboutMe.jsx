@@ -76,8 +76,14 @@ export default function AboutMe() {
 							production-level issues.
 						</p>
 						<p className="Home__section-text-para">
-							I am currently on the lookout for my next adventure, eager to
-							bring my skills and passion to a new team.
+							Currently, I am focused on building the next big thing at{' '}
+							<a
+								className="Home__section-text-link"
+								href="https://www.snowflake.com/en/"
+								target="blank"
+							>
+								Snowflake
+							</a> ❄️.
 						</p>
 					</div>
 				</div>
